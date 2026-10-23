@@ -1,3 +1,4 @@
+import "@/lib/load-env";
 import { PrismaClient } from "@prisma/client";
 
 // One Prisma client per process. In development, Next's hot reload would otherwise

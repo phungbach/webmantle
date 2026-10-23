@@ -310,3 +310,27 @@ describe("private data shown to the demo account", () => {
     expect(maskPrivate("no personal data here")).toBe("no personal data here");
   });
 });
+
+describe(".env reader for command-line scripts", () => {
+  it("parses quotes, comments and export, and ignores bad lines", async () => {
+    const { parseEnv } = await import("@/lib/load-env");
+    const parsed = parseEnv(
+      [
+        "# comment",
+        'DATABASE_URL="file:../data/cms.db"',
+        "export SITE_URL='http://localhost:3000'",
+        "PLAIN=value # trailing comment",
+        "EMPTY=",
+        "not a line",
+        "SPACED = spaced value ",
+      ].join("\n")
+    );
+    expect(parsed).toEqual({
+      DATABASE_URL: "file:../data/cms.db",
+      SITE_URL: "http://localhost:3000",
+      PLAIN: "value",
+      EMPTY: "",
+      SPACED: "spaced value",
+    });
+  });
+});
