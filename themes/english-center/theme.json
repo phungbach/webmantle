@@ -1,0 +1,88 @@
+{
+  "contractVersion": 1,
+  "id": "english-center",
+  "name": "Trung tâm Anh ngữ (mẫu)",
+  "version": "1.5.2",
+  "description": "Giao diện trung tâm tiếng Anh: trang chủ, khoá học, học phí và giới thiệu được thiết kế riêng. Bảng màu teal và amber, lưới thẻ đều nhau, lời kêu gọi rõ ràng. Nội dung là ví dụ, hãy thay bằng thông tin của bạn.",
+  "author": "CMS Core",
+  "minimumCmsVersion": "1.0.0",
+  "thumbnail": "assets/thumbnail.jpg",
+  "supportedTemplates": [
+    "home",
+    "single-post",
+    "archive",
+    "category",
+    "page",
+    "search",
+    "not-found"
+  ],
+  "requiredComponents": [
+    "Shell",
+    "SiteHeader",
+    "SiteFooter",
+    "PostList",
+    "PostDetail",
+    "PageBody",
+    "Pagination",
+    "SearchForm",
+    "EmptyState",
+    "SectionTitle",
+    "PromoHero",
+    "CourseList",
+    "TeamGrid",
+    "PricingGrid",
+    "FeatureList",
+    "StatsStrip",
+    "Testimonials",
+    "LogoStrip",
+    "OfficeList",
+    "CtaBanner"
+  ],
+  "tokens": {
+    "color-bg": "#f4faf9",
+    "color-surface": "#ffffff",
+    "color-text": "#134e4a",
+    "color-muted": "#476461",
+    "color-accent": "#0f766e",
+    "color-accent-2": "#d97706",
+    "color-border": "#d3e6e3",
+    "font-body": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "font-heading": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "measure": "68ch"
+  },
+  "settingsSchema": [
+    {
+      "key": "accentColor",
+      "label": "Màu chủ đạo",
+      "type": "color",
+      "default": "#0f766e",
+      "cssVariable": "--color-accent"
+    },
+    {
+      "key": "showStats",
+      "label": "Hiện các con số nổi bật",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "customTemplates": [
+    {
+      "id": "courses",
+      "label": "Trang khoá học",
+      "description": "Giới thiệu và danh sách khoá học.",
+      "appliesTo": ["page"]
+    },
+    {
+      "id": "pricing",
+      "label": "Trang học phí",
+      "description": "Bảng học phí, cam kết và lời kêu gọi.",
+      "appliesTo": ["page"]
+    },
+    {
+      "id": "about",
+      "label": "Trang giới thiệu",
+      "description": "Câu chuyện, giáo viên, học viên và cơ sở.",
+      "appliesTo": ["page"]
+    }
+  ]
+}

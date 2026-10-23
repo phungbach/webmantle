@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "vat-lieu",
+    "name": "Vật liệu",
+    "description": "Chọn và bảo quản gỗ, đá, sơn.",
+    "translations": {
+      "en": {
+        "name": "Materials",
+        "description": "Choosing and caring for wood, stone and paint."
+      }
+    }
+  },
+  {
+    "slug": "mat-bang",
+    "name": "Mặt bằng",
+    "description": "Cách bố trí phòng cho nhà nhỏ.",
+    "translations": {
+      "en": {
+        "name": "Floor plans",
+        "description": "Laying out rooms in a small home."
+      }
+    }
+  },
+  {
+    "slug": "tin-studio",
+    "name": "Tin studio",
+    "description": "Công trình mới và lịch khảo sát.",
+    "translations": {
+      "en": {
+        "name": "Studio news",
+        "description": "New projects and survey dates."
+      }
+    }
+  }
+]

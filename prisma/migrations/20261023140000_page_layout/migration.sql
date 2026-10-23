@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Page" ADD COLUMN "layout" TEXT NOT NULL DEFAULT '';
+ALTER TABLE "Page" ADD COLUMN "layoutDraft" TEXT NOT NULL DEFAULT '';

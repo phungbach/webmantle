@@ -1,0 +1,80 @@
+{
+  "contractVersion": 1,
+  "id": "webcore",
+  "name": "Webmantle (mặc định)",
+  "version": "1.17.1",
+  "description": "Giao diện mặc định đi kèm Webmantle: trang chủ giới thiệu Webmantle, trang giới thiệu và bộ hướng dẫn sử dụng có ảnh chụp màn hình. Màu chàm sạch sẽ, dễ đọc, dùng được ngay cho blog hoặc website giới thiệu.",
+  "author": "Webmantle",
+  "minimumCmsVersion": "1.0.0",
+  "thumbnail": "assets/thumbnail.jpg",
+  "supportedTemplates": [
+    "home",
+    "single-post",
+    "archive",
+    "category",
+    "page",
+    "search",
+    "not-found"
+  ],
+  "requiredComponents": [
+    "Shell",
+    "SiteHeader",
+    "SiteFooter",
+    "PostList",
+    "PostDetail",
+    "PageBody",
+    "Pagination",
+    "SearchForm",
+    "EmptyState",
+    "SectionTitle",
+    "PromoHero",
+    "FeatureList",
+    "StatsStrip",
+    "CtaBanner"
+  ],
+  "tokens": {
+    "color-bg": "#f6f7f9",
+    "color-surface": "#ffffff",
+    "color-text": "#0a0c1f",
+    "color-muted": "#41485e",
+    "color-accent": "#3b5bff",
+    "color-accent-2": "#f59e0b",
+    "color-border": "#d9dce6",
+    "font-body": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "font-heading": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "measure": "68ch"
+  },
+  "settingsSchema": [
+    {
+      "key": "accentColor",
+      "label": "Màu chủ đạo",
+      "type": "color",
+      "default": "#3b5bff",
+      "cssVariable": "--color-accent"
+    },
+    {
+      "key": "showStats",
+      "label": "Hiện dải số liệu",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "customTemplates": [
+    {
+      "id": "docs",
+      "label": "Trang tài liệu",
+      "description": "Menu tài liệu bên trái, mục lục bên phải, nút trang trước và sau.",
+      "appliesTo": [
+        "page"
+      ]
+    },
+    {
+      "id": "roadmap",
+      "label": "Trang lộ trình",
+      "description": "Dòng thời gian các phiên bản: đã hoàn thành và dự kiến.",
+      "appliesTo": [
+        "page"
+      ]
+    }
+  ]
+}

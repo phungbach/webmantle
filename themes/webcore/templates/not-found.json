@@ -1,0 +1,48 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow"
+        },
+        "children": [
+          {
+            "component": "EmptyState",
+            "props": {
+              "message": "Trang này không tồn tại hoặc đã được chuyển đi.",
+              "source": "titlenotfound"
+            }
+          },
+          {
+            "component": "SearchForm",
+            "props": {
+              "placeholder": "Tìm bài viết",
+              "source": "titlesearch"
+            }
+          },
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

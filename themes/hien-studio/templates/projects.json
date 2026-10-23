@@ -1,0 +1,82 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "Breadcrumbs"
+          },
+          {
+            "component": "PromoHero",
+            "props": {
+              "source": "heroprojects"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "CourseList",
+            "props": {
+              "source": "projects",
+              "tag": "congtrinh",
+              "limit": 24
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "PageBody"
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "full",
+          "tone": "accent"
+        },
+        "children": [
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "contractVersion": 1,
+  "id": "starter",
+  "name": "Midnight Grid",
+  "version": "1.2.0",
+  "description": "A dark, card-based theme with a grid homepage. Demonstrates a different layout from the same core content.",
+  "author": "CMS Core",
+  "minimumCmsVersion": "1.0.0",
+  "thumbnail": "assets/thumbnail.jpg",
+  "supportedTemplates": [
+    "home",
+    "single-post",
+    "archive",
+    "category",
+    "page",
+    "search",
+    "not-found"
+  ],
+  "requiredComponents": [
+    "Shell",
+    "SiteHeader",
+    "SiteFooter",
+    "PostList",
+    "PostDetail",
+    "PageBody",
+    "Pagination",
+    "SearchForm",
+    "EmptyState"
+  ],
+  "tokens": {
+    "color-bg": "#0b0d12",
+    "color-surface": "#151923",
+    "color-text": "#e8ecf3",
+    "color-muted": "#98a2b3",
+    "color-accent": "#7dd3fc",
+    "color-border": "#242b38",
+    "font-body": "system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "font-heading": "ui-rounded, system-ui, sans-serif",
+    "measure": "72ch"
+  },
+  "settingsSchema": [
+    {
+      "key": "accentColor",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#7dd3fc",
+      "cssVariable": "--color-accent"
+    },
+    {
+      "key": "density",
+      "label": "Card density",
+      "type": "select",
+      "default": "comfortable",
+      "options": ["comfortable", "compact"]
+    },
+    {
+      "key": "showExcerpts",
+      "label": "Show post excerpts",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "assets": [],
+  "customTemplates": [
+    {
+      "id": "showcase",
+      "label": "Showcase page",
+      "description": "Wide page with a large heading, for portfolio-style content.",
+      "appliesTo": ["page"]
+    }
+  ]
+}

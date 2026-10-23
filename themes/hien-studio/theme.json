@@ -1,0 +1,116 @@
+{
+  "contractVersion": 1,
+  "id": "hien-studio",
+  "name": "Hiên Studio (nội thất)",
+  "version": "1.11.4",
+  "description": "Giao diện landing cho studio thiết kế nội thất và kiến trúc: hero là bản vẽ mặt bằng, công trình, quy trình bốn bước, báo giá theo m² và blog.",
+  "author": "Webcore",
+  "minimumCmsVersion": "1.0.0",
+  "thumbnail": "assets/thumbnail.jpg",
+  "supportedTemplates": [
+    "home",
+    "single-post",
+    "archive",
+    "category",
+    "page",
+    "search",
+    "not-found"
+  ],
+  "requiredComponents": [
+    "Shell",
+    "SiteHeader",
+    "SiteFooter",
+    "PostList",
+    "PostDetail",
+    "PageBody",
+    "Pagination",
+    "SearchForm",
+    "EmptyState",
+    "SectionTitle",
+    "PromoHero",
+    "CourseList",
+    "TeamGrid",
+    "PricingGrid",
+    "FeatureList",
+    "StatsStrip",
+    "Testimonials",
+    "LogoStrip",
+    "OfficeList",
+    "CtaBanner"
+  ],
+  "tokens": {
+    "color-bg": "#e4e7df",
+    "color-surface": "#f2f3ee",
+    "color-text": "#17231e",
+    "color-muted": "#4f5c55",
+    "color-accent": "#24508a",
+    "color-accent-2": "#a07f36",
+    "color-border": "#bcc3b8",
+    "font-body": "'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+    "font-heading": "'Bricolage Grotesque', 'Public Sans', system-ui, sans-serif",
+    "measure": "66ch"
+  },
+  "settingsSchema": [
+    {
+      "key": "accentColor",
+      "label": "Màu nhấn",
+      "type": "color",
+      "default": "#24508a",
+      "cssVariable": "--color-accent"
+    },
+    {
+      "key": "showStats",
+      "label": "Hiện dải số liệu",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "assets": [
+    "assets/about.jpg",
+    "assets/bricolage-latin.woff2",
+    "assets/bricolage-vi.woff2",
+    "assets/contact.jpg",
+    "assets/hero-en.jpg",
+    "assets/hero.jpg",
+    "assets/project-bep.jpg",
+    "assets/project-can-ho.jpg",
+    "assets/project-goc-doc.jpg",
+    "assets/project-nha-pho.jpg",
+    "assets/project-studio.jpg",
+    "assets/project-thong-tang.jpg",
+    "assets/public-latin.woff2",
+    "assets/public-vi.woff2"
+  ],
+  "customTemplates": [
+    {
+      "id": "projects",
+      "label": "Trang công trình",
+      "description": "Lưới công trình đã làm.",
+      "appliesTo": ["page"]
+    },
+    {
+      "id": "process",
+      "label": "Trang quy trình",
+      "description": "Bốn bước làm việc.",
+      "appliesTo": ["page"]
+    },
+    {
+      "id": "pricing",
+      "label": "Trang báo giá",
+      "description": "Gói dịch vụ và đơn giá.",
+      "appliesTo": ["page"]
+    },
+    {
+      "id": "about",
+      "label": "Trang giới thiệu",
+      "description": "Câu chuyện, đội ngũ và số liệu.",
+      "appliesTo": ["page"]
+    },
+    {
+      "id": "contact",
+      "label": "Trang liên hệ",
+      "description": "Địa chỉ và cách đặt lịch.",
+      "appliesTo": ["page"]
+    }
+  ]
+}

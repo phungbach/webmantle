@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "bat-dau",
+    "name": "Bắt đầu",
+    "translations": {
+      "en": {
+        "name": "Get started"
+      }
+    }
+  },
+  {
+    "slug": "seo",
+    "name": "SEO",
+    "translations": {
+      "en": {
+        "name": "SEO"
+      }
+    }
+  },
+  {
+    "slug": "giao-dien",
+    "name": "Giao diện",
+    "translations": {
+      "en": {
+        "name": "Themes"
+      }
+    }
+  },
+  {
+    "slug": "soan-thao",
+    "name": "Soạn thảo",
+    "translations": {
+      "en": {
+        "name": "Writing"
+      }
+    }
+  }
+]

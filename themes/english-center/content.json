@@ -1,0 +1,477 @@
+{
+  "nav": [
+    {
+      "label": "Giới thiệu",
+      "href": "/pages/gioi-thieu"
+    },
+    {
+      "label": "Khoá học",
+      "href": "/pages/khoa-hoc",
+      "children": [
+        {
+          "label": "Luyện thi IELTS",
+          "href": "/categories/ielts",
+          "text": "Lộ trình 4 kỹ năng và mẹo làm bài"
+        },
+        {
+          "label": "Ngữ pháp",
+          "href": "/categories/ngu-phap",
+          "text": "Hệ thống hoá các thì và cấu trúc"
+        },
+        {
+          "label": "Từ vựng",
+          "href": "/categories/tu-vung",
+          "text": "Học từ theo chủ đề và ngữ cảnh"
+        }
+      ]
+    },
+    {
+      "label": "Học phí",
+      "href": "/pages/hoc-phi"
+    },
+    {
+      "label": "Blog",
+      "href": "/search",
+      "children": [
+        {
+          "label": "Mẹo học",
+          "href": "/categories/meo-hoc",
+          "text": "Phương pháp học hiệu quả"
+        },
+        {
+          "label": "Tin trung tâm",
+          "href": "/categories/tin-tuc",
+          "text": "Lịch khai giảng và sự kiện"
+        }
+      ]
+    },
+    {
+      "label": "Liên hệ",
+      "href": "/pages/lien-he"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Trung tâm Anh ngữ · Lớp nhỏ · Lộ trình rõ ràng",
+    "title": "Học tiếng Anh đúng trình độ, đạt đúng mục tiêu",
+    "text": "Kiểm tra đầu vào miễn phí để xếp lớp phù hợp. Giáo viên theo sát từng học viên và báo cáo tiến độ đều đặn.",
+    "primaryLabel": "Đăng ký học thử",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "Xem khoá học",
+    "secondaryHref": "/pages/khoa-hoc",
+    "highlights": [
+      "Kiểm tra đầu vào miễn phí",
+      "Tối đa 15 học viên mỗi lớp",
+      "Báo cáo tiến độ hằng tháng"
+    ],
+    "image": "assets/hero.png"
+  },
+  "herocourses": {
+    "eyebrow": "Khoá học",
+    "title": "Chọn khoá học theo mục tiêu của bạn",
+    "text": "Từ luyện thi IELTS đến giao tiếp và tiếng Anh cho trẻ em. Mỗi khoá có lộ trình, số buổi và học phí rõ ràng.",
+    "primaryLabel": "Tư vấn chọn lớp",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "Xem học phí",
+    "secondaryHref": "/pages/hoc-phi",
+    "highlights": [
+      "Xếp lớp theo kiểm tra đầu vào",
+      "Lịch học tối và cuối tuần",
+      "Học bù khi vắng mặt"
+    ],
+    "image": "assets/courses.png"
+  },
+  "heroprice": {
+    "eyebrow": "Học phí",
+    "title": "Học phí minh bạch, không phát sinh",
+    "text": "Giá đã gồm tài liệu, kiểm tra đầu vào và học bù. Đăng ký theo nhóm để nhận ưu đãi.",
+    "primaryLabel": "Nhận báo giá",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": [
+      "Không phí ẩn",
+      "Hoàn phí theo chính sách",
+      "Ưu đãi đăng ký nhóm"
+    ],
+    "image": "assets/pricing.png"
+  },
+  "heroabout": {
+    "eyebrow": "Giới thiệu",
+    "title": "Chúng tôi dạy tiếng Anh để học viên dùng được",
+    "text": "Trung tâm được xây dựng quanh một ý tưởng: học ít nhưng đúng, học viên nói và viết được ngay trong buổi học đầu tiên.",
+    "primaryLabel": "Gặp đội ngũ tư vấn",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "Xem khoá học",
+    "secondaryHref": "/pages/khoa-hoc",
+    "highlights": [
+      "Thành lập từ 2018",
+      "Giáo viên có chứng chỉ giảng dạy",
+      "Hơn 12.000 học viên"
+    ],
+    "image": "assets/about.png"
+  },
+  "cta": {
+    "title": "Đăng ký buổi học thử miễn phí",
+    "text": "Đội ngũ tư vấn sẽ xếp lớp phù hợp với trình độ và mục tiêu của bạn.",
+    "button": "Đăng ký ngay",
+    "href": "/pages/lien-he"
+  },
+  "courses": [
+    {
+      "title": "Luyện thi IELTS",
+      "level": "Từ 4.0 đến 7.5",
+      "duration": "12 tuần · 3 buổi/tuần",
+      "schedule": "Lớp tối và cuối tuần",
+      "price": "7.800.000đ",
+      "text": "Luyện đủ 4 kỹ năng theo đề thi thật, chữa bài viết và nói chi tiết sau mỗi buổi.",
+      "badge": "Bán chạy",
+      "href": "/pages/khoa-hoc",
+      "image": "assets/course-ielts.png"
+    },
+    {
+      "title": "Giao tiếp tự tin",
+      "level": "Sơ cấp đến trung cấp",
+      "duration": "10 tuần · 2 buổi/tuần",
+      "schedule": "Lớp sáng và tối",
+      "price": "4.500.000đ",
+      "text": "Tập trung phản xạ nói qua tình huống thực tế: công việc, du lịch, phỏng vấn.",
+      "href": "/pages/khoa-hoc",
+      "image": "assets/course-speaking.png"
+    },
+    {
+      "title": "Ngữ pháp nền tảng",
+      "level": "Mất gốc",
+      "duration": "8 tuần · 2 buổi/tuần",
+      "schedule": "Lớp tối các ngày trong tuần",
+      "price": "2.900.000đ",
+      "text": "Xây dựng nền ngữ pháp vững chắc, có bài tập sau mỗi chủ điểm.",
+      "href": "/pages/khoa-hoc",
+      "image": "assets/course-grammar.png"
+    },
+    {
+      "title": "Tiếng Anh thiếu nhi",
+      "level": "6 đến 12 tuổi",
+      "duration": "16 tuần · 2 buổi/tuần",
+      "schedule": "Lớp chiều thứ 7 và chủ nhật",
+      "price": "3.600.000đ",
+      "text": "Học qua trò chơi và chủ đề gần gũi, sĩ số tối đa 12 bé mỗi lớp.",
+      "href": "/pages/khoa-hoc",
+      "image": "assets/course-kids.png"
+    },
+    {
+      "title": "Tiếng Anh văn phòng",
+      "level": "Đi làm",
+      "duration": "10 tuần · 2 buổi/tuần",
+      "schedule": "Lớp tối trong tuần",
+      "price": "5.200.000đ",
+      "text": "Email, báo cáo, họp và thuyết trình bằng tiếng Anh cho môi trường làm việc.",
+      "href": "/pages/khoa-hoc",
+      "image": "assets/course-office.png"
+    },
+    {
+      "title": "Chuẩn bị du học",
+      "level": "Từ 5.0 trở lên",
+      "duration": "14 tuần · 3 buổi/tuần",
+      "schedule": "Lớp sáng và tối",
+      "price": "8.400.000đ",
+      "text": "Luyện viết luận, phỏng vấn và hồ sơ cho học sinh, sinh viên định đi du học.",
+      "href": "/pages/khoa-hoc",
+      "image": "assets/course-abroad.png"
+    }
+  ],
+  "features": [
+    {
+      "title": "Lớp nhỏ, tối đa 15 học viên",
+      "text": "Giáo viên theo sát từng người và sửa lỗi ngay trong buổi học.",
+      "icon": "users"
+    },
+    {
+      "title": "Kiểm tra đầu vào miễn phí",
+      "text": "Xếp đúng lớp ngay từ đầu, không học lại kiến thức đã biết.",
+      "icon": "target"
+    },
+    {
+      "title": "Báo cáo tiến độ hằng tháng",
+      "text": "Điểm số và nhận xét được gửi cho học viên và phụ huynh.",
+      "icon": "chart"
+    },
+    {
+      "title": "Học bù khi vắng mặt",
+      "text": "Có buổi học bù và tài liệu ghi lại để không bị đứt quãng.",
+      "icon": "calendar"
+    },
+    {
+      "title": "Phòng học và thiết bị đầy đủ",
+      "text": "Phòng máy chiếu, loa và thư viện tài liệu tiếng Anh tại cơ sở.",
+      "icon": "laptop"
+    },
+    {
+      "title": "Cam kết đầu ra rõ ràng",
+      "text": "Mục tiêu điểm số được ghi trong hợp đồng và có chính sách hỗ trợ.",
+      "icon": "shield"
+    }
+  ],
+  "stats": [
+    {
+      "value": "12.000+",
+      "label": "Học viên đã học",
+      "icon": "users"
+    },
+    {
+      "value": "25",
+      "label": "Giáo viên bản ngữ và Việt",
+      "icon": "graduation"
+    },
+    {
+      "value": "92%",
+      "label": "Học viên đạt mục tiêu",
+      "icon": "award"
+    },
+    {
+      "value": "8",
+      "label": "Năm kinh nghiệm",
+      "icon": "calendar"
+    }
+  ],
+  "tuition": {
+    "title": "Học phí các chương trình",
+    "description": "Giá đã gồm tài liệu và kiểm tra đầu vào. Có ưu đãi cho học viên đăng ký theo nhóm.",
+    "plans": [
+      {
+        "name": "Lớp nhóm",
+        "price": "từ 2.900.000đ",
+        "period": "/ khoá",
+        "specs": [
+          "Tối đa 15 học viên",
+          "Tài liệu đầy đủ",
+          "Kiểm tra định kỳ",
+          "Học bù khi vắng"
+        ],
+        "badge": "Phổ biến",
+        "href": "/pages/lien-he",
+        "cta": "Đăng ký tư vấn"
+      },
+      {
+        "name": "Kèm riêng 1-1",
+        "price": "từ 350.000đ",
+        "period": "/ buổi",
+        "specs": [
+          "Lịch học linh hoạt",
+          "Giáo viên cố định",
+          "Lộ trình cá nhân hoá",
+          "Báo cáo hằng tuần"
+        ],
+        "href": "/pages/lien-he",
+        "cta": "Đặt lịch học thử"
+      },
+      {
+        "name": "Học online",
+        "price": "từ 1.800.000đ",
+        "period": "/ khoá",
+        "specs": [
+          "Học qua video trực tiếp",
+          "Ghi lại buổi học",
+          "Bài tập trên hệ thống",
+          "Hỗ trợ kỹ thuật"
+        ],
+        "href": "/pages/lien-he",
+        "cta": "Đăng ký online"
+      }
+    ]
+  },
+  "teachers": [
+    {
+      "name": "Nguyễn Thu Hà",
+      "role": "Trưởng bộ môn IELTS",
+      "experience": "10 năm giảng dạy",
+      "bio": "Chuyên luyện viết học thuật và chữa bài nói chi tiết."
+    },
+    {
+      "name": "Trần Minh Khang",
+      "role": "Giáo viên giao tiếp",
+      "experience": "7 năm giảng dạy",
+      "bio": "Tạo lớp học nhiều tương tác, khuyến khích học viên nói ngay từ buổi đầu."
+    },
+    {
+      "name": "Lê Gia Linh",
+      "role": "Giáo viên thiếu nhi",
+      "experience": "6 năm giảng dạy",
+      "bio": "Có kinh nghiệm dạy trẻ qua trò chơi và các hoạt động nhóm."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Sau 3 tháng, mình tăng từ 5.0 lên 6.5. Giáo viên sửa bài viết rất kỹ.",
+      "name": "Phạm Quỳnh Anh",
+      "role": "Học viên IELTS"
+    },
+    {
+      "quote": "Lớp nhỏ nên mình được nói nhiều hơn hẳn so với các nơi trước đây.",
+      "name": "Đỗ Hoàng Nam",
+      "role": "Học viên giao tiếp"
+    },
+    {
+      "quote": "Con mình thích đi học và tự hỏi bài tiếng Anh ở nhà mỗi ngày.",
+      "name": "Chị Hương",
+      "role": "Phụ huynh học viên thiếu nhi"
+    },
+    {
+      "quote": "Báo cáo hằng tháng giúp mình biết rõ mình còn yếu ở đâu.",
+      "name": "Vũ Thảo My",
+      "role": "Nhân viên văn phòng"
+    }
+  ],
+  "partners": [
+    {
+      "name": "Chứng chỉ quốc tế"
+    },
+    {
+      "name": "Đối tác đào tạo"
+    },
+    {
+      "name": "Trường liên kết"
+    },
+    {
+      "name": "Doanh nghiệp tuyển dụng"
+    },
+    {
+      "name": "Hiệp hội giáo dục"
+    }
+  ],
+  "offices": [
+    {
+      "city": "Cơ sở 1 · Quận 1",
+      "address": "123 Đường Mẫu, Phường Bến Nghé, TP. Hồ Chí Minh",
+      "phone": "028 0000 0001",
+      "email": "co1@example.com"
+    },
+    {
+      "city": "Cơ sở 2 · Cầu Giấy",
+      "address": "45 Phố Mẫu, Quận Cầu Giấy, Hà Nội",
+      "phone": "024 0000 0002",
+      "email": "co2@example.com"
+    }
+  ],
+  "footer": {
+    "columns": [
+      {
+        "title": "Khoá học",
+        "links": [
+          {
+            "label": "Luyện thi IELTS",
+            "href": "/categories/ielts"
+          },
+          {
+            "label": "Giao tiếp",
+            "href": "/pages/khoa-hoc"
+          },
+          {
+            "label": "Tiếng Anh thiếu nhi",
+            "href": "/pages/khoa-hoc"
+          }
+        ]
+      },
+      {
+        "title": "Trung tâm",
+        "links": [
+          {
+            "label": "Giới thiệu",
+            "href": "/pages/gioi-thieu"
+          },
+          {
+            "label": "Học phí",
+            "href": "/pages/hoc-phi"
+          },
+          {
+            "label": "Liên hệ",
+            "href": "/pages/lien-he"
+          }
+        ]
+      },
+      {
+        "title": "Blog",
+        "links": [
+          {
+            "label": "Mẹo học",
+            "href": "/categories/meo-hoc"
+          },
+          {
+            "label": "Tin trung tâm",
+            "href": "/categories/tin-tuc"
+          },
+          {
+            "label": "Tìm kiếm",
+            "href": "/search"
+          }
+        ]
+      }
+    ],
+    "contact": "Hotline: 028 0000 0000 · Email: hello@example.com",
+    "copyright": "© Trung tâm Anh ngữ (mẫu). Nội dung minh hoạ, hãy thay bằng thông tin thật."
+  },
+  "titleclass": {
+    "eyebrow": "Câu chuyện",
+    "title": "Từ một lớp học nhỏ đến trung tâm hôm nay"
+  },
+  "titleteachers": {
+    "eyebrow": "Đội ngũ",
+    "title": "Người dạy bạn"
+  },
+  "titlestories": {
+    "eyebrow": "Cảm nhận",
+    "title": "Học viên kể về trải nghiệm"
+  },
+  "titlecampuses": {
+    "eyebrow": "Cơ sở",
+    "title": "Hai cơ sở, cùng một tiêu chuẩn"
+  },
+  "titlecurrent": {
+    "eyebrow": "Danh sách",
+    "title": "Các khoá học đang mở",
+    "text": "Lịch khai giảng cập nhật theo tháng. Liên hệ để giữ chỗ."
+  },
+  "titlecourseinfo": {
+    "eyebrow": "Cách học",
+    "title": "Mỗi khoá học có điểm gì khác"
+  },
+  "titlecourses": {
+    "eyebrow": "Khoá học",
+    "title": "Chọn khoá học theo mục tiêu",
+    "text": "Mỗi khoá có trình độ, thời lượng, lịch học và học phí rõ ràng."
+  },
+  "titlewhy": {
+    "eyebrow": "Vì sao chọn chúng tôi",
+    "title": "Học đúng cách, thấy tiến bộ rõ"
+  },
+  "titleteam": {
+    "eyebrow": "Đội ngũ",
+    "title": "Giáo viên giàu kinh nghiệm"
+  },
+  "titlereviews": {
+    "eyebrow": "Học viên nói gì",
+    "title": "Cảm nhận từ học viên"
+  },
+  "titleblog": {
+    "eyebrow": "Blog",
+    "title": "Mẹo học và tin mới",
+    "text": "Bài viết ngắn, đúng trọng tâm, viết theo một khuôn chung."
+  },
+  "titlevisit": {
+    "eyebrow": "Cơ sở",
+    "title": "Đến học trực tiếp"
+  },
+  "titleincluded": {
+    "eyebrow": "Đã bao gồm",
+    "title": "Những gì bạn nhận được trong học phí"
+  },
+  "titlerelated": {
+    "eyebrow": "Đọc tiếp",
+    "title": "Bài viết liên quan"
+  },
+  "titlenotfound": {
+    "title": "Ôi, trang này lạc đường rồi. Thử tìm kiếm bên dưới nhé."
+  },
+  "titlesearch": {
+    "title": "Tìm bài viết hoặc khoá học"
+  }
+}

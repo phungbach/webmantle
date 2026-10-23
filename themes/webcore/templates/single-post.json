@@ -1,0 +1,71 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow"
+        },
+        "children": [
+          {
+            "component": "Breadcrumbs"
+          },
+          {
+            "component": "PostDetail",
+            "props": {
+              "showFeaturedImage": true
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow"
+        },
+        "children": [
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titlerelated"
+            }
+          },
+          {
+            "component": "RelatedPosts",
+            "props": {
+              "limit": 3
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

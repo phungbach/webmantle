@@ -1,0 +1,23 @@
+node_modules/
+.next/
+out/
+coverage/
+next-env.d.ts
+*.tsbuildinfo
+.env
+.env.local
+.env.production
+# Runtime data (database, media, installed themes, backups, caches) never goes to git.
+data/*
+!data/.gitkeep
+dist/
+release/
+test-results/
+playwright-report/
+.env.*
+!.env.example
+.DS_Store
+*.log
+.claude/
+.mcp.json
+/webcore-home*.png

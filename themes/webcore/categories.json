@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "huong-dan",
+    "name": "Hướng dẫn",
+    "description": "Cách dùng từng tính năng của Webmantle.",
+    "translations": {
+      "en": {
+        "name": "Guides",
+        "description": "How to use each Webmantle feature."
+      }
+    }
+  },
+  {
+    "slug": "meo-viet-bai",
+    "name": "Mẹo viết bài",
+    "description": "Viết bài rõ ràng, dễ tìm thấy trên Google.",
+    "translations": {
+      "en": {
+        "name": "Writing tips",
+        "description": "Write clearly and be easy to find on Google."
+      }
+    }
+  },
+  {
+    "slug": "tin-webcore",
+    "name": "Tin Webmantle",
+    "description": "Thông báo và cập nhật mới.",
+    "translations": {
+      "en": {
+        "name": "Webmantle news",
+        "description": "Announcements and new updates."
+      }
+    }
+  }
+]

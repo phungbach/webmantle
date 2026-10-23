@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Page" ADD COLUMN "isHome" BOOLEAN NOT NULL DEFAULT false;

@@ -1,0 +1,363 @@
+{
+  "nav": [
+    {
+      "label": "About",
+      "href": "/pages/gioi-thieu",
+      "icon": "star"
+    },
+    {
+      "label": "Guides",
+      "href": "/pages/huong-dan",
+      "children": [
+        {
+          "label": "Get started",
+          "href": "/pages/huong-dan-bat-dau",
+          "text": "Sign in and get to know the admin area.",
+          "icon": "rocket"
+        },
+        {
+          "label": "Write and publish posts",
+          "href": "/pages/huong-dan-viet-bai",
+          "text": "Draft a post, pick a category, schedule it and publish.",
+          "icon": "pen"
+        },
+        {
+          "label": "Manage pages",
+          "href": "/pages/huong-dan-quan-ly-trang",
+          "text": "Create static pages such as About and Contact.",
+          "icon": "file"
+        },
+        {
+          "label": "Media library",
+          "href": "/pages/huong-dan-thu-vien-media",
+          "text": "Upload images once and reuse them anywhere.",
+          "icon": "image"
+        },
+        {
+          "label": "Categories and tags",
+          "href": "/pages/huong-dan-chuyen-muc-the",
+          "text": "Organize posts so readers can find them.",
+          "icon": "tag"
+        },
+        {
+          "label": "Themes",
+          "href": "/pages/huong-dan-giao-dien",
+          "text": "Install, preview, activate and restore themes.",
+          "icon": "palette"
+        }
+      ],
+      "icon": "book"
+    },
+    {
+      "label": "Roadmap",
+      "href": "/pages/nhat-ky-hoat-dong",
+      "icon": "history"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Webmantle CMS",
+    "headingLevel": "h1",
+    "title": "Write, design and run your website in one place",
+    "text": "Webmantle brings posts, pages, themes and SEO into one admin area. Switch themes without losing content, and edit the home page right on screen.",
+    "primaryLabel": "Read the user guide",
+    "primaryHref": "/pages/huong-dan",
+    "secondaryLabel": "About Webmantle",
+    "secondaryHref": "/pages/gioi-thieu",
+    "highlights": [
+      "Admin in Vietnamese and English",
+      "Change themes without losing posts",
+      "Guided backup and restore"
+    ],
+    "image": "assets/hero-en.jpg",
+    "tertiaryLabel": "View demo",
+    "tertiaryHref": "/demo"
+  },
+  "stats": [
+    {
+      "value": "3",
+      "label": "Roles: administrator, editor, author",
+      "icon": "users"
+    },
+    {
+      "value": "2",
+      "label": "Interface languages: Vietnamese and English",
+      "icon": "language"
+    },
+    {
+      "value": "3",
+      "label": "Themes ready to choose from",
+      "icon": "palette"
+    },
+    {
+      "value": "1",
+      "label": "Designer for the home page and every page",
+      "icon": "wand"
+    }
+  ],
+  "titlefeatures": {
+    "eyebrow": "What Webmantle does",
+    "title": "Everything you need to run a content website",
+    "text": "From writing posts to switching themes, you do it all in the admin area."
+  },
+  "features": [
+    {
+      "title": "Write and publish posts",
+      "text": "An editor with images, categories, tags, scheduled publishing and revision history.",
+      "icon": "pen"
+    },
+    {
+      "title": "Static pages",
+      "text": "About, Contact, Pricing: create standalone pages and add them to the menu.",
+      "icon": "file"
+    },
+    {
+      "title": "Switchable themes",
+      "text": "Upload a theme, preview it, activate it and roll back. Your content stays the same.",
+      "icon": "palette"
+    },
+    {
+      "title": "Designer",
+      "text": "Edit text, images, links and heading levels (H1, H2, H3) on the home page and on each page.",
+      "icon": "wand"
+    },
+    {
+      "title": "Built-in SEO",
+      "text": "Titles, descriptions, sitemap and robots, with checks while you write.",
+      "icon": "search"
+    },
+    {
+      "title": "Roles and backups",
+      "text": "Give your team roles and back up the database, images and themes.",
+      "icon": "lock"
+    }
+  ],
+  "titlesteps": {
+    "eyebrow": "Quick start",
+    "title": "From setup to your first post"
+  },
+  "process": [
+    {
+      "title": "Sign in",
+      "text": "Go to /admin with the administrator account you created during setup.",
+      "icon": "key"
+    },
+    {
+      "title": "Choose a theme",
+      "text": "Open Themes, preview, then activate the one you like.",
+      "icon": "palette"
+    },
+    {
+      "title": "Write your first post",
+      "text": "Posts → New post. Enter a title and content, then save a draft.",
+      "icon": "pen"
+    },
+    {
+      "title": "Publish",
+      "text": "Check SEO, change the status to Published and view it on the site.",
+      "icon": "rocket"
+    }
+  ],
+  "titleguide": {
+    "eyebrow": "User guide",
+    "title": "Step-by-step guides with screenshots",
+    "text": "Pick a topic to see the details."
+  },
+  "values": [
+    {
+      "title": "Get started",
+      "text": "Sign in and get to know the admin area.",
+      "icon": "rocket",
+      "href": "/pages/huong-dan-bat-dau",
+      "image": "assets/guide-login-en.jpg"
+    },
+    {
+      "title": "Write and publish posts",
+      "text": "Draft a post, pick a category, schedule it and publish.",
+      "icon": "pen",
+      "href": "/pages/huong-dan-viet-bai",
+      "image": "assets/guide-post-new-en.jpg"
+    },
+    {
+      "title": "Manage pages",
+      "text": "Create static pages such as About and Contact.",
+      "icon": "file",
+      "href": "/pages/huong-dan-quan-ly-trang",
+      "image": "assets/guide-pages-en.jpg"
+    },
+    {
+      "title": "Media library",
+      "text": "Upload images once and reuse them anywhere.",
+      "icon": "image",
+      "href": "/pages/huong-dan-thu-vien-media",
+      "image": "assets/guide-media-en.jpg"
+    },
+    {
+      "title": "Categories and tags",
+      "text": "Organize posts so readers can find them.",
+      "icon": "tag",
+      "href": "/pages/huong-dan-chuyen-muc-the",
+      "image": "assets/guide-categories-en.jpg"
+    },
+    {
+      "title": "Themes",
+      "text": "Install, preview, activate and restore themes.",
+      "icon": "palette",
+      "href": "/pages/huong-dan-giao-dien",
+      "image": "assets/guide-themes-en.jpg"
+    }
+  ],
+  "cta": {
+    "headingLevel": "h2",
+    "title": "New to Webmantle? Start with the guide.",
+    "text": "Every step has a screenshot to follow.",
+    "button": "Open the guide",
+    "href": "/pages/huong-dan"
+  },
+  "titleblog": {
+    "eyebrow": "Blog",
+    "title": "Latest posts",
+    "text": "Tips and announcements from Webmantle."
+  },
+  "titlerelated": {
+    "title": "Related posts"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Webmantle",
+        "links": [
+          {
+            "label": "About",
+            "href": "/pages/gioi-thieu"
+          },
+          {
+            "label": "User guide",
+            "href": "/pages/huong-dan"
+          },
+          {
+            "label": "Blog",
+            "href": "/search"
+          },
+          {
+            "label": "Roadmap and activity log",
+            "href": "/pages/nhat-ky-hoat-dong"
+          }
+        ]
+      },
+      {
+        "title": "Guides",
+        "links": [
+          {
+            "label": "Get started",
+            "href": "/pages/huong-dan-bat-dau"
+          },
+          {
+            "label": "Write and publish posts",
+            "href": "/pages/huong-dan-viet-bai"
+          },
+          {
+            "label": "Manage pages",
+            "href": "/pages/huong-dan-quan-ly-trang"
+          },
+          {
+            "label": "Media library",
+            "href": "/pages/huong-dan-thu-vien-media"
+          }
+        ]
+      },
+      {
+        "title": "Admin",
+        "links": [
+          {
+            "label": "Admin sign-in",
+            "href": "/login"
+          },
+          {
+            "label": "SEO and settings",
+            "href": "/pages/huong-dan-seo-cai-dat"
+          },
+          {
+            "label": "Backups",
+            "href": "/pages/huong-dan-nguoi-dung-sao-luu"
+          }
+        ]
+      }
+    ],
+    "contact": "This website runs on Webmantle CMS.",
+    "copyright": "© Your website. Powered by Webmantle."
+  },
+  "docsnav": {
+    "title": "Webmantle documentation",
+    "groups": [
+      {
+        "title": "About",
+        "links": [
+          {
+            "label": "About Webmantle",
+            "href": "/pages/gioi-thieu"
+          }
+        ]
+      },
+      {
+        "title": "User guide",
+        "links": [
+          {
+            "label": "Guide contents",
+            "href": "/pages/huong-dan"
+          },
+          {
+            "label": "Get started",
+            "href": "/pages/huong-dan-bat-dau"
+          },
+          {
+            "label": "Write and publish posts",
+            "href": "/pages/huong-dan-viet-bai"
+          },
+          {
+            "label": "Manage pages",
+            "href": "/pages/huong-dan-quan-ly-trang"
+          },
+          {
+            "label": "Media library",
+            "href": "/pages/huong-dan-thu-vien-media"
+          },
+          {
+            "label": "Categories and tags",
+            "href": "/pages/huong-dan-chuyen-muc-the"
+          },
+          {
+            "label": "Themes",
+            "href": "/pages/huong-dan-giao-dien"
+          },
+          {
+            "label": "Page design",
+            "href": "/pages/huong-dan-thiet-ke-trang"
+          },
+          {
+            "label": "SEO and settings",
+            "href": "/pages/huong-dan-seo-cai-dat"
+          },
+          {
+            "label": "Users and backups",
+            "href": "/pages/huong-dan-nguoi-dung-sao-luu"
+          }
+        ]
+      },
+      {
+        "title": "Project",
+        "links": [
+          {
+            "label": "Roadmap and activity log",
+            "href": "/pages/nhat-ky-hoat-dong"
+          }
+        ]
+      }
+    ]
+  },
+  "titlenotfound": {
+    "title": "Oops, this page took a wrong turn. Try searching below."
+  },
+  "titlesearch": {
+    "title": "Search posts and guides"
+  }
+}

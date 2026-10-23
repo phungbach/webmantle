@@ -1,0 +1,78 @@
+{
+  "contractVersion": 1,
+  "id": "default",
+  "name": "Editorial",
+  "version": "1.2.0",
+  "description": "A warm, typography-first reading layout. The built-in fallback theme.",
+  "author": "CMS Core",
+  "minimumCmsVersion": "1.0.0",
+  "thumbnail": "assets/thumbnail.jpg",
+  "supportedTemplates": [
+    "home",
+    "single-post",
+    "archive",
+    "category",
+    "page",
+    "search",
+    "not-found"
+  ],
+  "requiredComponents": [
+    "Shell",
+    "SiteHeader",
+    "SiteFooter",
+    "PostList",
+    "PostDetail",
+    "PageBody",
+    "Pagination",
+    "SearchForm",
+    "EmptyState"
+  ],
+  "tokens": {
+    "color-bg": "#fbfaf7",
+    "color-surface": "#ffffff",
+    "color-text": "#1d1b19",
+    "color-muted": "#6b665f",
+    "color-accent": "#9a3412",
+    "color-border": "#e7e2d9",
+    "font-body": "Georgia, 'Times New Roman', serif",
+    "font-heading": "'Helvetica Neue', Arial, sans-serif",
+    "measure": "68ch"
+  },
+  "settingsSchema": [
+    {
+      "key": "accentColor",
+      "label": "Accent color",
+      "type": "color",
+      "default": "#9a3412",
+      "cssVariable": "--color-accent"
+    },
+    {
+      "key": "bodyFont",
+      "label": "Body font",
+      "type": "select",
+      "default": "serif",
+      "options": ["serif", "sans"]
+    },
+    {
+      "key": "showExcerpts",
+      "label": "Show post excerpts",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "assets": [],
+  "customTemplates": [
+    {
+      "id": "full-width",
+      "label": "Full width article",
+      "description": "Article without the side column, with a wide reading area.",
+      "appliesTo": ["single-post"]
+    },
+    {
+      "id": "landing",
+      "label": "Landing page",
+      "description": "Intro block, the featured post, and a grid of recent posts.",
+      "appliesTo": ["page"]
+    }
+  ]
+}

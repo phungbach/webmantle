@@ -1,0 +1,21 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      { "component": "SiteHeader", "props": { "variant": "simple" } },
+      {
+        "component": "Section",
+        "props": { "width": "narrow" },
+        "children": [
+          {
+            "component": "EmptyState",
+            "props": { "message": "We could not find that page. Try the homepage or search." }
+          },
+          { "component": "SearchForm", "props": { "placeholder": "Search articles" } }
+        ]
+      },
+      { "component": "SiteFooter", "props": { "variant": "simple" } }
+    ]
+  }
+}

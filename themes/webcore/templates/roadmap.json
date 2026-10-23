@@ -1,0 +1,35 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "full",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "DocsPage",
+            "props": {
+              "source": "docsnav"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

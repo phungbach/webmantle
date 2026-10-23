@@ -1,0 +1,277 @@
+// Prisma schema for the blog CMS (SQLite).
+// Enum-like columns are plain strings validated with Zod in src/lib/validation,
+// because SQLite support for native enums depends on the Prisma version.
+// DATABASE_URL is resolved relative to this file: "file:../data/cms.db" -> <project>/data/cms.db
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  role         String    @default("author") // admin | editor | author
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+  posts        Post[]
+  revisions    PostRevision[]
+  pages        Page[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique // SHA-256 of the cookie value; raw tokens are never stored
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model Post {
+  id              String         @id @default(cuid())
+  slug            String         @unique
+  title           String
+  excerpt         String         @default("")
+  body            String         @default("") // sanitized HTML
+  status          String         @default("draft") // draft | published
+  template        String         @default("") // custom template name from the active theme; "" = default
+  publishedAt     DateTime?      // a published post with a future date is "scheduled"
+  featured        Boolean        @default(false)
+  themeId         String?        // set when the post came from a theme's posts.json
+  themeImage      String         @default("") // picture inside the owning theme's assets/, for example assets/a.jpg
+  fields          String         @default("") // JSON {key: text} of project facts (type, area, schedule, price) shown on theme cards
+  translations    String         @default("") // JSON {locale: {title, excerpt, body, seoTitle, seoDescription}} from the theme
+  authorId        String
+  author          User           @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  featuredImage   String?        // media id
+  seoTitle        String         @default("")
+  seoDescription  String         @default("")
+  canonicalUrl    String         @default("")
+  socialImage     String?        // media id
+  focusKeyword    String         @default("") // target keyword for the SEO checks (not a ranking guarantee)
+  robotsIndex     Boolean        @default(true)  // false = <meta name="robots" content="noindex">
+  robotsFollow    Boolean        @default(true)  // false = nofollow
+  ogTitle         String         @default("") // empty = use the SEO title
+  ogDescription   String         @default("") // empty = use the meta description
+  twitterCard     String         @default("summary_large_image") // summary | summary_large_image
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  revisions       PostRevision[]
+  categories      PostCategory[]
+  tags            PostTag[]
+
+  @@index([status, publishedAt])
+  @@index([featured])
+  @@index([authorId])
+  @@index([themeId])
+  @@index([updatedAt])
+  @@index([status, updatedAt])
+}
+
+model PostRevision {
+  id        String   @id @default(cuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  title     String
+  excerpt   String
+  body      String
+  editorId  String?
+  editor    User?    @relation(fields: [editorId], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
+
+  @@index([postId, createdAt])
+}
+
+model Page {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  title          String
+  body           String   @default("")
+  status         String   @default("draft") // draft | published
+  template       String   @default("") // custom template name from the active theme; "" = default
+  themeId        String? // set when the page came from a theme's pages.json
+  isHome         Boolean  @default(false) // the theme's home page: shown at "/", its layout is the home layout
+  translations   String   @default("") // JSON {locale: {title, body, seoTitle, seoDescription}} from the theme
+  seoTitle       String   @default("")
+  seoDescription String   @default("")
+  layout         String   @default("") // page designer document (JSON), published; "" = use the theme template
+  layoutDraft    String   @default("") // page designer document being edited
+  authorId       String
+  author         User     @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([status])
+  @@index([themeId])
+}
+
+model Category {
+  id             String         @id @default(cuid())
+  slug           String         @unique
+  name           String
+  description    String         @default("")
+  seoDescription String         @default("")
+  themeId        String?        // set when the category came from a theme's categories.json
+  translations   String         @default("") // JSON {locale: {name, description}} from the theme
+  hidden         Boolean        @default(false) // true while the owning theme is not active
+  createdAt      DateTime       @default(now())
+  posts          PostCategory[]
+
+  @@index([themeId])
+}
+
+model Tag {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  name         String
+  themeId      String?   // set when the tag came from a theme's tags.json
+  translations String    @default("") // JSON {locale: {name}} from the theme
+  hidden       Boolean   @default(false) // true while the owning theme is not active
+  createdAt    DateTime  @default(now())
+  posts        PostTag[]
+
+  @@index([themeId])
+}
+
+model PostCategory {
+  postId     String
+  categoryId String
+  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([postId, categoryId])
+  @@index([categoryId])
+}
+
+model PostTag {
+  postId String
+  tagId  String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([tagId])
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  filename  String   // generated name on disk, never user supplied
+  mimeType  String
+  byteSize  Int
+  width     Int?
+  height    Int?
+  altText   String   @default("")
+  uploadedById String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model SiteSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+// One row per installed theme. The id is the manifest id, validated against a strict pattern.
+model Theme {
+  id                String         @id
+  name              String
+  version           String
+  description       String         @default("")
+  author            String         @default("")
+  path              String         // absolute path inside data/themes (private)
+  manifestJson      String
+  installedAt       DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  settings          ThemeSetting[]
+}
+
+model ThemeSetting {
+  id      String @id @default(cuid())
+  themeId String
+  theme   Theme  @relation(fields: [themeId], references: [id], onDelete: Cascade)
+  key     String
+  value   String
+
+  @@unique([themeId, key])
+}
+
+// Append-only log of installs, updates, activations, rollbacks and uninstalls.
+// themeId is deliberately not a foreign key so history survives uninstall.
+model ThemeHistory {
+  id          String   @id @default(cuid())
+  action      String   // install | update | activate | rollback | uninstall | validation_failed
+  themeId     String?
+  fromThemeId String?
+  toThemeId   String?
+  detail      String   @default("")
+  actorId     String?
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  action     String
+  targetType String
+  targetId   String
+  detail     String   @default("")
+  ip         String?
+  userAgent  String?  // truncated to 200 characters when stored
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([actorId])
+  @@index([action, createdAt])
+  @@index([targetType, targetId])
+}
+
+// Installed plugins. The code lives in the repository (plugins/); this table only stores the state.
+model Plugin {
+  id        String   @id
+  name      String
+  version   String
+  enabled   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  settings  PluginSetting[]
+}
+
+model PluginSetting {
+  id       String @id @default(cuid())
+  pluginId String
+  plugin   Plugin @relation(fields: [pluginId], references: [id], onDelete: Cascade)
+  key      String
+  value    String
+
+  @@unique([pluginId, key])
+}
+
+// One row per page view on the public site. No IP address or cookie is stored: "visitor" is a hash that
+// changes every day, so it can count distinct visitors per day but cannot follow a person over time.
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  postId    String?  // set when the page is a published post; no relation, so views outlive the post
+  visitor   String
+  source    String   @default("direct") // direct | search | social | referral
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([postId, createdAt])
+  @@index([source, createdAt])
+}

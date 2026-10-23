@@ -1,0 +1,26 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      { "component": "SiteHeader", "props": { "variant": "mega" } },
+      {
+        "component": "Section",
+        "props": { "width": "wide" },
+        "children": [
+          { "component": "ArchiveHeader", "props": { "showCount": true } },
+          {
+            "component": "SearchForm",
+            "props": { "placeholder": "Tìm bài viết, mẹo học, lịch khai giảng" }
+          },
+          {
+            "component": "PostList",
+            "props": { "layout": "grid", "limit": 9, "showExcerpt": true }
+          },
+          { "component": "Pagination" }
+        ]
+      },
+      { "component": "SiteFooter", "props": { "variant": "columns" } }
+    ]
+  }
+}

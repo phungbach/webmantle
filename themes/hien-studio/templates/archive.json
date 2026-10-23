@@ -1,0 +1,78 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "Breadcrumbs"
+          },
+          {
+            "component": "ArchiveHeader",
+            "props": {
+              "showCount": true,
+              "source": "titlejournal"
+            }
+          },
+          {
+            "component": "CategoryList",
+            "props": {
+              "limit": 12
+            }
+          },
+          {
+            "component": "FeaturedPost",
+            "props": {
+              "showExcerpt": true
+            }
+          },
+          {
+            "component": "PostList",
+            "props": {
+              "layout": "grid",
+              "limit": 9,
+              "showExcerpt": true,
+              "skipFeatured": true
+            }
+          },
+          {
+            "component": "Pagination"
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "full",
+          "tone": "accent"
+        },
+        "children": [
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

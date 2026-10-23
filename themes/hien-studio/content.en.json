@@ -1,0 +1,467 @@
+{
+  "nav": [
+    {
+      "label": "Projects",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "label": "Process",
+      "href": "/pages/quy-trinh"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pages/bao-gia"
+    },
+    {
+      "label": "About",
+      "href": "/pages/gioi-thieu"
+    },
+    {
+      "label": "Journal",
+      "href": "/posts",
+      "children": [
+        {
+          "label": "Materials",
+          "href": "/categories/vat-lieu",
+          "text": "Choosing and caring for wood, stone and paint"
+        },
+        {
+          "label": "Floor plans",
+          "href": "/categories/mat-bang",
+          "text": "Laying out rooms in a small home"
+        },
+        {
+          "label": "Studio news",
+          "href": "/categories/tin-studio",
+          "text": "New projects and survey dates"
+        }
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "/pages/lien-he"
+    }
+  ],
+  "hero": {
+    "eyebrow": "",
+    "title": "Interior design that fits the way you live",
+    "text": "We draw the floor plan with you, pick materials from real samples, and price every item before building starts.",
+    "primaryLabel": "Book a home survey",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "See our projects",
+    "secondaryHref": "/pages/cong-trinh",
+    "highlights": [],
+    "image": "assets/hero-en.jpg"
+  },
+  "heroprojects": {
+    "eyebrow": "",
+    "title": "Projects we have built",
+    "text": "Each project lists its area, build time and cost so you can compare with your own home.",
+    "primaryLabel": "Book a home survey",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "heroprocess": {
+    "eyebrow": "",
+    "title": "Four steps, each with something you can hold",
+    "text": "You always know which step you are in and what you receive when it ends.",
+    "primaryLabel": "Start with a survey",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "heropricing": {
+    "eyebrow": "",
+    "title": "Clear costs before you sign",
+    "text": "Design is priced per square metre. Construction is quoted separately once you approve the plan.",
+    "primaryLabel": "Get a detailed quote",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "heroabout": {
+    "eyebrow": "",
+    "title": "A small studio making homes that fit their people",
+    "text": "Hiên Studio began at a drawing table in a rented house in 2012. Fourteen years on we still measure by hand and meet every client at least three times before drawing the first line.",
+    "primaryLabel": "See our projects",
+    "primaryHref": "/pages/cong-trinh",
+    "secondaryLabel": "assets/about.jpg",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "herocontact": {
+    "eyebrow": "",
+    "title": "Book a home survey",
+    "text": "Call 0903 000 111 or send an email and we will set a date to measure, during working hours. The first survey is free.",
+    "primaryLabel": "Call 0903 000 111",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "assets/contact.jpg",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "stats": [
+    {
+      "value": "126",
+      "label": "projects delivered"
+    },
+    {
+      "value": "14 years",
+      "label": "building homes and shops"
+    },
+    {
+      "value": "68%",
+      "label": "of clients come by referral"
+    },
+    {
+      "value": "45–90 days",
+      "label": "from signing to moving in"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Four-storey townhouse, Bình Thạnh",
+      "level": "Townhouse",
+      "duration": "96 m² floor area",
+      "schedule": "78 days on site",
+      "price": "From VND 1.35bn",
+      "image": "assets/project-nha-pho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Two-bedroom apartment, Thảo Điền",
+      "level": "Apartment",
+      "duration": "74 m² floor area",
+      "schedule": "52 days on site",
+      "price": "From VND 640m",
+      "image": "assets/project-can-ho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Open kitchen and dining, District 7",
+      "level": "Apartment",
+      "duration": "18 m² floor area",
+      "schedule": "30 days on site",
+      "price": "From VND 280m",
+      "image": "assets/project-bep.jpg",
+      "href": "/pages/cong-trinh"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Four-storey townhouse, Bình Thạnh",
+      "level": "Townhouse",
+      "duration": "96 m² floor area",
+      "schedule": "78 days on site",
+      "price": "From VND 1.35bn",
+      "image": "assets/project-nha-pho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Two-bedroom apartment, Thảo Điền",
+      "level": "Apartment",
+      "duration": "74 m² floor area",
+      "schedule": "52 days on site",
+      "price": "From VND 640m",
+      "image": "assets/project-can-ho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Open kitchen and dining, District 7",
+      "level": "Apartment",
+      "duration": "18 m² floor area",
+      "schedule": "30 days on site",
+      "price": "From VND 280m",
+      "image": "assets/project-bep.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Double-height living room, Thủ Đức",
+      "level": "Villa",
+      "duration": "210 m² floor area",
+      "schedule": "120 days on site",
+      "price": "From VND 2.9bn",
+      "image": "assets/project-thong-tang.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Reading corner, Phú Nhuận",
+      "level": "Townhouse",
+      "duration": "12 m² floor area",
+      "schedule": "21 days on site",
+      "price": "From VND 95m",
+      "image": "assets/project-goc-doc.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Sunny studio apartment, District 2",
+      "level": "Apartment",
+      "duration": "42 m² floor area",
+      "schedule": "40 days on site",
+      "price": "From VND 410m",
+      "image": "assets/project-studio.jpg",
+      "href": "/pages/cong-trinh"
+    }
+  ],
+  "process": [
+    {
+      "title": "Survey (week 1)",
+      "text": "We visit, measure every room, photograph what is there and ask how each person lives. You receive the survey and a needs list.",
+      "icon": "pen"
+    },
+    {
+      "title": "Options (weeks 2 to 4)",
+      "text": "Two floor-plan options with renders, refined until the whole family agrees. You receive a 1:50 plan and 3D views.",
+      "icon": "puzzle"
+    },
+    {
+      "title": "Build (weeks 5 to 14)",
+      "text": "The studio's own crew works in your home, with a photo log every week. You receive a weekly site journal.",
+      "icon": "chart"
+    },
+    {
+      "title": "Handover (week 15)",
+      "text": "We check each item with you, fix issues on the spot and start the 24-month warranty. You receive completion records and a warranty card.",
+      "icon": "award"
+    }
+  ],
+  "features": [
+    {
+      "title": "Survey",
+      "text": "We measure at home and note how each person lives. You get the survey and a needs list.",
+      "icon": "pen"
+    },
+    {
+      "title": "Options",
+      "text": "Two floor-plan options with renders. You get a 1:50 plan.",
+      "icon": "puzzle"
+    },
+    {
+      "title": "Build",
+      "text": "The studio's own crew, weekly photo log. You get a site journal.",
+      "icon": "chart"
+    },
+    {
+      "title": "Handover",
+      "text": "Item-by-item acceptance and a 24-month warranty. You get completion records.",
+      "icon": "award"
+    }
+  ],
+  "values": [
+    {
+      "title": "Measure first, draw second",
+      "text": "No drawing is made before we have real measurements from your home.",
+      "icon": "pen"
+    },
+    {
+      "title": "Every line priced",
+      "text": "Estimates are split by item, unit prices are open and every change is confirmed in writing.",
+      "icon": "coins"
+    },
+    {
+      "title": "Our own crew",
+      "text": "The builders have worked with the studio for years, so quality does not depend on luck.",
+      "icon": "handshake"
+    }
+  ],
+  "pricing": {
+    "title": "Pricing by service level",
+    "description": "Design is priced per m² of floor area. Construction is quoted separately once you approve the plan.",
+    "plans": [
+      {
+        "name": "Consult",
+        "price": "1.2M VND",
+        "period": "/ m²",
+        "specs": ["Home measurements", "Functional plan at 1:50", "Suggested material list"],
+        "cta": "Choose Consult",
+        "href": "/pages/lien-he"
+      },
+      {
+        "name": "Design",
+        "price": "2.8M VND",
+        "period": "/ m²",
+        "specs": [
+          "Two floor-plan options",
+          "3D render of every room",
+          "Technical drawings and estimate"
+        ],
+        "badge": "Most chosen",
+        "cta": "Choose Design",
+        "href": "/pages/lien-he"
+      },
+      {
+        "name": "Full service",
+        "price": "From 6.5M VND",
+        "period": "/ m²",
+        "specs": [
+          "Everything in Design",
+          "Construction and daily supervision",
+          "24-month warranty"
+        ],
+        "cta": "Choose Full service",
+        "href": "/pages/lien-he"
+      }
+    ]
+  },
+  "teachers": [
+    {
+      "name": "Lê Thanh Hiên",
+      "role": "Lead architect",
+      "experience": "14 years in practice",
+      "bio": "Owns the floor plan and works directly with the homeowner during the survey."
+    },
+    {
+      "name": "Phan Gia Bảo",
+      "role": "Head of construction",
+      "experience": "11 years on site",
+      "bio": "Keeps schedule and quality, and reports to the homeowner every week."
+    },
+    {
+      "name": "Đỗ Ngọc Anh",
+      "role": "Materials designer",
+      "experience": "8 years",
+      "bio": "Tests samples of wood, stone and fabric so clients can handle them before approving."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "We changed our minds three times at the options stage and they redrew it without charge. The estimate was within 3% at handover.",
+      "name": "Ms. Mai Phương",
+      "role": "Thảo Điền apartment"
+    },
+    {
+      "quote": "The café opened on the promised day. The bar was built to the staff's height, so nobody complains about their back.",
+      "name": "Mr. Quốc Bảo",
+      "role": "District 3 café"
+    },
+    {
+      "quote": "My parents are older so I asked for a step-free floor. The studio measured every threshold and brought it all to one level.",
+      "name": "Mr. Đức Minh",
+      "role": "Bình Thạnh townhouse"
+    }
+  ],
+  "partners": [
+    {
+      "name": "American oak"
+    },
+    {
+      "name": "Terrazzo"
+    },
+    {
+      "name": "Mineral paint"
+    },
+    {
+      "name": "Handmade tile"
+    }
+  ],
+  "offices": [
+    {
+      "city": "Studio, District 1",
+      "address": "24 Nguyễn Văn Thủ, Đa Kao Ward, Ho Chi Minh City",
+      "phone": "0903 000 111",
+      "email": "lienhe@hienstudio.vn"
+    },
+    {
+      "city": "Joinery workshop, Thủ Đức",
+      "address": "88 Street 9, Linh Tây Ward, Thủ Đức City",
+      "phone": "0903 000 222",
+      "email": "xuong@hienstudio.vn"
+    }
+  ],
+  "cta": {
+    "title": "Send us your floor plan. Within 48 hours you get our first layout ideas, free.",
+    "text": "",
+    "button": "Book a survey",
+    "href": "/pages/lien-he"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Studio",
+        "links": [
+          {
+            "label": "Projects",
+            "href": "/pages/cong-trinh"
+          },
+          {
+            "label": "Process",
+            "href": "/pages/quy-trinh"
+          },
+          {
+            "label": "About",
+            "href": "/pages/gioi-thieu"
+          }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          {
+            "label": "Pricing",
+            "href": "/pages/bao-gia"
+          },
+          {
+            "label": "Journal",
+            "href": "/posts"
+          }
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          {
+            "label": "Book a survey",
+            "href": "/pages/lien-he"
+          },
+          {
+            "label": "Warranty",
+            "href": "/pages/quy-trinh"
+          }
+        ]
+      }
+    ],
+    "contact": "24 Nguyễn Văn Thủ, Ho Chi Minh City. 0903 000 111. lienhe@hienstudio.vn",
+    "copyright": "© Hiên Studio"
+  },
+  "titleprojects": {
+    "title": "Recent projects",
+    "text": "Each project lists its area, build time and cost so you can compare with your own home."
+  },
+  "titlesteps": {
+    "title": "Four steps, each with something you can hold",
+    "text": "You always know which step you are in and what you receive when it ends."
+  },
+  "titleteam": {
+    "title": "The team"
+  },
+  "titlereviews": {
+    "title": "What clients say a year after moving in",
+    "text": "We ask every client again after 12 months and publish the answer as written."
+  },
+  "titleblog": {
+    "title": "Design journal",
+    "text": "Notes on materials, floor plans and what we learn on site."
+  },
+  "titlevisit": {
+    "title": "Come and see the material samples"
+  },
+  "titlevalues": {
+    "title": "Three things we keep to"
+  },
+  "titlecontact": {
+    "title": "Two places to visit"
+  },
+  "titlejournal": {
+    "title": "Design journal",
+    "text": "Notes on materials, floor plans and what we learn on site, written for people about to renovate."
+  },
+  "titlesearch": {
+    "title": "Search posts, materials, floor plans"
+  },
+  "titlenotfound": {
+    "title": "This page is not on the drawing. The address may have changed or the post was removed."
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "dark"
+        },
+        "children": [
+          {
+            "component": "Breadcrumbs"
+          },
+          {
+            "component": "PromoHero",
+            "props": {
+              "source": "heroabout"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "tint"
+        },
+        "children": [
+          {
+            "component": "StatsStrip",
+            "props": {
+              "source": "stats"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titleclass"
+            }
+          },
+          {
+            "component": "PageBody"
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titleteachers"
+            }
+          },
+          {
+            "component": "TeamGrid",
+            "props": {
+              "source": "teachers"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "dark"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titlestories"
+            }
+          },
+          {
+            "component": "Testimonials",
+            "props": {
+              "source": "testimonials"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "tint"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titlecampuses"
+            }
+          },
+          {
+            "component": "OfficeList",
+            "props": {
+              "source": "offices"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "accent"
+        },
+        "children": [
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

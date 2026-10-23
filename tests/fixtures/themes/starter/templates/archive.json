@@ -1,0 +1,23 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      { "component": "SiteHeader", "props": { "variant": "simple" } },
+      {
+        "component": "Section",
+        "props": { "width": "content" },
+        "children": [
+          { "component": "Breadcrumbs" },
+          { "component": "ArchiveHeader", "props": { "showCount": true } },
+          {
+            "component": "PostList",
+            "props": { "layout": "list", "limit": 10, "showExcerpt": true }
+          },
+          { "component": "Pagination" }
+        ]
+      },
+      { "component": "SiteFooter", "props": { "variant": "simple" } }
+    ]
+  }
+}

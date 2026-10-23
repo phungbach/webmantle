@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "trang-chu",
+    "title": "Trang chủ",
+    "isHome": true,
+    "body": "",
+    "seoTitle": "",
+    "seoDescription": ""
+  },
+  {
+    "slug": "gioi-thieu",
+    "title": "Giới thiệu",
+    "template": "about",
+    "body": "<p>Trung tâm được thành lập với mục tiêu đơn giản: giúp học viên dùng được tiếng Anh trong công việc, học tập và đời sống. Chúng tôi chọn lớp nhỏ để giáo viên theo sát từng người.</p><h2>Phương pháp</h2><p>Mỗi buổi học có ba phần: ôn bài cũ ngắn, luyện kỹ năng theo tình huống, và nhận xét cá nhân. Học viên biết chính xác mình đang ở đâu sau mỗi tháng.</p><h2>Cam kết</h2><p>Kiểm tra đầu vào miễn phí, học bù khi vắng mặt và báo cáo tiến độ hằng tháng. Nếu lớp không phù hợp, chúng tôi xếp lại lớp khác.</p>"
+  },
+  {
+    "slug": "khoa-hoc",
+    "title": "Khoá học",
+    "template": "courses",
+    "body": "<p>Mỗi khoá học có đầu ra rõ ràng. Bạn có thể học một khoá hoặc kết hợp nhiều khoá theo mục tiêu.</p><p>Nếu chưa chắc nên chọn khoá nào, hãy làm bài kiểm tra đầu vào miễn phí. Chúng tôi sẽ tư vấn đúng lớp.</p>"
+  },
+  {
+    "slug": "hoc-phi",
+    "title": "Học phí",
+    "template": "pricing",
+    "body": "<p>Học phí chưa bao gồm lệ phí thi chứng chỉ do tổ chức thi thu. Chúng tôi sẽ thông báo rõ khi bạn đăng ký.</p><p>Học viên đăng ký theo nhóm từ ba người được giảm học phí. Liên hệ để biết chi tiết.</p>"
+  },
+  {
+    "slug": "lien-he",
+    "title": "Liên hệ",
+    "template": "",
+    "body": "<p>Gọi hotline hoặc để lại thông tin, đội ngũ tư vấn sẽ liên hệ trong ngày làm việc.</p>"
+  }
+]

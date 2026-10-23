@@ -1,0 +1,252 @@
+/*
+ * Stylesheet của theme. Các biến màu và font lấy từ "tokens" trong theme.json,
+ * và cài đặt "accentColor" ghi đè --color-accent. Hãy dùng biến thay vì giá trị cố định
+ * để người dùng đổi màu được trong Admin → Giao diện.
+ */
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* Đầu trang */
+.cms-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cms-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 700 1.1rem/1 var(--font-heading);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.cms-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font: 500 0.95rem/1 var(--font-heading);
+}
+
+.cms-header__nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* Khung nội dung. Mỗi section có class cms-section--<width>. */
+.cms-section {
+  margin-inline: auto;
+  padding: 2rem 1.25rem;
+}
+
+.cms-section--narrow {
+  max-width: 42rem;
+}
+
+.cms-section--content {
+  max-width: 56rem;
+}
+
+.cms-section--wide {
+  max-width: 72rem;
+}
+
+/* Danh sách bài viết. Thêm .cms-post-list--grid hoặc --list hoặc --compact. */
+.cms-post-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cms-post-list--grid {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.cms-post-list--list,
+.cms-post-list--compact {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Thẻ bài viết. Trạng thái đã đổi theo cài đặt "density". */
+.cms-post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.cms-post__image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.cms-post__title {
+  margin: 0;
+  font: 700 1.25rem/1.3 var(--font-heading);
+}
+
+.cms-post__title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.cms-post__meta,
+.cms-post__excerpt {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.cms-post__more {
+  font: 600 0.9rem/1 var(--font-heading);
+}
+
+/* Bài viết đơn */
+.cms-article__header {
+  margin-bottom: 1.5rem;
+}
+
+.cms-article__title {
+  margin: 0 0 0.5rem;
+  font: 700 2.25rem/1.2 var(--font-heading);
+}
+
+.cms-article__meta {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.cms-article__image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+}
+
+.cms-article__body {
+  max-width: var(--measure);
+}
+
+.cms-article__body img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Phân trang, tìm kiếm, thẻ và trạng thái rỗng */
+.cms-pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font: 600 0.95rem/1 var(--font-heading);
+}
+
+.cms-search {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cms-search input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.cms-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* Đầu trang lưu trữ */
+.cms-archive-header h1 {
+  margin: 0 0 0.25rem;
+  font: 700 2rem/1.2 var(--font-heading);
+}
+
+.cms-archive-header p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* Chân trang */
+.cms-footer {
+  padding: 2rem 1.25rem;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* Cài đặt "showExcerpts" = false sẽ ẩn đoạn trích. Đây là ví dụ về cách dùng data-setting-*. */
+[data-setting-show-excerpts="false"] .cms-post__excerpt {
+  display: none;
+}
+
+/* Cài đặt "density" = compact thu gọn khoảng cách thẻ. */
+[data-setting-density="compact"] .cms-post {
+  padding: 0.85rem;
+}
+
+/* Điện thoại */
+@media (max-width: 640px) {
+  .cms-article__title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Optional pictures and links that an editor can add to content blocks in the designer */
+.cms-title__img,
+.cms-mkt__cta-img {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  margin: 1rem auto 0;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.cms-mkt__cta-img {
+  max-width: 14rem;
+  margin: 0;
+}
+.cms-mkt__feature-img {
+  display: block;
+  width: 100%;
+  max-width: 16rem;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.cms-mkt__avatar--img {
+  object-fit: cover;
+}
+.cms-title__link,
+.cms-mkt__more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}

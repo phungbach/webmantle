@@ -1,0 +1,20 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      { "component": "SiteHeader", "props": { "variant": "simple" } },
+      {
+        "component": "Section",
+        "props": { "width": "content" },
+        "children": [
+          { "component": "ArchiveHeader", "props": { "showCount": true } },
+          { "component": "SearchForm", "props": { "placeholder": "Tìm bài viết" } },
+          { "component": "PostList", "props": { "layout": "list", "limit": 10, "showExcerpt": true } },
+          { "component": "Pagination" }
+        ]
+      },
+      { "component": "SiteFooter", "props": { "variant": "simple" } }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Blog</title>
+  <meta name="description" content="A blog with multiple themes.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#/" class="brand">My Blog</a>
+    <div class="theme-switcher">
+      <label for="theme-select">Theme</label>
+      <select id="theme-select" aria-label="Choose theme"></select>
+    </div>
+  </header>
+
+  <main id="app" class="container" aria-live="polite"></main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> My Blog</small>
+  </footer>
+
+  <script src="js/posts.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

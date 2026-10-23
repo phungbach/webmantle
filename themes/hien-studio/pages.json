@@ -1,0 +1,70 @@
+[
+  {
+    "slug": "trang-chu",
+    "title": "Trang chủ",
+    "isHome": true,
+    "body": "",
+    "seoTitle": "",
+    "seoDescription": ""
+  },
+  {
+    "slug": "cong-trinh",
+    "title": "Công trình",
+    "template": "projects",
+    "body": "<p>Mọi công trình trên trang này đều do studio thiết kế và thi công. Chi phí là mức khởi điểm đã gồm vật liệu hoàn thiện, chưa gồm đồ rời do chủ nhà tự mua.</p>",
+    "translations": {
+      "en": {
+        "title": "Projects",
+        "body": "<p>Every project here was designed and built by the studio. Costs are starting prices including finishing materials, not including loose furniture the owner buys.</p>"
+      }
+    }
+  },
+  {
+    "slug": "quy-trinh",
+    "title": "Quy trình",
+    "template": "process",
+    "body": "<h2>Câu hỏi thường gặp</h2><h3>Tôi cần chuẩn bị gì trước buổi khảo sát?</h3><p>Bản vẽ nhà nếu có, danh sách đồ đạc muốn giữ và ngân sách dự kiến. Chưa có cũng không sao, chúng tôi đo lại.</p><h3>Chi phí có phát sinh sau khi duyệt dự toán không?</h3><p>Chỉ phát sinh khi bạn yêu cầu thay đổi, và chúng tôi báo giá bằng văn bản trước khi làm.</p><h3>Tôi ở nhà trong lúc thi công được không?</h3><p>Được với các hạng mục nhỏ. Với cải tạo lớn chúng tôi khuyên dọn tạm vì bụi và tiếng ồn.</p><h3>Bảo hành tính thế nào?</h3><p>24 tháng cho thi công và đồ nội thất do studio làm. Thiết bị theo bảo hành của hãng.</p>",
+    "translations": {
+      "en": {
+        "title": "Process",
+        "body": "<h2>Frequently asked questions</h2><h3>What should I prepare before the survey?</h3><p>Any floor plan you have, a list of furniture you want to keep and a rough budget. If you have none of these, we measure from scratch.</p><h3>Can costs change after I approve the estimate?</h3><p>Only when you ask for a change, and we quote it in writing before doing the work.</p><h3>Can I stay at home during construction?</h3><p>For small jobs, yes. For a large renovation we advise moving out because of dust and noise.</p><h3>How does the warranty work?</h3><p>24 months on construction and on furniture made by the studio. Appliances follow the manufacturer's warranty.</p>"
+      }
+    }
+  },
+  {
+    "slug": "bao-gia",
+    "title": "Báo giá",
+    "template": "pricing",
+    "body": "<h2>Chi phí thi công tính thế nào?</h2><p>Sau khi duyệt phương án, chúng tôi lập dự toán theo từng hạng mục: phần thô, điện nước, nội thất rời và hoàn thiện. Bạn xem được đơn giá từng dòng và chọn bỏ hoặc thay vật liệu trước khi ký.</p><h2>Có nhận thiết kế riêng, không thi công không?</h2><p>Có. Gói Thiết kế cho bạn bộ hồ sơ đủ để thợ bất kỳ thi công.</p>",
+    "translations": {
+      "en": {
+        "title": "Pricing",
+        "body": "<h2>How is construction priced?</h2><p>After you approve the plan we prepare an estimate by item: structure, plumbing and electrics, loose furniture and finishing. You see every unit price and can remove or swap materials before signing.</p><h2>Do you take design-only jobs?</h2><p>Yes. The Design package gives you a set of drawings that any builder can work from.</p>"
+      }
+    }
+  },
+  {
+    "slug": "gioi-thieu",
+    "title": "Giới thiệu",
+    "template": "about",
+    "body": "<h2>Cách chúng tôi làm việc</h2><p>Mỗi dự án có một kiến trúc sư chịu trách nhiệm từ buổi khảo sát đầu tiên đến ngày bàn giao. Bạn luôn biết gọi cho ai khi cần.</p>",
+    "translations": {
+      "en": {
+        "title": "About",
+        "body": "<h2>How we work</h2><p>Each project has one architect responsible from the first survey to handover day. You always know who to call.</p>"
+      }
+    }
+  },
+  {
+    "slug": "lien-he",
+    "title": "Liên hệ",
+    "template": "contact",
+    "body": "<p>Studio làm việc từ thứ Hai đến thứ Bảy, 8:30 đến 18:00. Gọi 0903 000 111 hoặc gửi email tới lienhe@hienstudio.vn kèm mặt bằng nhà nếu có, chúng tôi phản hồi trong 48 giờ.</p>",
+    "translations": {
+      "en": {
+        "title": "Contact",
+        "body": "<p>The studio is open Monday to Saturday, 8:30 to 18:00. Call 0903 000 111 or email lienhe@hienstudio.vn with your floor plan if you have one, and we reply within 48 hours.</p>"
+      }
+    }
+  }
+]

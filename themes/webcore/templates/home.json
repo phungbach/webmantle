@@ -1,0 +1,151 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "PromoHero",
+            "props": {
+              "source": "hero"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "tint"
+        },
+        "children": [
+          {
+            "component": "StatsStrip",
+            "props": {
+              "source": "stats"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titlefeatures"
+            }
+          },
+          {
+            "component": "FeatureList",
+            "props": {
+              "source": "features"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "tint"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titlesteps"
+            }
+          },
+          {
+            "component": "FeatureList",
+            "props": {
+              "source": "process"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "dark"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titleguide"
+            }
+          },
+          {
+            "component": "FeatureList",
+            "props": {
+              "source": "values"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "tint"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titleblog"
+            }
+          },
+          {
+            "component": "PostList",
+            "props": {
+              "layout": "grid",
+              "limit": 3,
+              "showExcerpt": true
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "accent"
+        },
+        "children": [
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

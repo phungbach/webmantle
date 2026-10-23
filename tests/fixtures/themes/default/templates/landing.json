@@ -1,0 +1,50 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "centered"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide"
+        },
+        "children": [
+          {
+            "component": "Hero",
+            "props": {
+              "eyebrow": "Welcome",
+              "showDescription": true
+            }
+          },
+          {
+            "component": "FeaturedPost",
+            "props": {
+              "showExcerpt": true
+            }
+          },
+          {
+            "component": "PostList",
+            "props": {
+              "layout": "grid",
+              "limit": 6,
+              "showExcerpt": true,
+              "skipFeatured": true
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "nav": [
+    {
+      "label": "Giới thiệu",
+      "href": "/pages/gioi-thieu",
+      "icon": "star"
+    },
+    {
+      "label": "Hướng dẫn",
+      "href": "/pages/huong-dan",
+      "children": [
+        {
+          "label": "Bắt đầu",
+          "href": "/pages/huong-dan-bat-dau",
+          "text": "Đăng nhập và làm quen với trang quản trị.",
+          "icon": "rocket"
+        },
+        {
+          "label": "Viết và xuất bản bài",
+          "href": "/pages/huong-dan-viet-bai",
+          "text": "Soạn bài, chọn chuyên mục, hẹn giờ và xuất bản.",
+          "icon": "pen"
+        },
+        {
+          "label": "Quản lý trang",
+          "href": "/pages/huong-dan-quan-ly-trang",
+          "text": "Tạo trang tĩnh như Giới thiệu, Liên hệ.",
+          "icon": "file"
+        },
+        {
+          "label": "Thư viện ảnh",
+          "href": "/pages/huong-dan-thu-vien-media",
+          "text": "Tải ảnh lên và dùng lại ở nhiều nơi.",
+          "icon": "image"
+        },
+        {
+          "label": "Chuyên mục và thẻ",
+          "href": "/pages/huong-dan-chuyen-muc-the",
+          "text": "Sắp xếp bài viết để người đọc dễ tìm.",
+          "icon": "tag"
+        },
+        {
+          "label": "Giao diện (theme)",
+          "href": "/pages/huong-dan-giao-dien",
+          "text": "Cài, xem trước, bật và khôi phục giao diện.",
+          "icon": "palette"
+        }
+      ],
+      "icon": "book"
+    },
+    {
+      "label": "Nhật ký",
+      "href": "/pages/nhat-ky-hoat-dong",
+      "icon": "history"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Webmantle CMS",
+    "headingLevel": "h1",
+    "title": "Viết, thiết kế và vận hành website trong một nơi",
+    "text": "Webmantle gom bài viết, trang, giao diện và SEO vào một trang quản trị tiếng Việt. Đổi giao diện mà không mất nội dung, sửa trang chủ ngay trên màn hình.",
+    "primaryLabel": "Xem hướng dẫn sử dụng",
+    "primaryHref": "/pages/huong-dan",
+    "secondaryLabel": "Giới thiệu Webmantle",
+    "secondaryHref": "/pages/gioi-thieu",
+    "highlights": [
+      "Quản trị bằng tiếng Việt",
+      "Đổi giao diện không mất bài viết",
+      "Sao lưu và khôi phục có hướng dẫn"
+    ],
+    "image": "assets/hero.jpg",
+    "tertiaryLabel": "Xem demo",
+    "tertiaryHref": "/demo"
+  },
+  "stats": [
+    {
+      "value": "3",
+      "label": "Vai trò: quản trị, biên tập, tác giả",
+      "icon": "users"
+    },
+    {
+      "value": "2",
+      "label": "Ngôn ngữ giao diện: Việt và Anh",
+      "icon": "language"
+    },
+    {
+      "value": "3",
+      "label": "Giao diện có sẵn để chọn",
+      "icon": "palette"
+    },
+    {
+      "value": "1",
+      "label": "Trình thiết kế cho trang chủ và từng trang",
+      "icon": "wand"
+    }
+  ],
+  "titlefeatures": {
+    "eyebrow": "Webmantle làm được gì",
+    "title": "Mọi thứ để vận hành một website nội dung",
+    "text": "Từ viết bài đến đổi giao diện, bạn làm hết trong trang quản trị."
+  },
+  "features": [
+    {
+      "title": "Viết và xuất bản bài",
+      "text": "Trình soạn thảo có ảnh, chuyên mục, thẻ, hẹn giờ đăng và lịch sử bản sửa.",
+      "icon": "pen"
+    },
+    {
+      "title": "Trang tĩnh",
+      "text": "Giới thiệu, Liên hệ, Bảng giá: tạo trang riêng và gắn vào menu.",
+      "icon": "file"
+    },
+    {
+      "title": "Giao diện thay được",
+      "text": "Tải giao diện lên, xem trước, bật và quay lại bản cũ. Nội dung không đổi.",
+      "icon": "palette"
+    },
+    {
+      "title": "Trình thiết kế",
+      "text": "Sửa chữ, ảnh, liên kết và cấp tiêu đề (H1, H2, H3) của trang chủ và từng trang.",
+      "icon": "wand"
+    },
+    {
+      "title": "SEO sẵn có",
+      "text": "Tiêu đề, mô tả, sơ đồ trang và robots, kèm kiểm tra khi bạn soạn bài.",
+      "icon": "search"
+    },
+    {
+      "title": "Phân quyền và sao lưu",
+      "text": "Chia vai trò cho nhóm và sao lưu cơ sở dữ liệu, ảnh, giao diện.",
+      "icon": "lock"
+    }
+  ],
+  "titlesteps": {
+    "eyebrow": "Bắt đầu nhanh",
+    "title": "Từ cài đặt đến bài viết đầu tiên"
+  },
+  "process": [
+    {
+      "title": "Đăng nhập",
+      "text": "Vào /admin bằng tài khoản quản trị đã tạo khi cài đặt.",
+      "icon": "key"
+    },
+    {
+      "title": "Chọn giao diện",
+      "text": "Mở Giao diện, xem trước rồi bật giao diện bạn thích.",
+      "icon": "palette"
+    },
+    {
+      "title": "Viết bài đầu tiên",
+      "text": "Bài viết → Bài mới. Nhập tiêu đề, nội dung và lưu nháp.",
+      "icon": "pen"
+    },
+    {
+      "title": "Xuất bản",
+      "text": "Kiểm tra SEO, đổi trạng thái sang Đã đăng và xem ngoài website.",
+      "icon": "rocket"
+    }
+  ],
+  "titleguide": {
+    "eyebrow": "Hướng dẫn sử dụng",
+    "title": "Hướng dẫn từng bước, có ảnh chụp màn hình",
+    "text": "Chọn một chủ đề để xem chi tiết."
+  },
+  "values": [
+    {
+      "title": "Bắt đầu",
+      "text": "Đăng nhập và làm quen với trang quản trị.",
+      "icon": "rocket",
+      "href": "/pages/huong-dan-bat-dau",
+      "image": "assets/guide-login.jpg"
+    },
+    {
+      "title": "Viết và xuất bản bài",
+      "text": "Soạn bài, chọn chuyên mục, hẹn giờ và xuất bản.",
+      "icon": "pen",
+      "href": "/pages/huong-dan-viet-bai",
+      "image": "assets/guide-post-new.jpg"
+    },
+    {
+      "title": "Quản lý trang",
+      "text": "Tạo trang tĩnh như Giới thiệu, Liên hệ.",
+      "icon": "file",
+      "href": "/pages/huong-dan-quan-ly-trang",
+      "image": "assets/guide-pages.jpg"
+    },
+    {
+      "title": "Thư viện ảnh",
+      "text": "Tải ảnh lên và dùng lại ở nhiều nơi.",
+      "icon": "image",
+      "href": "/pages/huong-dan-thu-vien-media",
+      "image": "assets/guide-media.jpg"
+    },
+    {
+      "title": "Chuyên mục và thẻ",
+      "text": "Sắp xếp bài viết để người đọc dễ tìm.",
+      "icon": "tag",
+      "href": "/pages/huong-dan-chuyen-muc-the",
+      "image": "assets/guide-categories.jpg"
+    },
+    {
+      "title": "Giao diện (theme)",
+      "text": "Cài, xem trước, bật và khôi phục giao diện.",
+      "icon": "palette",
+      "href": "/pages/huong-dan-giao-dien",
+      "image": "assets/guide-themes.jpg"
+    }
+  ],
+  "cta": {
+    "headingLevel": "h2",
+    "title": "Bạn mới dùng Webmantle? Bắt đầu từ hướng dẫn.",
+    "text": "Mỗi bước đều có ảnh chụp màn hình để làm theo.",
+    "button": "Mở hướng dẫn",
+    "href": "/pages/huong-dan"
+  },
+  "titleblog": {
+    "eyebrow": "Blog",
+    "title": "Bài viết mới",
+    "text": "Mẹo và thông báo từ Webmantle."
+  },
+  "titlerelated": {
+    "title": "Bài viết liên quan"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Webmantle",
+        "links": [
+          {
+            "label": "Giới thiệu",
+            "href": "/pages/gioi-thieu"
+          },
+          {
+            "label": "Hướng dẫn sử dụng",
+            "href": "/pages/huong-dan"
+          },
+          {
+            "label": "Blog",
+            "href": "/search"
+          },
+          {
+            "label": "Nhật ký hoạt động",
+            "href": "/pages/nhat-ky-hoat-dong"
+          }
+        ]
+      },
+      {
+        "title": "Hướng dẫn",
+        "links": [
+          {
+            "label": "Bắt đầu",
+            "href": "/pages/huong-dan-bat-dau"
+          },
+          {
+            "label": "Viết và xuất bản bài",
+            "href": "/pages/huong-dan-viet-bai"
+          },
+          {
+            "label": "Quản lý trang",
+            "href": "/pages/huong-dan-quan-ly-trang"
+          },
+          {
+            "label": "Thư viện ảnh",
+            "href": "/pages/huong-dan-thu-vien-media"
+          }
+        ]
+      },
+      {
+        "title": "Quản trị",
+        "links": [
+          {
+            "label": "Đăng nhập quản trị",
+            "href": "/login"
+          },
+          {
+            "label": "SEO và cài đặt",
+            "href": "/pages/huong-dan-seo-cai-dat"
+          },
+          {
+            "label": "Sao lưu",
+            "href": "/pages/huong-dan-nguoi-dung-sao-luu"
+          }
+        ]
+      }
+    ],
+    "contact": "Website chạy trên Webmantle CMS.",
+    "copyright": "© Website của bạn. Chạy trên Webmantle."
+  },
+  "docsnav": {
+    "title": "Tài liệu Webmantle",
+    "groups": [
+      {
+        "title": "Giới thiệu",
+        "links": [
+          {
+            "label": "Giới thiệu Webmantle",
+            "href": "/pages/gioi-thieu"
+          }
+        ]
+      },
+      {
+        "title": "Hướng dẫn sử dụng",
+        "links": [
+          {
+            "label": "Mục lục hướng dẫn",
+            "href": "/pages/huong-dan"
+          },
+          {
+            "label": "Bắt đầu",
+            "href": "/pages/huong-dan-bat-dau"
+          },
+          {
+            "label": "Viết và xuất bản bài",
+            "href": "/pages/huong-dan-viet-bai"
+          },
+          {
+            "label": "Quản lý trang",
+            "href": "/pages/huong-dan-quan-ly-trang"
+          },
+          {
+            "label": "Thư viện ảnh",
+            "href": "/pages/huong-dan-thu-vien-media"
+          },
+          {
+            "label": "Chuyên mục và thẻ",
+            "href": "/pages/huong-dan-chuyen-muc-the"
+          },
+          {
+            "label": "Giao diện (theme)",
+            "href": "/pages/huong-dan-giao-dien"
+          },
+          {
+            "label": "Thiết kế trang",
+            "href": "/pages/huong-dan-thiet-ke-trang"
+          },
+          {
+            "label": "SEO và cài đặt",
+            "href": "/pages/huong-dan-seo-cai-dat"
+          },
+          {
+            "label": "Người dùng và sao lưu",
+            "href": "/pages/huong-dan-nguoi-dung-sao-luu"
+          }
+        ]
+      },
+      {
+        "title": "Dự án",
+        "links": [
+          {
+            "label": "Nhật ký hoạt động",
+            "href": "/pages/nhat-ky-hoat-dong"
+          }
+        ]
+      }
+    ]
+  },
+  "titlenotfound": {
+    "title": "Ôi, trang này lạc đường rồi. Thử tìm kiếm bên dưới nhé."
+  },
+  "titlesearch": {
+    "title": "Tìm bài viết hoặc hướng dẫn"
+  }
+}

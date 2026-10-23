@@ -1,0 +1,43 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "EmptyState",
+            "props": {
+              "source": "titlenotfound",
+              "message": "Trang này không tồn tại."
+            }
+          },
+          {
+            "component": "SearchForm",
+            "props": {
+              "source": "titlesearch",
+              "placeholder": "Tìm bài viết"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

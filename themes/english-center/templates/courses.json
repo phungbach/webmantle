@@ -1,0 +1,107 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "dark"
+        },
+        "children": [
+          {
+            "component": "Breadcrumbs"
+          },
+          {
+            "component": "PromoHero",
+            "props": {
+              "source": "herocourses"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titlecurrent"
+            }
+          },
+          {
+            "component": "CourseList",
+            "props": {
+              "source": "courses"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "tint"
+        },
+        "children": [
+          {
+            "component": "SectionTitle",
+            "props": {
+              "source": "titlecourseinfo"
+            }
+          },
+          {
+            "component": "FeatureList",
+            "props": {
+              "source": "features"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "PageBody"
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "accent"
+        },
+        "children": [
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

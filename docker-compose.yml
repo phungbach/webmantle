@@ -1,0 +1,20 @@
+# Quick start: cp .env.example .env, fill it in, then: docker compose up -d --build
+# Data (database, media, themes, backups) lives in the "webmantle-data" volume.
+services:
+  web:
+    build: .
+    image: webmantle:1.0.0
+    container_name: webmantle
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      CMS_DATA_DIR: /app/data
+      DATABASE_URL: file:/app/data/cms.db
+    volumes:
+      - webmantle-data:/app/data
+
+volumes:
+  webmantle-data:

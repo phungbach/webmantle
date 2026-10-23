@@ -1,0 +1,80 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      {
+        "component": "SiteHeader",
+        "props": {
+          "variant": "mega"
+        }
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "Breadcrumbs"
+          },
+          {
+            "component": "PromoHero",
+            "props": {
+              "source": "heroprocess"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "wide",
+          "tone": "tint"
+        },
+        "children": [
+          {
+            "component": "FeatureList",
+            "props": {
+              "source": "process"
+            }
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "narrow",
+          "tone": "plain"
+        },
+        "children": [
+          {
+            "component": "PageBody"
+          }
+        ]
+      },
+      {
+        "component": "Section",
+        "props": {
+          "width": "full",
+          "tone": "accent"
+        },
+        "children": [
+          {
+            "component": "CtaBanner",
+            "props": {
+              "source": "cta"
+            }
+          }
+        ]
+      },
+      {
+        "component": "SiteFooter",
+        "props": {
+          "variant": "columns"
+        }
+      }
+    ]
+  }
+}

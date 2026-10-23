@@ -1,0 +1,22 @@
+# Never copy secrets, local data or build output into the image.
+.env
+.env.*
+!.env.example
+data
+node_modules
+.next
+release
+dist
+coverage
+test-results
+playwright-report
+tests
+legacy-static
+brand
+.git
+.github
+.claude
+.mcp.json
+*.log
+*.tsbuildinfo
+.DS_Store

@@ -1,0 +1,62 @@
+{
+  "contractVersion": 1,
+  "id": "my-theme",
+  "name": "Theme mẫu của tôi",
+  "version": "1.0.0",
+  "description": "Theme mẫu để bắt đầu phát triển. Sửa id, name, màu và bố cục theo ý bạn.",
+  "author": "Tên của bạn",
+  "minimumCmsVersion": "1.0.0",
+  "supportedTemplates": [
+    "home",
+    "single-post",
+    "archive",
+    "category",
+    "page",
+    "search",
+    "not-found"
+  ],
+  "requiredComponents": [
+    "Shell",
+    "SiteHeader",
+    "SiteFooter",
+    "PostList",
+    "PostDetail",
+    "PageBody",
+    "Pagination",
+    "SearchForm",
+    "EmptyState"
+  ],
+  "tokens": {
+    "color-bg": "#f7f7f5",
+    "color-surface": "#ffffff",
+    "color-text": "#1f2328",
+    "color-muted": "#5f6670",
+    "color-accent": "#2563eb",
+    "color-border": "#e3e5e8",
+    "font-body": "Georgia, 'Times New Roman', serif",
+    "font-heading": "system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "measure": "68ch"
+  },
+  "settingsSchema": [
+    {
+      "key": "accentColor",
+      "label": "Màu nhấn",
+      "type": "color",
+      "default": "#2563eb",
+      "cssVariable": "--color-accent"
+    },
+    {
+      "key": "showExcerpts",
+      "label": "Hiện đoạn trích",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "density",
+      "label": "Mật độ thẻ",
+      "type": "select",
+      "default": "comfortable",
+      "options": ["comfortable", "compact"]
+    }
+  ]
+}

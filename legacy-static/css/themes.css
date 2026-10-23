@@ -1,0 +1,110 @@
+/*
+ * Theme tokens. Each theme is a [data-theme="name"] block that overrides
+ * the same set of CSS variables. To add a theme:
+ *   1. Add a block here with all the variables below.
+ *   2. Add an entry to js/themes.js.
+ */
+
+/* Shared tokens used by every theme */
+:root {
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius: 8px;
+}
+
+/* Light (default) */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --text: #1f2328;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --border: #e5e7eb;
+  --code-bg: #f1f3f5;
+  --tag-bg: #e0e7ff;
+  --tag-text: #3730a3;
+}
+
+/* Dark */
+:root[data-theme="dark"] {
+  --bg: #0f1117;
+  --surface: #171a23;
+  --text: #e6e8ee;
+  --muted: #9aa3b2;
+  --accent: #60a5fa;
+  --border: #2a2f3d;
+  --code-bg: #1d2230;
+  --tag-bg: #1e3a5f;
+  --tag-text: #bfdbfe;
+}
+
+/* Sepia */
+:root[data-theme="sepia"] {
+  --bg: #f4ecd8;
+  --surface: #ebe1c7;
+  --text: #3b2f1e;
+  --muted: #7a6a50;
+  --accent: #9a4d12;
+  --border: #d6c7a6;
+  --code-bg: #e6dabb;
+  --tag-bg: #dcc89c;
+  --tag-text: #4a3416;
+  --font-body: Charter, Georgia, "Times New Roman", serif;
+  --font-heading: "Iowan Old Style", Georgia, serif;
+}
+
+/* Ocean */
+:root[data-theme="ocean"] {
+  --bg: #0b2535;
+  --surface: #0e3046;
+  --text: #d9f0ff;
+  --muted: #8fb8cc;
+  --accent: #38d9c0;
+  --border: #1d4a63;
+  --code-bg: #0a2030;
+  --tag-bg: #13506b;
+  --tag-text: #c6ecff;
+}
+
+/* Forest */
+:root[data-theme="forest"] {
+  --bg: #f1f6ef;
+  --surface: #e3ecdf;
+  --text: #1c2b1a;
+  --muted: #5b6e57;
+  --accent: #2f7d32;
+  --border: #c7d6c2;
+  --code-bg: #dfe9da;
+  --tag-bg: #c5e1c0;
+  --tag-text: #1d4a1b;
+}
+
+/* Rose */
+:root[data-theme="rose"] {
+  --bg: #fff5f7;
+  --surface: #ffe8ee;
+  --text: #3d1a26;
+  --muted: #9a6474;
+  --accent: #db2777;
+  --border: #f5c9d6;
+  --code-bg: #ffe0ea;
+  --tag-bg: #fbcfe0;
+  --tag-text: #831843;
+  --font-heading: "Trebuchet MS", system-ui, sans-serif;
+}
+
+/* Honour the OS preference only when the user has not chosen a theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0f1117;
+    --surface: #171a23;
+    --text: #e6e8ee;
+    --muted: #9aa3b2;
+    --accent: #60a5fa;
+    --border: #2a2f3d;
+    --code-bg: #1d2230;
+    --tag-bg: #1e3a5f;
+    --tag-text: #bfdbfe;
+  }
+}

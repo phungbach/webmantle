@@ -1,0 +1,461 @@
+{
+  "nav": [
+    {
+      "label": "Công trình",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "label": "Quy trình",
+      "href": "/pages/quy-trinh"
+    },
+    {
+      "label": "Báo giá",
+      "href": "/pages/bao-gia"
+    },
+    {
+      "label": "Giới thiệu",
+      "href": "/pages/gioi-thieu"
+    },
+    {
+      "label": "Nhật ký thiết kế",
+      "href": "/posts",
+      "children": [
+        {
+          "label": "Vật liệu",
+          "href": "/categories/vat-lieu",
+          "text": "Chọn và bảo quản gỗ, đá, sơn"
+        },
+        {
+          "label": "Mặt bằng",
+          "href": "/categories/mat-bang",
+          "text": "Cách bố trí phòng cho nhà nhỏ"
+        },
+        {
+          "label": "Tin studio",
+          "href": "/categories/tin-studio",
+          "text": "Công trình mới và lịch khảo sát"
+        }
+      ]
+    },
+    {
+      "label": "Liên hệ",
+      "href": "/pages/lien-he"
+    }
+  ],
+  "hero": {
+    "eyebrow": "",
+    "title": "Thiết kế nội thất để ngôi nhà vừa với cách bạn sống",
+    "text": "Chúng tôi vẽ mặt bằng cùng bạn, chọn vật liệu có mẫu thật, và báo giá từng hạng mục trước khi thi công.",
+    "primaryLabel": "Đặt lịch khảo sát nhà",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "Xem công trình đã làm",
+    "secondaryHref": "/pages/cong-trinh",
+    "highlights": [],
+    "image": "assets/hero.jpg"
+  },
+  "stats": [
+    {
+      "value": "126",
+      "label": "công trình đã bàn giao"
+    },
+    {
+      "value": "14 năm",
+      "label": "làm nhà ở và cửa hàng"
+    },
+    {
+      "value": "68%",
+      "label": "khách đến từ người quen giới thiệu"
+    },
+    {
+      "value": "45–90 ngày",
+      "label": "từ ngày ký đến ngày dọn vào"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Nhà phố 4 tầng, Bình Thạnh",
+      "level": "Nhà phố",
+      "duration": "96 m² sàn",
+      "schedule": "Thi công 78 ngày",
+      "price": "Từ 1,35 tỷ",
+      "image": "assets/project-nha-pho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Căn hộ hai phòng ngủ, Thảo Điền",
+      "level": "Căn hộ",
+      "duration": "74 m² sàn",
+      "schedule": "Thi công 52 ngày",
+      "price": "Từ 640 triệu",
+      "image": "assets/project-can-ho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Bếp và phòng ăn mở, Quận 7",
+      "level": "Căn hộ",
+      "duration": "18 m² sàn",
+      "schedule": "Thi công 30 ngày",
+      "price": "Từ 280 triệu",
+      "image": "assets/project-bep.jpg",
+      "href": "/pages/cong-trinh"
+    }
+  ],
+  "features": [
+    {
+      "title": "Khảo sát",
+      "text": "Đo đạc tại nhà, ghi lại thói quen sinh hoạt của từng người. Bạn nhận bản đo và bảng nhu cầu.",
+      "icon": "pen"
+    },
+    {
+      "title": "Phương án",
+      "text": "Hai phương án mặt bằng kèm ảnh phối cảnh. Bạn nhận mặt bằng tỷ lệ 1:50.",
+      "icon": "puzzle"
+    },
+    {
+      "title": "Thi công",
+      "text": "Thợ riêng của studio, cập nhật tiến độ mỗi tuần. Bạn nhận nhật ký công trình.",
+      "icon": "chart"
+    },
+    {
+      "title": "Bàn giao",
+      "text": "Nghiệm thu từng hạng mục, bảo hành 24 tháng. Bạn nhận hồ sơ hoàn công.",
+      "icon": "award"
+    }
+  ],
+  "pricing": {
+    "title": "Báo giá theo mức dịch vụ",
+    "description": "Đơn giá thiết kế tính theo m² sàn. Thi công báo riêng sau khi duyệt phương án.",
+    "plans": [
+      {
+        "name": "Tư vấn",
+        "price": "1,2 triệu",
+        "period": "/ m²",
+        "specs": ["Đo đạc tại nhà", "Mặt bằng công năng 1:50", "Danh mục vật liệu gợi ý"],
+        "cta": "Chọn gói Tư vấn",
+        "href": "/pages/lien-he"
+      },
+      {
+        "name": "Thiết kế",
+        "price": "2,8 triệu",
+        "period": "/ m²",
+        "specs": ["Hai phương án mặt bằng", "Phối cảnh 3D mỗi phòng", "Bản vẽ kỹ thuật và dự toán"],
+        "badge": "Chọn nhiều nhất",
+        "cta": "Chọn gói Thiết kế",
+        "href": "/pages/lien-he"
+      },
+      {
+        "name": "Trọn gói",
+        "price": "Từ 6,5 triệu",
+        "period": "/ m²",
+        "specs": ["Toàn bộ gói Thiết kế", "Thi công và giám sát hằng ngày", "Bảo hành 24 tháng"],
+        "cta": "Chọn gói Trọn gói",
+        "href": "/pages/lien-he"
+      }
+    ]
+  },
+  "teachers": [
+    {
+      "name": "Lê Thanh Hiên",
+      "role": "Kiến trúc sư chủ trì",
+      "experience": "14 năm hành nghề",
+      "bio": "Phụ trách mặt bằng và làm việc trực tiếp với chủ nhà ở bước khảo sát."
+    },
+    {
+      "name": "Phan Gia Bảo",
+      "role": "Trưởng nhóm thi công",
+      "experience": "11 năm hiện trường",
+      "bio": "Giữ tiến độ và chất lượng, báo cáo công trình cho chủ nhà mỗi tuần."
+    },
+    {
+      "name": "Đỗ Ngọc Anh",
+      "role": "Thiết kế vật liệu",
+      "experience": "8 năm",
+      "bio": "Chọn và thử mẫu gỗ, đá, vải để khách xem tận tay trước khi duyệt."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Hai vợ chồng đổi ý ba lần ở bước phương án, anh chị vẫn vẽ lại không tính thêm phí. Dự toán lúc đầu chênh khi nghiệm thu chưa tới 3%.",
+      "name": "Chị Mai Phương",
+      "role": "Chủ căn hộ Thảo Điền"
+    },
+    {
+      "quote": "Quán mở đúng ngày hẹn. Quầy pha chế đặt theo chiều cao nhân viên nên không ai kêu đau lưng.",
+      "name": "Anh Quốc Bảo",
+      "role": "Chủ quán cà phê Quận 3"
+    },
+    {
+      "quote": "Bố mẹ lớn tuổi nên tôi đòi sàn không bậc. Studio đo từng ngưỡng cửa và hạ hết về một cốt.",
+      "name": "Anh Đức Minh",
+      "role": "Chủ nhà phố Bình Thạnh"
+    }
+  ],
+  "partners": [
+    {
+      "name": "Gỗ sồi Bắc Mỹ"
+    },
+    {
+      "name": "Đá terrazzo"
+    },
+    {
+      "name": "Sơn khoáng"
+    },
+    {
+      "name": "Gạch men thủ công"
+    }
+  ],
+  "offices": [
+    {
+      "city": "Studio Quận 1",
+      "address": "24 Nguyễn Văn Thủ, Phường Đa Kao, TP. Hồ Chí Minh",
+      "phone": "0903 000 111",
+      "email": "lienhe@hienstudio.vn"
+    },
+    {
+      "city": "Xưởng mộc Thủ Đức",
+      "address": "88 Đường số 9, Phường Linh Tây, TP. Thủ Đức",
+      "phone": "0903 000 222",
+      "email": "xuong@hienstudio.vn"
+    }
+  ],
+  "cta": {
+    "title": "Gửi cho chúng tôi mặt bằng nhà bạn. Trong 48 giờ bạn nhận được ý kiến bố trí đầu tiên, miễn phí.",
+    "text": "",
+    "button": "Đặt lịch khảo sát",
+    "href": "/pages/lien-he"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Studio",
+        "links": [
+          {
+            "label": "Công trình",
+            "href": "/pages/cong-trinh"
+          },
+          {
+            "label": "Quy trình",
+            "href": "/pages/quy-trinh"
+          },
+          {
+            "label": "Giới thiệu",
+            "href": "/pages/gioi-thieu"
+          }
+        ]
+      },
+      {
+        "title": "Tài liệu",
+        "links": [
+          {
+            "label": "Báo giá",
+            "href": "/pages/bao-gia"
+          },
+          {
+            "label": "Nhật ký thiết kế",
+            "href": "/posts"
+          }
+        ]
+      },
+      {
+        "title": "Liên hệ",
+        "links": [
+          {
+            "label": "Đặt lịch khảo sát",
+            "href": "/pages/lien-he"
+          },
+          {
+            "label": "Chính sách bảo hành",
+            "href": "/pages/quy-trinh"
+          }
+        ]
+      }
+    ],
+    "contact": "24 Nguyễn Văn Thủ, TP. Hồ Chí Minh. 0903 000 111. lienhe@hienstudio.vn",
+    "copyright": "© Hiên Studio"
+  },
+  "heroprojects": {
+    "eyebrow": "",
+    "title": "Công trình đã làm",
+    "text": "Mỗi dự án ghi rõ diện tích, thời gian thi công và chi phí để bạn so với nhà mình.",
+    "primaryLabel": "Đặt lịch khảo sát nhà",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "heroprocess": {
+    "eyebrow": "",
+    "title": "Bốn bước, mỗi bước có một sản phẩm bàn giao",
+    "text": "Bạn luôn biết mình đang ở bước nào, mất bao lâu và sẽ nhận gì khi bước đó kết thúc.",
+    "primaryLabel": "Bắt đầu khảo sát",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "heropricing": {
+    "eyebrow": "",
+    "title": "Chi phí rõ ràng trước khi bạn ký",
+    "text": "Đơn giá thiết kế tính theo m² sàn. Thi công báo riêng sau khi bạn duyệt phương án.",
+    "primaryLabel": "Nhận báo giá chi tiết",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": []
+  },
+  "heroabout": {
+    "eyebrow": "",
+    "title": "Một studio nhỏ làm nhà vừa với người ở",
+    "text": "Hiên Studio bắt đầu từ một chiếc bàn vẽ trong căn nhà thuê năm 2012. Mười bốn năm sau, chúng tôi vẫn đo nhà bằng tay và gặp từng khách ít nhất ba lần trước khi vẽ nét đầu tiên.",
+    "primaryLabel": "Xem công trình",
+    "primaryHref": "/pages/cong-trinh",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": [],
+    "image": "assets/about.jpg"
+  },
+  "herocontact": {
+    "eyebrow": "",
+    "title": "Đặt lịch khảo sát nhà",
+    "text": "Gọi 0903 000 111 hoặc gửi email, chúng tôi hẹn ngày đến đo trong giờ làm việc. Khảo sát đầu tiên miễn phí.",
+    "primaryLabel": "Gọi 0903 000 111",
+    "primaryHref": "/pages/lien-he",
+    "secondaryLabel": "",
+    "secondaryHref": "/",
+    "highlights": [],
+    "image": "assets/contact.jpg"
+  },
+  "projects": [
+    {
+      "title": "Nhà phố 4 tầng, Bình Thạnh",
+      "level": "Nhà phố",
+      "duration": "96 m² sàn",
+      "schedule": "Thi công 78 ngày",
+      "price": "Từ 1,35 tỷ",
+      "image": "assets/project-nha-pho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Căn hộ hai phòng ngủ, Thảo Điền",
+      "level": "Căn hộ",
+      "duration": "74 m² sàn",
+      "schedule": "Thi công 52 ngày",
+      "price": "Từ 640 triệu",
+      "image": "assets/project-can-ho.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Bếp và phòng ăn mở, Quận 7",
+      "level": "Căn hộ",
+      "duration": "18 m² sàn",
+      "schedule": "Thi công 30 ngày",
+      "price": "Từ 280 triệu",
+      "image": "assets/project-bep.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Phòng khách thông tầng, Thủ Đức",
+      "level": "Biệt thự",
+      "duration": "210 m² sàn",
+      "schedule": "Thi công 120 ngày",
+      "price": "Từ 2,9 tỷ",
+      "image": "assets/project-thong-tang.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Góc đọc sách, Phú Nhuận",
+      "level": "Nhà phố",
+      "duration": "12 m² sàn",
+      "schedule": "Thi công 21 ngày",
+      "price": "Từ 95 triệu",
+      "image": "assets/project-goc-doc.jpg",
+      "href": "/pages/cong-trinh"
+    },
+    {
+      "title": "Căn hộ studio nhiều nắng, Quận 2",
+      "level": "Căn hộ",
+      "duration": "42 m² sàn",
+      "schedule": "Thi công 40 ngày",
+      "price": "Từ 410 triệu",
+      "image": "assets/project-studio.jpg",
+      "href": "/pages/cong-trinh"
+    }
+  ],
+  "process": [
+    {
+      "title": "Khảo sát (tuần 1)",
+      "text": "Chúng tôi đến nhà, đo từng phòng, chụp ảnh hiện trạng và hỏi kỹ thói quen sinh hoạt. Bạn nhận bản đo hiện trạng và bảng nhu cầu.",
+      "icon": "pen"
+    },
+    {
+      "title": "Phương án (tuần 2 đến 4)",
+      "text": "Hai phương án mặt bằng kèm ảnh phối cảnh, chỉnh đến khi cả nhà đồng ý. Bạn nhận mặt bằng tỷ lệ 1:50 và phối cảnh 3D.",
+      "icon": "puzzle"
+    },
+    {
+      "title": "Thi công (tuần 5 đến 14)",
+      "text": "Thợ riêng của studio làm việc tại nhà bạn, mỗi tuần có nhật ký kèm ảnh. Bạn nhận nhật ký công trình hằng tuần.",
+      "icon": "chart"
+    },
+    {
+      "title": "Bàn giao (tuần 15)",
+      "text": "Nghiệm thu từng hạng mục cùng bạn, sửa lỗi tại chỗ, bắt đầu bảo hành 24 tháng. Bạn nhận hồ sơ hoàn công và phiếu bảo hành.",
+      "icon": "award"
+    }
+  ],
+  "values": [
+    {
+      "title": "Đo trước, vẽ sau",
+      "text": "Không bản vẽ nào được làm khi chưa có số đo thực tế tại nhà bạn.",
+      "icon": "pen"
+    },
+    {
+      "title": "Giá rõ từng dòng",
+      "text": "Dự toán chia theo hạng mục, đơn giá công khai, mọi thay đổi đều báo bằng văn bản.",
+      "icon": "coins"
+    },
+    {
+      "title": "Thợ của chính mình",
+      "text": "Đội thi công làm việc với studio nhiều năm, nên chất lượng không phụ thuộc may rủi.",
+      "icon": "handshake"
+    }
+  ],
+  "titleprojects": {
+    "title": "Công trình gần đây",
+    "text": "Mỗi dự án ghi rõ diện tích, thời gian thi công và chi phí để bạn so với nhà mình."
+  },
+  "titlesteps": {
+    "title": "Bốn bước, mỗi bước có một sản phẩm bàn giao",
+    "text": "Bạn luôn biết mình đang ở bước nào và sẽ nhận gì khi bước đó kết thúc."
+  },
+  "titleteam": {
+    "title": "Đội ngũ"
+  },
+  "titlereviews": {
+    "title": "Khách nói gì sau một năm ở nhà mới",
+    "text": "Chúng tôi hỏi lại mọi khách sau 12 tháng và đăng nguyên văn."
+  },
+  "titleblog": {
+    "title": "Nhật ký thiết kế",
+    "text": "Ghi chép về vật liệu, mặt bằng và những gì chúng tôi học được ở công trình."
+  },
+  "titlevisit": {
+    "title": "Đến xem mẫu vật liệu"
+  },
+  "titlevalues": {
+    "title": "Ba điều chúng tôi giữ"
+  },
+  "titlecontact": {
+    "title": "Hai địa điểm để ghé"
+  },
+  "titlejournal": {
+    "title": "Nhật ký thiết kế",
+    "text": "Ghi chép về vật liệu, mặt bằng và những gì chúng tôi học được ở công trình, viết cho người sắp sửa nhà."
+  },
+  "titlesearch": {
+    "title": "Tìm bài viết, vật liệu, mặt bằng"
+  },
+  "titlenotfound": {
+    "title": "Trang này không có trong bản vẽ. Địa chỉ có thể đã đổi hoặc bài viết đã được gỡ."
+  }
+}

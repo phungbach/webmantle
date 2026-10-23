@@ -1,0 +1,46 @@
+import {
+  AlignLeft,
+  FolderTree,
+  GalleryHorizontal,
+  Heading,
+  Image as ImageIcon,
+  LayoutGrid,
+  LayoutPanelTop,
+  Megaphone,
+  Minus,
+  MousePointerClick,
+  MoveVertical,
+  Newspaper,
+  PanelTop,
+  PanelTopOpen,
+  Rows3,
+  Search,
+  Tags,
+  Type,
+  Box,
+  type LucideIcon,
+} from "lucide-react";
+
+// Only the icons BLOCK_DEFS uses, so the designer does not pull in the whole icon set.
+const MAP: Record<string, LucideIcon> = {
+  PanelTop,
+  LayoutGrid,
+  Rows3,
+  MoveVertical,
+  Minus,
+  Type,
+  Heading,
+  AlignLeft,
+  MousePointerClick,
+  Image: ImageIcon,
+  GalleryHorizontal,
+  PanelTopOpen,
+  LayoutPanelTop,
+  Megaphone,
+  Newspaper,
+  FolderTree,
+  Tags,
+  Search,
+};
+
+export const blockIcon = (name: string): LucideIcon => MAP[name] ?? Box;

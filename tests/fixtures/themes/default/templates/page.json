@@ -1,0 +1,15 @@
+{
+  "contractVersion": 1,
+  "root": {
+    "component": "Shell",
+    "children": [
+      { "component": "SiteHeader", "props": { "variant": "simple" } },
+      {
+        "component": "Section",
+        "props": { "width": "narrow" },
+        "children": [{ "component": "Breadcrumbs" }, { "component": "PageBody" }]
+      },
+      { "component": "SiteFooter", "props": { "variant": "simple" } }
+    ]
+  }
+}
