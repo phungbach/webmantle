@@ -2,7 +2,7 @@
   "contractVersion": 1,
   "id": "webcore",
   "name": "Webmantle (mặc định)",
-  "version": "1.17.3",
+  "version": "1.17.4",
   "description": "Giao diện mặc định đi kèm Webmantle: trang chủ giới thiệu Webmantle, trang giới thiệu và bộ hướng dẫn sử dụng có ảnh chụp màn hình. Màu chàm sạch sẽ, dễ đọc, dùng được ngay cho blog hoặc website giới thiệu.",
   "author": "Webmantle",
   "minimumCmsVersion": "1.0.0",
