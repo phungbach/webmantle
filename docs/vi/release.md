@@ -4,11 +4,11 @@
 
 `npm run release` kiểm tra mã (typecheck và test), build website rồi ghi các file sau vào `release/`:
 
-| File                          | Công dụng                                                                                                                                                                    |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| File                          | Công dụng                                                                                                                                                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `webmantle-vX.Y.Z.zip`        | Gói **build sẵn** để đưa lên hosting. Chứa website đã build, mã nguồn cần để khởi động, tài liệu, `app.js` (cPanel), `Dockerfile` và `docker-compose.yml`. Không có `.env`, cơ sở dữ liệu hay ảnh tải lên. |
-| `webmantle-vX.Y.Z-source.zip` | Mã nguồn đúng như đã commit trong git (chỉ tạo khi chạy trong một repo git).                                                                                                 |
-| `*.sha256`                    | Mã kiểm tra toàn vẹn.                                                                                                                                                        |
+| `webmantle-vX.Y.Z-source.zip` | Mã nguồn đúng như đã commit trong git (chỉ tạo khi chạy trong một repo git).                                                                                                                               |
+| `*.sha256`                    | Mã kiểm tra toàn vẹn.                                                                                                                                                                                      |
 
 Gói build sẵn dùng được trên nhiều hệ điều hành: nó không chứa `node_modules`, nên `npm ci` trên hosting sẽ cài các phần native (Prisma engine và `sharp`) đúng cho hệ thống của hosting.
 

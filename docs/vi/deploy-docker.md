@@ -95,19 +95,19 @@ docker cp webmantle:/app/data/backups ./backups
 
 ## Các thiết lập có thể cần
 
-| Biến                          | Ý nghĩa                                                                                                                                                                         |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `SKIP_SEED=true`              | Không chạy seed khi khởi động (vẫn chạy cập nhật cơ sở dữ liệu).                                                                                                                |
-| `DEMO_EMAIL`, `DEMO_PASSWORD` | Tạo tài khoản demo chỉ xem ở lần seed đầu.                                                                                                                                      |
-| `DEMO_PUBLIC_LOGIN=true`      | Bật liên kết `/demo` tự đăng nhập khách vào tài khoản demo. Chỉ bật trên site có dữ liệu mẫu: tài khoản demo xem được mọi thứ mà khu quản trị hiển thị.                         |
-| `TRUST_PROXY=true`            | Lấy địa chỉ khách từ `X-Forwarded-For` (chỉ dùng khi đứng sau proxy do bạn kiểm soát).                                                                                          |
+| Biến                          | Ý nghĩa                                                                                                                                                 |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SKIP_SEED=true`              | Không chạy seed khi khởi động (vẫn chạy cập nhật cơ sở dữ liệu).                                                                                        |
+| `DEMO_EMAIL`, `DEMO_PASSWORD` | Tạo tài khoản demo chỉ xem ở lần seed đầu.                                                                                                              |
+| `DEMO_PUBLIC_LOGIN=true`      | Bật liên kết `/demo` tự đăng nhập khách vào tài khoản demo. Chỉ bật trên site có dữ liệu mẫu: tài khoản demo xem được mọi thứ mà khu quản trị hiển thị. |
+| `TRUST_PROXY=true`            | Lấy địa chỉ khách từ `X-Forwarded-For` (chỉ dùng khi đứng sau proxy do bạn kiểm soát).                                                                  |
 
 ## Xử lý sự cố
 
-| Triệu chứng                          | Nguyên nhân thường gặp và cách sửa                                                                                                                       |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Container khởi động lại liên tục     | Xem `docker compose logs web`. Thường do thiếu `ADMIN_EMAIL` hoặc `ADMIN_PASSWORD` ở lần đầu, hoặc mật khẩu ngắn hơn 12 ký tự.                           |
-| "Unable to open the database file"   | Người dùng `node` không ghi được vào volume. Tạo lại volume, hoặc chạy `docker compose down` và xóa volume do `root` tạo.                                |
-| Prisma không nạp được engine         | Image dùng Debian có OpenSSL (cài trong Dockerfile). Đừng đổi sang Alpine nếu chưa thêm `binaryTargets` cho musl.                                        |
-| Build bị dừng hoặc rất chậm          | Cấp cho Docker ít nhất 2 GB bộ nhớ.                                                                                                                      |
-| Giới hạn đăng nhập áp dụng cho mọi người | Đặt `TRUST_PROXY=true` khi chạy sau proxy của bạn.                                                                                                   |
+| Triệu chứng                              | Nguyên nhân thường gặp và cách sửa                                                                                             |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Container khởi động lại liên tục         | Xem `docker compose logs web`. Thường do thiếu `ADMIN_EMAIL` hoặc `ADMIN_PASSWORD` ở lần đầu, hoặc mật khẩu ngắn hơn 12 ký tự. |
+| "Unable to open the database file"       | Người dùng `node` không ghi được vào volume. Tạo lại volume, hoặc chạy `docker compose down` và xóa volume do `root` tạo.      |
+| Prisma không nạp được engine             | Image dùng Debian có OpenSSL (cài trong Dockerfile). Đừng đổi sang Alpine nếu chưa thêm `binaryTargets` cho musl.              |
+| Build bị dừng hoặc rất chậm              | Cấp cho Docker ít nhất 2 GB bộ nhớ.                                                                                            |
+| Giới hạn đăng nhập áp dụng cho mọi người | Đặt `TRUST_PROXY=true` khi chạy sau proxy của bạn.                                                                             |

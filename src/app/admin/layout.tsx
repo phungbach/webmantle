@@ -48,7 +48,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       label: T("admin.group.content"),
       items: present([
         item("/admin/posts", T("admin.nav.posts"), "posts", true),
-        item("/admin/pages", T("admin.nav.pages"), "pages", canView(user.role, "content:write-any")),
+        item(
+          "/admin/pages",
+          T("admin.nav.pages"),
+          "pages",
+          canView(user.role, "content:write-any")
+        ),
         item(
           "/admin/categories",
           T("admin.nav.taxonomy"),

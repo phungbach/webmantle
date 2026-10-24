@@ -64,17 +64,13 @@
       "id": "docs",
       "label": "Trang tài liệu",
       "description": "Menu tài liệu bên trái, mục lục bên phải, nút trang trước và sau.",
-      "appliesTo": [
-        "page"
-      ]
+      "appliesTo": ["page"]
     },
     {
       "id": "roadmap",
       "label": "Trang lộ trình",
       "description": "Dòng thời gian các phiên bản: đã hoàn thành và dự kiến.",
-      "appliesTo": [
-        "page"
-      ]
+      "appliesTo": ["page"]
     }
   ]
 }

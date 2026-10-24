@@ -219,7 +219,9 @@ export const navItemSchema: z.ZodType<{
   href,
   icon: iconKey.optional(),
   children: z
-    .array(z.object({ label: text(60), href, text: text(160).optional(), icon: iconKey.optional() }))
+    .array(
+      z.object({ label: text(60), href, text: text(160).optional(), icon: iconKey.optional() })
+    )
     .max(20)
     .optional(),
 });

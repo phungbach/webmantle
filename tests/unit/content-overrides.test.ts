@@ -4,7 +4,11 @@ import { contentImageUrl } from "@/lib/themes/content-image";
 import { assetImage } from "@/lib/themes/content-schemas";
 
 describe("applyContentOverrides", () => {
-  const base = { hero: { title: "Base", text: "t" }, nav: [{ label: "A", href: "/a" }], cta: { x: 1 } };
+  const base = {
+    hero: { title: "Base", text: "t" },
+    nav: [{ label: "A", href: "/a" }],
+    cta: { x: 1 },
+  };
 
   it("replaces whole top-level keys, nothing deeper", () => {
     const out = applyContentOverrides(base, { hero: { title: "New" } });
@@ -57,7 +61,9 @@ describe("applyContentOverrides", () => {
 
 describe("contentImageUrl", () => {
   it("maps media references to the media route", () => {
-    expect(contentImageUrl("english-center", "1.4.0", "media/abcdefghij1")).toBe("/media/abcdefghij1");
+    expect(contentImageUrl("english-center", "1.4.0", "media/abcdefghij1")).toBe(
+      "/media/abcdefghij1"
+    );
   });
   it("maps asset files to the theme-assets route", () => {
     expect(contentImageUrl("english-center", "1.4.0", "assets/hero.jpg")).toBe(

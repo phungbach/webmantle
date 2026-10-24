@@ -70,7 +70,13 @@ afterEach(() => vi.restoreAllMocks());
 describe("settings hub page", () => {
   it("shows all five tabs to an admin and General by default", async () => {
     const { tabs, panels } = await render({});
-    expect(tabs.map((t) => t.id)).toEqual(["general", "appearance", "blog-style", "seo", "plugins"]);
+    expect(tabs.map((t) => t.id)).toEqual([
+      "general",
+      "appearance",
+      "blog-style",
+      "seo",
+      "plugins",
+    ]);
     expect(tabs.filter((t) => t.selected).map((t) => t.id)).toEqual(["general"]);
     expect(panels).toEqual(["GeneralPanel"]);
   });

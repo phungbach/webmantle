@@ -10,7 +10,10 @@
         "children": [
           { "component": "Breadcrumbs" },
           { "component": "ArchiveHeader", "props": { "showCount": true } },
-          { "component": "PostList", "props": { "layout": "list", "limit": 10, "showExcerpt": true } },
+          {
+            "component": "PostList",
+            "props": { "layout": "list", "limit": 10, "showExcerpt": true }
+          },
           { "component": "Pagination" }
         ]
       },

@@ -14,8 +14,7 @@ async function ready(page: Page) {
   await expect(page.locator("header[data-mobile-nav='ready']")).toHaveCount(1);
 }
 
-const bodyOverflow = (page: Page) =>
-  page.evaluate(() => getComputedStyle(document.body).overflow);
+const bodyOverflow = (page: Page) => page.evaluate(() => getComputedStyle(document.body).overflow);
 
 test("the toggle is hidden on desktop and visible on a phone", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });

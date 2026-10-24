@@ -69,7 +69,13 @@ beforeEach(async () => {
   editor = await createUser("editor");
   author = await createUser("author");
   const row = await prisma.page.create({
-    data: { slug: "about-us", title: "About us", body: "<p>Theme body</p>", status: "published", authorId: admin.id },
+    data: {
+      slug: "about-us",
+      title: "About us",
+      body: "<p>Theme body</p>",
+      status: "published",
+      authorId: admin.id,
+    },
   });
   pageId = row.id;
   pageSlug = row.slug;
@@ -152,7 +158,9 @@ describe("store: draft, publish, discard, reset", () => {
   });
 
   it("rejects unknown media, oversize and invalid documents", async () => {
-    const withImage = doc(section({ id: bid(), type: "Image", props: { mediaId: "doesnotexist1234" } }));
+    const withImage = doc(
+      section({ id: bid(), type: "Image", props: { mediaId: "doesnotexist1234" } })
+    );
     await expect(saveDraft(admin, page(), withImage)).rejects.toThrow(/no longer exists/i);
     const media = await prisma.media.create({
       data: { filename: "m.png", mimeType: "image/png", byteSize: 1 },
@@ -164,7 +172,9 @@ describe("store: draft, publish, discard, reset", () => {
     );
     await expect(saveDraft(admin, page(), "x".repeat(300 * 1024))).rejects.toThrow(/too large/i);
     await expect(saveDraft(admin, page(), doc(section(section())))).rejects.toThrow();
-    await expect(saveDraft(admin, { kind: "page", id: "nope" }, doc())).rejects.toThrow(/does not exist/i);
+    await expect(saveDraft(admin, { kind: "page", id: "nope" }, doc())).rejects.toThrow(
+      /does not exist/i
+    );
   });
 
   it("a stored draft that became invalid cannot be published", async () => {
@@ -208,7 +218,7 @@ describe("store: audit", () => {
     });
     for (const r of rows) {
       expect(r.detail).not.toContain(secret);
-      expect(r.detail).not.toContain("blocks\":[");
+      expect(r.detail).not.toContain('blocks":[');
       expect(r.actorId).toBe(admin.id);
     }
     expect(rows[0]).toMatchObject({ targetType: "page", targetId: pageId });
@@ -323,7 +333,9 @@ describe("composeLayout", () => {
     const bundle = await bundleFor("english-center");
     const raw = {
       version: 1,
-      blocks: [{ id: "abcdef1", type: "RichText", props: { html: "<p>ok</p><script>alert(1)</script>" } }],
+      blocks: [
+        { id: "abcdef1", type: "RichText", props: { html: "<p>ok</p><script>alert(1)</script>" } },
+      ],
     } as unknown as LayoutDoc;
     expect(JSON.stringify(composeLayout(bundle, "page", raw))).not.toContain("script");
   });
@@ -339,7 +351,13 @@ describe("rendering", () => {
         bundle={bundle}
         values={values}
         ctx={{
-          site: { title: "Site", description: "", url: "http://localhost", locale: "en", logoUrl: null } as never,
+          site: {
+            title: "Site",
+            description: "",
+            url: "http://localhost",
+            locale: "en",
+            logoUrl: null,
+          } as never,
           view: { kind, title: "T", layoutOverride: composeLayout(bundle, kind, parsed) } as never,
           preview: false,
         }}
@@ -384,8 +402,18 @@ describe("rendering", () => {
         bundle={bundle}
         values={await getThemeSettings("hien-studio", bundle.manifest.settingsSchema)}
         ctx={{
-          site: { title: "Site", description: "", url: "http://localhost", locale: "en", logoUrl: null } as never,
-          view: { kind: "page", title: "T", layoutOverride: composeLayout(bundle, "page", stored) } as never,
+          site: {
+            title: "Site",
+            description: "",
+            url: "http://localhost",
+            locale: "en",
+            logoUrl: null,
+          } as never,
+          view: {
+            kind: "page",
+            title: "T",
+            layoutOverride: composeLayout(bundle, "page", stored),
+          } as never,
           preview: false,
         }}
       />
@@ -398,8 +426,16 @@ describe("rendering", () => {
     const html = await renderDoc(
       doc(
         section(
-          { id: bid(), type: "Image", props: { alt: "UNIQUE-ALT-XYZ", caption: "UNIQUE-CAPTION-XYZ" } },
-          { id: bid(), type: "Button", props: { label: "Go there", href: "https://example.com/x", newTab: true } }
+          {
+            id: bid(),
+            type: "Image",
+            props: { alt: "UNIQUE-ALT-XYZ", caption: "UNIQUE-CAPTION-XYZ" },
+          },
+          {
+            id: bid(),
+            type: "Button",
+            props: { label: "Go there", href: "https://example.com/x", newTab: true },
+          }
         )
       )
     );
@@ -434,7 +470,9 @@ describe("rendering", () => {
 
   it("the home route uses the layout only after publishing", async () => {
     const { default: HomePage } = await import("@/app/page");
-    const find = (node: ReactNode): ReactElement<{ ctx?: { view: { layoutOverride?: LayoutNode } } }> | null => {
+    const find = (
+      node: ReactNode
+    ): ReactElement<{ ctx?: { view: { layoutOverride?: LayoutNode } } }> | null => {
       if (Array.isArray(node)) {
         for (const n of node) {
           const f = find(n);
@@ -443,7 +481,10 @@ describe("rendering", () => {
         return null;
       }
       if (!node || typeof node !== "object" || !("props" in node)) return null;
-      const el = node as ReactElement<{ ctx?: { view: { layoutOverride?: LayoutNode } }; children?: ReactNode }>;
+      const el = node as ReactElement<{
+        ctx?: { view: { layoutOverride?: LayoutNode } };
+        children?: ReactNode;
+      }>;
       if (el.props.ctx) return el;
       return find(el.props.children);
     };

@@ -132,7 +132,13 @@ describe("theme content overrides on the public site", () => {
       bundle,
       values: await getThemeSettings(EC, bundle.manifest.settingsSchema),
       ctx: {
-        site: { title: "S", description: "", url: "http://localhost", locale: "en", logoUrl: null } as never,
+        site: {
+          title: "S",
+          description: "",
+          url: "http://localhost",
+          locale: "en",
+          logoUrl: null,
+        } as never,
         view: { kind: "home", posts: [], total: 0, title: "Home" } as never,
         preview: false,
       } as never,

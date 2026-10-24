@@ -3791,7 +3791,13 @@ html {
 
 /* Trang 404: số 404 chuyển sắc và trôi nhẹ, các phần còn lại hiện dần */
 .cms-shell[data-template="not-found"] .cms-empty::before {
-  background: linear-gradient(100deg, var(--color-accent), color-mix(in srgb, var(--color-accent) 45%, #ffffff) 50%, var(--color-accent) 100%) 0 0 / 220% 100%;
+  background: linear-gradient(
+      100deg,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 45%, #ffffff) 50%,
+      var(--color-accent) 100%
+    )
+    0 0 / 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

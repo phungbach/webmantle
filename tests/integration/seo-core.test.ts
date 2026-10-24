@@ -74,7 +74,19 @@ describe("SEO settings", () => {
       twitterHandle: "hiennha_com",
       noindexSite: true,
     });
-    expect((await saveSeoSettings({ ...valid, separator: "|", homeTitle: "Home title", homeDescription: "Home description", defaultOgImageId: media.id, twitterHandle: "hiennha_com", noindexSite: true })).changed).toEqual([]);
+    expect(
+      (
+        await saveSeoSettings({
+          ...valid,
+          separator: "|",
+          homeTitle: "Home title",
+          homeDescription: "Home description",
+          defaultOgImageId: media.id,
+          twitterHandle: "hiennha_com",
+          noindexSite: true,
+        })
+      ).changed
+    ).toEqual([]);
   });
 
   it("rejects invalid input", async () => {
@@ -122,7 +134,12 @@ describe("root layout metadata", () => {
 
   it("applies the separator and the home title override", async () => {
     await setSiteSetting("siteTitle", "Hiennha.com");
-    await saveSeoSettings({ ...valid, separator: "—", homeTitle: "Nội thất đẹp", twitterHandle: "hien" });
+    await saveSeoSettings({
+      ...valid,
+      separator: "—",
+      homeTitle: "Nội thất đẹp",
+      twitterHandle: "hien",
+    });
     const m = await layoutMetadata();
     const title = m.title as { default: string; template: string };
     expect(title.template).toBe("%s — Hiennha.com");
@@ -159,7 +176,8 @@ describe("robots and sitemap", () => {
     expect(r.sitemap).toMatch(/sitemap\.xml$/);
     const rule = Array.isArray(r.rules) ? r.rules[0]! : r.rules;
     const disallow = ([] as string[]).concat(rule.disallow ?? []);
-    for (const p of ["/admin", "/preview", "/design-preview", "/search", "/api", "/login"]) expect(disallow).toContain(p);
+    for (const p of ["/admin", "/preview", "/design-preview", "/search", "/api", "/login"])
+      expect(disallow).toContain(p);
   });
 
   it("noindex site: blocks everything, no sitemap line, empty sitemap", async () => {
@@ -176,10 +194,22 @@ describe("robots and sitemap", () => {
     const cat = await prisma.category.create({ data: { name: "Có bài", slug: "co-bai" } });
     await prisma.category.create({ data: { name: "Trống", slug: "trong" } });
     await prisma.page.create({
-      data: { slug: "about", title: "About", body: "<p>x</p>", status: "published", authorId: editor.id },
+      data: {
+        slug: "about",
+        title: "About",
+        body: "<p>x</p>",
+        status: "published",
+        authorId: editor.id,
+      },
     });
     await prisma.page.create({
-      data: { slug: "secret-page", title: "S", body: "<p>x</p>", status: "draft", authorId: editor.id },
+      data: {
+        slug: "secret-page",
+        title: "S",
+        body: "<p>x</p>",
+        status: "draft",
+        authorId: editor.id,
+      },
     });
     await savePost(editor, postInput("live", { categoryIds: [cat.id] }));
     await savePost(editor, postInput("draft-one", { status: "draft" }));
@@ -204,7 +234,9 @@ describe("JSON-LD", () => {
   const nasty = `</script><script>alert(1)</script> & "q" \u2028 \u2029`;
   it("safeJsonLd escapes markup and stays valid JSON", () => {
     const out = safeJsonLd({ name: nasty, nested: [nasty] });
-    expect(out).not.toMatch(new RegExp(`[<>&${String.fromCharCode(0x2028)}${String.fromCharCode(0x2029)}]`));
+    expect(out).not.toMatch(
+      new RegExp(`[<>&${String.fromCharCode(0x2028)}${String.fromCharCode(0x2029)}]`)
+    );
     expect(JSON.parse(out).name).toBe(nasty);
   });
   it("breadcrumb output parses and has no raw <", () => {

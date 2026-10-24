@@ -16,7 +16,9 @@ const ALT = "E2E theme picture";
 test.beforeEach(async ({ context, baseURL, page }) => {
   await context.addCookies([{ name: "cms_locale", value: "en", url: baseURL! }]);
   page.on("dialog", (d) => void d.accept());
-  page.on("pageerror", (e) => problems.push(`pageerror at ${page.url()}: ${e.message.slice(0, 60)}`));
+  page.on("pageerror", (e) =>
+    problems.push(`pageerror at ${page.url()}: ${e.message.slice(0, 60)}`)
+  );
   page.on("console", (m) => {
     if (m.type() === "error") problems.push(`console.error: ${m.text()}`);
   });
@@ -140,7 +142,9 @@ test("edit texts in the preview: double click, Enter saves, Escape cancels", asy
   }
 });
 
-test("clicking a button selects it; label and link are edited in the inspector", async ({ page }) => {
+test("clicking a button selects it; label and link are edited in the inspector", async ({
+  page,
+}) => {
   await signIn(page);
   await openHome(page);
   try {
@@ -164,7 +168,9 @@ test("clicking a button selects it; label and link are edited in the inspector",
     await page.waitForTimeout(1500);
     await link.fill("/pages/e2e-target");
     await expect(inline).toHaveCount(0);
-    await expect.poll(async () => ce(page, "hero.primaryLabel").getAttribute("href"), { timeout: 20_000 }).toBe("/pages/e2e-target");
+    await expect
+      .poll(async () => ce(page, "hero.primaryLabel").getAttribute("href"), { timeout: 20_000 })
+      .toBe("/pages/e2e-target");
     const mid = await ce(page, "hero.primaryLabel").getAttribute("href");
     expect(mid).not.toContain("javascript");
   } finally {
@@ -183,11 +189,18 @@ test("pictures: choose from the library, then go back to the theme's own", async
     expect(original).toContain("/theme-assets/");
     await ce(page, "hero.image").click();
     await page.getByRole("button", { name: "Choose image" }).click();
-    await page.getByRole("dialog").getByRole("button", { name: new RegExp(ALT) }).click();
-    await expect.poll(() => ce(page, "hero.image").getAttribute("src"), { timeout: 20_000 }).toContain(`/media/${mediaId}`);
+    await page
+      .getByRole("dialog")
+      .getByRole("button", { name: new RegExp(ALT) })
+      .click();
+    await expect
+      .poll(() => ce(page, "hero.image").getAttribute("src"), { timeout: 20_000 })
+      .toContain(`/media/${mediaId}`);
 
     await page.getByRole("button", { name: "Use the theme's own image" }).click();
-    await expect.poll(() => ce(page, "hero.image").getAttribute("src"), { timeout: 20_000 }).toContain("/theme-assets/");
+    await expect
+      .poll(() => ce(page, "hero.image").getAttribute("src"), { timeout: 20_000 })
+      .toContain("/theme-assets/");
   } finally {
     await openHome(page);
     await resetKeyIfEdited(page, "hero.image");
@@ -209,7 +222,9 @@ test("list items: duplicate, move and delete a course, then reset the block", as
     await expect(titles()).toHaveCount(count + 1, { timeout: 20_000 });
 
     await page.getByRole("button", { name: "Move down" }).first().click();
-    await expect.poll(async () => (await titles().first().innerText()) === first, { timeout: 20_000 }).toBe(true);
+    await expect
+      .poll(async () => (await titles().first().innerText()) === first, { timeout: 20_000 })
+      .toBe(true);
     await page.getByRole("button", { name: "Remove item" }).first().click();
     await expect(titles()).toHaveCount(count, { timeout: 20_000 });
 
@@ -227,7 +242,9 @@ test("list items: duplicate, move and delete a course, then reset the block", as
   }
 });
 
-test("drafts stay private; Publish makes theme edits live site-wide; Discard restores", async ({ page }) => {
+test("drafts stay private; Publish makes theme edits live site-wide; Discard restores", async ({
+  page,
+}) => {
   await signIn(page);
   await openHome(page);
   const before = await publicPage(page);
@@ -278,24 +295,37 @@ test("markup typed as text is shown literally on the public page", async ({ page
   } finally {
     await openHome(page);
     await resetKeyIfEdited(page, "hero.title");
-    if (await page.getByRole("button", { name: "Publish", exact: true }).isEnabled()) await publish(page);
+    if (await page.getByRole("button", { name: "Publish", exact: true }).isEnabled())
+      await publish(page);
   }
   expect((await publicPage(page)).text).not.toContain("alert(1)");
 });
 
-test("an image used by the theme content cannot be deleted until it is released", async ({ page }) => {
+test("an image used by the theme content cannot be deleted until it is released", async ({
+  page,
+}) => {
   await signIn(page);
   await openHome(page);
   try {
     await ce(page, "hero.image").click();
     await page.getByRole("button", { name: "Choose image" }).click();
-    await page.getByRole("dialog").getByRole("button", { name: new RegExp(ALT) }).click();
-    await expect.poll(() => ce(page, "hero.image").getAttribute("src"), { timeout: 20_000 }).toContain(`/media/${mediaId}`);
+    await page
+      .getByRole("dialog")
+      .getByRole("button", { name: new RegExp(ALT) })
+      .click();
+    await expect
+      .poll(() => ce(page, "hero.image").getAttribute("src"), { timeout: 20_000 })
+      .toContain(`/media/${mediaId}`);
     await saved(page);
     await publish(page);
     expect((await publicPage(page)).heroImage).toContain(`/media/${mediaId}`);
 
-    const card = () => page.locator("div,article,section").filter({ has: page.locator(`img[alt="${ALT}"]`) }).filter({ has: page.getByRole("button", { name: "Delete" }) }).last();
+    const card = () =>
+      page
+        .locator("div,article,section")
+        .filter({ has: page.locator(`img[alt="${ALT}"]`) })
+        .filter({ has: page.getByRole("button", { name: "Delete" }) })
+        .last();
     await page.goto("/admin/media");
     await card().getByRole("button", { name: "Delete" }).click();
     await expect(page.getByText(/used by .*theme content/i)).toBeVisible();
@@ -312,7 +342,8 @@ test("an image used by the theme content cannot be deleted until it is released"
   } finally {
     await openHome(page);
     await resetKeyIfEdited(page, "hero.title").catch(() => {});
-    if (await page.getByRole("button", { name: "Publish", exact: true }).isEnabled()) await publish(page);
+    if (await page.getByRole("button", { name: "Publish", exact: true }).isEnabled())
+      await publish(page);
   }
 });
 
@@ -324,5 +355,7 @@ test("cleanup: switch back to the Editorial theme", async ({ page }) => {
     .filter({ has: page.getByRole("heading", { name: "Editorial" }) })
     .getByRole("button", { name: "Activate" })
     .click();
-  await expect(page.getByRole("status").filter({ hasText: /Activated|Editorial|default/ })).toBeVisible();
+  await expect(
+    page.getByRole("status").filter({ hasText: /Activated|Editorial|default/ })
+  ).toBeVisible();
 });

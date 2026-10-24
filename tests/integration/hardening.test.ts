@@ -10,7 +10,12 @@ import { createUser, installBuiltIns, resetDatabase } from "../helpers/db";
 const nav = vi.hoisted(() => ({ headers: new Map<string, string>() }));
 vi.mock("next/headers", () => ({
   headers: async () => new Headers([...nav.headers.entries()]),
-  cookies: async () => ({ get: () => undefined, set: () => {}, delete: () => {}, getAll: () => [] }),
+  cookies: async () => ({
+    get: () => undefined,
+    set: () => {},
+    delete: () => {},
+    getAll: () => [],
+  }),
 }));
 vi.mock("next/navigation", () => ({
   redirect: (url: string) => {
@@ -76,7 +81,8 @@ describe("login rate limits", () => {
     }
     return "no-redirect";
   }
-  const tooMany = (msg: string) => msg.startsWith("REDIRECT:/login?error=") && /minute|phút|15/i.test(decodeURIComponent(msg));
+  const tooMany = (msg: string) =>
+    msg.startsWith("REDIRECT:/login?error=") && /minute|phút|15/i.test(decodeURIComponent(msg));
 
   it("a spoofed x-forwarded-for does not reset the per-IP limit", async () => {
     vi.stubEnv("TRUST_PROXY", "");
@@ -153,14 +159,21 @@ describe("POST /api/track origin checks", () => {
     expect((await post({ "sec-fetch-site": "same-origin" })).status).toBe(204);
     expect(await views()).toBe(1);
     await prisma.pageView.deleteMany();
-    for (const headers of [{} as Record<string, string>,{ "sec-fetch-site": "cross-site" }, { "sec-fetch-site": "none" }]) {
+    for (const headers of [
+      {} as Record<string, string>,
+      { "sec-fetch-site": "cross-site" },
+      { "sec-fetch-site": "none" },
+    ]) {
       const res = await post(headers);
       expect(res.status).toBe(204);
     }
     expect(await views()).toBe(0);
   });
   it("answers 413 for a body over 2000 characters", async () => {
-    const res = await post({ origin: "http://localhost:3000" }, JSON.stringify({ path: "/", x: "a".repeat(2100) }));
+    const res = await post(
+      { origin: "http://localhost:3000" },
+      JSON.stringify({ path: "/", x: "a".repeat(2100) })
+    );
     expect(res.status).toBe(413);
   });
   it("honours DNT and GPC with a quiet 204", async () => {
@@ -245,8 +258,7 @@ describe("next.config security headers", () => {
   });
 
   // The designer preview is the one place the admin may frame; the final path is /design-preview.
-  const sourceRegex = (source: string) =>
-    new RegExp(`^${source.replace(/:path\*/g, ".*")}$`);
+  const sourceRegex = (source: string) => new RegExp(`^${source.replace(/:path\*/g, ".*")}$`);
   const valueOf = (rule: { headers: { key: string; value: string }[] }, key: string) =>
     rule.headers.find((h) => h.key === key)?.value;
 
@@ -278,15 +290,15 @@ describe("next.config security headers", () => {
     // The phone-size theme preview (/preview/<theme>) is framed by the admin page too, same origin only.
     const themePreview = "/preview/webcore";
     const themeRule = rules.find(
-      (r) => valueOf(r, "X-Frame-Options") === "SAMEORIGIN" && sourceRegex(r.source).test(themePreview)
+      (r) =>
+        valueOf(r, "X-Frame-Options") === "SAMEORIGIN" && sourceRegex(r.source).test(themePreview)
     )!;
     expect(themeRule).toBeDefined();
     expect(valueOf(themeRule, "Content-Security-Policy")).toContain("frame-ancestors 'self'");
     expect(denied(themePreview)).toBe(false);
     // Everywhere else the CSP forbids framing too.
     const global = cspRules.find(
-      (r) =>
-        !sourceRegex(r.source).test(previewPath) && !sourceRegex(r.source).test(themePreview)
+      (r) => !sourceRegex(r.source).test(previewPath) && !sourceRegex(r.source).test(themePreview)
     )!;
     expect(valueOf(global, "Content-Security-Policy")).toContain("frame-ancestors 'none'");
     expect(denied("/")).toBe(true);

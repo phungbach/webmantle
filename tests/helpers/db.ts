@@ -40,7 +40,10 @@ export async function resetDatabase() {
   clearBundleCache();
 }
 
-export async function createUser(role: "admin" | "editor" | "author" | "viewer", name: string = role) {
+export async function createUser(
+  role: "admin" | "editor" | "author" | "viewer",
+  name: string = role
+) {
   const user = await prisma.user.create({
     data: {
       email: `${role}-${Math.random().toString(36).slice(2, 8)}@example.com`,

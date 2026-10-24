@@ -34,8 +34,7 @@ beforeAll(async () => {
   gif = path.join(dir, "anim.gif");
   await noise(2000, 1200).jpeg().toFile(big);
   await noise(500, 300).png().toFile(small);
-  const frame = (r: number) =>
-    Buffer.alloc(40 * 40 * 3, 0).map((_, i) => (i % 3 === 0 ? r : 80));
+  const frame = (r: number) => Buffer.alloc(40 * 40 * 3, 0).map((_, i) => (i % 3 === 0 ? r : 80));
   const two = Buffer.concat([frame(255), frame(10)]);
   await sharp(two, { raw: { width: 40, height: 80, channels: 3, pageHeight: 40 } })
     .gif({ loop: 0, delay: [100, 100] })
@@ -53,7 +52,9 @@ describe("parseImageParams / imageSrcSet", () => {
     expect(parseImageParams(new URLSearchParams({ format: "bogus" })).format).toBe("webp");
   });
   it("builds a srcset from the whitelist", () => {
-    expect(imageSrcSet("/media/x")).toBe(ALLOWED_WIDTHS.map((w) => `/media/x?w=${w} ${w}w`).join(", "));
+    expect(imageSrcSet("/media/x")).toBe(
+      ALLOWED_WIDTHS.map((w) => `/media/x?w=${w} ${w}w`).join(", ")
+    );
     expect(imageSrcSet("/media/x?a=1", [480])).toBe("/media/x?a=1&w=480 480w");
     expect(ALLOWED_WIDTHS).toEqual([320, 480, 640, 800, 1024, 1280, 1600]);
   });
@@ -95,7 +96,9 @@ describe("getImageVariant", () => {
     expect(Buffer.compare(bufOf(a), bufOf(b))).toBe(0);
     expect(a.etag).not.toBe((await getImageVariant(file, { width: 640 })).etag);
     const cacheDir = path.join(process.env.CMS_DATA_DIR!, "cache", "images");
-    expect(fs.readdirSync(cacheDir).some((f) => a.etag.includes(f.replace(".webp", "")))).toBe(true);
+    expect(fs.readdirSync(cacheDir).some((f) => a.etag.includes(f.replace(".webp", "")))).toBe(
+      true
+    );
 
     await sharp({ create: { width: 900, height: 600, channels: 3, background: "#abcdef" } })
       .jpeg()
@@ -177,7 +180,9 @@ describe("/media/[id] with ?w=", () => {
     expect((await get("", { "if-none-match": oetag })).status).toBe(304);
   });
   it("still 404s for bad ids", async () => {
-    const res = await mediaGET(new Request("http://x"), { params: Promise.resolve({ id: "../etc" }) });
+    const res = await mediaGET(new Request("http://x"), {
+      params: Promise.resolve({ id: "../etc" }),
+    });
     expect(res.status).toBe(404);
   });
 });
@@ -194,7 +199,10 @@ describe("/theme-assets with ?w=", () => {
   it("resizes theme images by Accept and supports 304", async () => {
     const version = (await getInstalledTheme("default"))!.version;
     const url = "http://localhost/theme-assets/default/x/assets/thumbnail.jpg?w=320";
-    const webp = await assetGET(new Request(url, { headers: { accept: "image/webp" } }), params(version, ["assets", "thumbnail.jpg"]));
+    const webp = await assetGET(
+      new Request(url, { headers: { accept: "image/webp" } }),
+      params(version, ["assets", "thumbnail.jpg"])
+    );
     expect(webp.status).toBe(200);
     expect(webp.headers.get("content-type")).toBe("image/webp");
     expect(webp.headers.get("cache-control")).toContain("immutable");
@@ -209,7 +217,12 @@ describe("/theme-assets with ?w=", () => {
   });
   it("keeps path validation: traversal, hidden files and manifests are 404", async () => {
     const version = (await getInstalledTheme("default"))!.version;
-    for (const segs of [["..", "..", "cms.db"], [".secret.key"], ["theme.json"], ["assets", "..", "theme.json"]]) {
+    for (const segs of [
+      ["..", "..", "cms.db"],
+      [".secret.key"],
+      ["theme.json"],
+      ["assets", "..", "theme.json"],
+    ]) {
       const res = await assetGET(new Request("http://x?w=320"), params(version, segs));
       expect(res.status).toBe(404);
     }

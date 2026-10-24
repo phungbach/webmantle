@@ -10,7 +10,10 @@
         "children": [
           { "component": "ArchiveHeader", "props": { "showCount": true } },
           { "component": "SearchForm", "props": { "placeholder": "Tìm bài viết" } },
-          { "component": "PostList", "props": { "layout": "list", "limit": 10, "showExcerpt": true } },
+          {
+            "component": "PostList",
+            "props": { "layout": "list", "limit": 10, "showExcerpt": true }
+          },
           { "component": "Pagination" }
         ]
       },

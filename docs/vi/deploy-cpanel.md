@@ -27,13 +27,13 @@ Muốn tự build, chạy `npm run release` trên máy của bạn (xem [release
 
 Mở **Setup Node.js App → Create Application** và điền:
 
-| Trường                   | Giá trị                                |
-| ------------------------ | -------------------------------------- |
-| Node.js version          | 22 (hoặc bản 20.9+ mới nhất)           |
-| Application mode         | Production                             |
-| Application root         | `webmantle` (thư mục ở bước 2)         |
-| Application URL          | tên miền hoặc tên miền phụ của bạn     |
-| Application startup file | `app.js`                               |
+| Trường                   | Giá trị                            |
+| ------------------------ | ---------------------------------- |
+| Node.js version          | 22 (hoặc bản 20.9+ mới nhất)       |
+| Application mode         | Production                         |
+| Application root         | `webmantle` (thư mục ở bước 2)     |
+| Application URL          | tên miền hoặc tên miền phụ của bạn |
+| Application startup file | `app.js`                           |
 
 Bấm **Create**. Đừng tải thư mục `node_modules` lên: cPanel tự quản lý thư mục này.
 
@@ -106,12 +106,12 @@ Nếu muốn build ngay trên hosting: tải gói **mã nguồn** (`webmantle-v1
 
 ## Xử lý sự cố
 
-| Triệu chứng                                              | Nguyên nhân thường gặp và cách sửa                                                                                                         |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| "Incomplete response" hoặc trang lỗi Passenger           | Mở `stderr.log` trong thư mục ứng dụng (hoặc **Setup Node.js App → Open log**). Thường do thiếu giá trị trong `.env` hoặc chưa chạy `npm ci`. |
-| Lỗi nhắc tới `@prisma/client` hoặc query engine          | Chạy lại `npm ci` trong môi trường ảo của ứng dụng; kiểm tra phiên bản Node.js trùng với phiên bản đã chọn trong ứng dụng.                  |
-| `Error: Could not find a production build`               | Thiếu thư mục `.next`. Dùng gói build sẵn, hoặc chạy `npm run build`.                                                                      |
-| "Unable to open the database file"                       | `DATABASE_URL` trỏ tới thư mục không tồn tại hoặc không ghi được. Tạo thư mục và kiểm tra quyền.                                           |
-| Mọi người dùng chung một giới hạn đăng nhập              | `TRUST_PROXY` chưa là `true`, nên mọi khách trông như cùng một địa chỉ.                                                                    |
-| Hết bộ nhớ khi chạy `npm ci` hoặc khi build              | Dùng gói build sẵn; nhờ nhà cung cấp tăng giới hạn bộ nhớ.                                                                                 |
-| Ảnh không hiện sau khi nâng cấp                          | `CMS_DATA_DIR` đã bị đổi. Giá trị này phải giữ nguyên giữa các lần nâng cấp.                                                               |
+| Triệu chứng                                     | Nguyên nhân thường gặp và cách sửa                                                                                                            |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| "Incomplete response" hoặc trang lỗi Passenger  | Mở `stderr.log` trong thư mục ứng dụng (hoặc **Setup Node.js App → Open log**). Thường do thiếu giá trị trong `.env` hoặc chưa chạy `npm ci`. |
+| Lỗi nhắc tới `@prisma/client` hoặc query engine | Chạy lại `npm ci` trong môi trường ảo của ứng dụng; kiểm tra phiên bản Node.js trùng với phiên bản đã chọn trong ứng dụng.                    |
+| `Error: Could not find a production build`      | Thiếu thư mục `.next`. Dùng gói build sẵn, hoặc chạy `npm run build`.                                                                         |
+| "Unable to open the database file"              | `DATABASE_URL` trỏ tới thư mục không tồn tại hoặc không ghi được. Tạo thư mục và kiểm tra quyền.                                              |
+| Mọi người dùng chung một giới hạn đăng nhập     | `TRUST_PROXY` chưa là `true`, nên mọi khách trông như cùng một địa chỉ.                                                                       |
+| Hết bộ nhớ khi chạy `npm ci` hoặc khi build     | Dùng gói build sẵn; nhờ nhà cung cấp tăng giới hạn bộ nhớ.                                                                                    |
+| Ảnh không hiện sau khi nâng cấp                 | `CMS_DATA_DIR` đã bị đổi. Giá trị này phải giữ nguyên giữa các lần nâng cấp.                                                                  |

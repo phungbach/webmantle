@@ -54,24 +54,24 @@ Mỗi tệp là một cây component, bắt đầu bằng `Shell`. Ví dụ:
 
 Các component có sẵn và prop chính:
 
-| Component                        | Prop chính                                                                 |
-| -------------------------------- | -------------------------------------------------------------------------- |
-| `Shell`                          | không có. Đặt ở gốc của mọi template.                                      |
-| `Section`                        | `width`: narrow, content, wide, full                                       |
-| `Grid`, `Stack`                  | `columns` 1–4 (Grid), `gap` sm, md, lg                                     |
-| `SiteHeader`                     | `variant`: simple, centered, split, mega (mega cần `content.json`)         |
-| `SiteFooter`                     | `variant`: simple, columns                                                 |
-| `Breadcrumbs`                    | không có. Tự ẩn ở trang chủ và 404.                                        |
-| `Hero`                           | `eyebrow`, `showDescription`                                               |
-| `PostList`                       | `layout`: list, grid, compact; `limit` 1–24; `showExcerpt`; `skipFeatured` |
-| `PostDetail`                     | `showFeaturedImage`                                                        |
-| `RelatedPosts`                   | `limit` 1–12                                                               |
-| `PageBody`                       | không có. Nội dung trang tĩnh.                                             |
-| `ArchiveHeader`                  | `showCount`                                                                |
-| `Pagination`                     | không có                                                                   |
-| `SearchForm`                     | `placeholder`                                                              |
-| `EmptyState`                     | `message`                                                                  |
-| `CategoryList`, `TagList`        | `limit`                                                                    |
+| Component                 | Prop chính                                                                 |
+| ------------------------- | -------------------------------------------------------------------------- |
+| `Shell`                   | không có. Đặt ở gốc của mọi template.                                      |
+| `Section`                 | `width`: narrow, content, wide, full                                       |
+| `Grid`, `Stack`           | `columns` 1–4 (Grid), `gap` sm, md, lg                                     |
+| `SiteHeader`              | `variant`: simple, centered, split, mega (mega cần `content.json`)         |
+| `SiteFooter`              | `variant`: simple, columns                                                 |
+| `Breadcrumbs`             | không có. Tự ẩn ở trang chủ và 404.                                        |
+| `Hero`                    | `eyebrow`, `showDescription`                                               |
+| `PostList`                | `layout`: list, grid, compact; `limit` 1–24; `showExcerpt`; `skipFeatured` |
+| `PostDetail`              | `showFeaturedImage`                                                        |
+| `RelatedPosts`            | `limit` 1–12                                                               |
+| `PageBody`                | không có. Nội dung trang tĩnh.                                             |
+| `ArchiveHeader`           | `showCount`                                                                |
+| `Pagination`              | không có                                                                   |
+| `SearchForm`              | `placeholder`                                                              |
+| `EmptyState`              | `message`                                                                  |
+| `CategoryList`, `TagList` | `limit`                                                                    |
 
 Component nhận dữ liệu từ CMS. Theme không truy vấn cơ sở dữ liệu.
 

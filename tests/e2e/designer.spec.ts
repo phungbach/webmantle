@@ -9,7 +9,9 @@ const problems: string[] = [];
 test.beforeEach(async ({ context, baseURL, page }) => {
   await context.addCookies([{ name: "cms_locale", value: "en", url: baseURL! }]);
   page.on("dialog", (d) => void d.accept());
-  page.on("pageerror", (e) => problems.push(`pageerror at ${page.url()}: ${e.message.slice(0, 60)}`));
+  page.on("pageerror", (e) =>
+    problems.push(`pageerror at ${page.url()}: ${e.message.slice(0, 60)}`)
+  );
   page.on("console", (m) => {
     if (m.type() === "error") problems.push(`console.error: ${m.text()}`);
   });
@@ -60,7 +62,8 @@ const tree = (page: Page) => page.getByRole("tree", { name: "Structure" });
 const rows = (page: Page) => tree(page).getByRole("treeitem");
 const rowOf = (page: Page, text: string | RegExp) => rows(page).filter({ hasText: text }).first();
 const frame = (page: Page) => page.frameLocator('iframe[title="Canvas"]');
-const status = (page: Page) => page.getByRole("status").filter({ hasText: /Saved|Saving|Unsaved|Fix errors|Save failed/ });
+const status = (page: Page) =>
+  page.getByRole("status").filter({ hasText: /Saved|Saving|Unsaved|Fix errors|Save failed/ });
 
 /** The block names in the tree, top to bottom. */
 async function order(page: Page): Promise<string[]> {
@@ -78,7 +81,12 @@ async function open(page: Page, designer: string) {
   await expect(frame(page).locator("body")).toBeVisible({ timeout: 20_000 });
 }
 
-async function dragHandle(page: Page, handle: Locator, target: Locator, where: "top" | "middle" | "bottom") {
+async function dragHandle(
+  page: Page,
+  handle: Locator,
+  target: Locator,
+  where: "top" | "middle" | "bottom"
+) {
   const from = (await handle.boundingBox())!;
   const to = (await target.boundingBox())!;
   const y = to.y + (where === "top" ? 3 : where === "bottom" ? to.height - 3 : to.height / 2);
@@ -95,14 +103,21 @@ test("entry points: Design link, Designed badge and the home design buttons", as
   await signIn(page);
   a = await createPage(page, "Designer A", "Theme body A");
   await page.goto("/admin/pages");
-  await expect(page.getByRole("row").filter({ hasText: "Designer A" }).getByRole("link", { name: "Design", exact: true })).toBeVisible();
+  await expect(
+    page
+      .getByRole("row")
+      .filter({ hasText: "Designer A" })
+      .getByRole("link", { name: "Design", exact: true })
+  ).toBeVisible();
   await page.goto(`/admin/pages/${a.id}`);
   await expect(page.getByRole("link", { name: "Design this page" })).toBeVisible();
   await page.goto("/admin/settings");
   await expect(page.getByRole("link", { name: /Design the home page/ }).first()).toBeVisible();
 });
 
-test("add blocks from the palette, edit in the inspector, select from the preview", async ({ page }) => {
+test("add blocks from the palette, edit in the inspector, select from the preview", async ({
+  page,
+}) => {
   await signIn(page);
   await open(page, a.designer);
   await expect(status(page)).toContainText("Saved");
@@ -118,20 +133,26 @@ test("add blocks from the palette, edit in the inspector, select from the previe
   await expect(rowOf(page, /^Heading/)).toHaveAttribute("aria-level", "2");
 
   await show(page, "Structure");
-  await rowOf(page, /^Heading/).locator("[data-row-id]").click();
+  await rowOf(page, /^Heading/)
+    .locator("[data-row-id]")
+    .click();
   await page.getByLabel("Text", { exact: true }).fill("Hello designer");
   await expect(frame(page).getByText("Hello designer")).toBeVisible({ timeout: 20_000 });
   await expect(status(page)).toContainText("Saved", { timeout: 15_000 });
 
   // Selecting inside the preview moves the selection in the inspector.
-  await rowOf(page, /^Button/).locator("[data-row-id]").click();
+  await rowOf(page, /^Button/)
+    .locator("[data-row-id]")
+    .click();
   await expect(page.getByRole("heading", { name: "Button", exact: true })).toBeVisible();
   await frame(page).getByText("Hello designer").click();
   await expect(page.getByRole("heading", { name: "Heading", exact: true })).toBeVisible();
   await expect(rowOf(page, /^Heading/)).toHaveAttribute("aria-selected", "true");
 });
 
-test("reorder with buttons, mouse drag and keyboard; invalid drops change nothing", async ({ page }) => {
+test("reorder with buttons, mouse drag and keyboard; invalid drops change nothing", async ({
+  page,
+}) => {
   await signIn(page);
   const p = await createPage(page, "Designer B", "Theme body B");
   await open(page, p.designer);
@@ -143,20 +164,28 @@ test("reorder with buttons, mouse drag and keyboard; invalid drops change nothin
   expect(base.slice(0, 3)).toEqual(["Section", "Heading", "Button"]);
 
   // Move buttons.
-  await rowOf(page, /^Button/).getByRole("button", { name: "Move up" }).click();
+  await rowOf(page, /^Button/)
+    .getByRole("button", { name: "Move up" })
+    .click();
   expect((await order(page)).slice(0, 3)).toEqual(["Section", "Button", "Heading"]);
-  await rowOf(page, /^Button/).getByRole("button", { name: "Move down" }).click();
+  await rowOf(page, /^Button/)
+    .getByRole("button", { name: "Move down" })
+    .click();
   expect((await order(page)).slice(0, 3)).toEqual(["Section", "Heading", "Button"]);
 
   // Alt+Arrow on the focused row.
-  await rowOf(page, /^Button/).locator("[data-row-id]").focus();
+  await rowOf(page, /^Button/)
+    .locator("[data-row-id]")
+    .focus();
   await page.keyboard.press("Alt+ArrowUp");
   expect((await order(page)).slice(0, 3)).toEqual(["Section", "Button", "Heading"]);
 
   // Mouse drag: Heading above Button (top third of the Button row).
   const handle = rowOf(page, /^Heading/).getByRole("button", { name: /Drag to move/ });
   await dragHandle(page, handle, rowOf(page, /^Button/), "top");
-  await expect.poll(async () => (await order(page)).slice(0, 3)).toEqual(["Section", "Heading", "Button"]);
+  await expect
+    .poll(async () => (await order(page)).slice(0, 3))
+    .toEqual(["Section", "Heading", "Button"]);
 
   // Keyboard drag: Space, ArrowDown, Space.
   const kb = rowOf(page, /^Heading/).getByRole("button", { name: /Drag to move/ });
@@ -166,7 +195,9 @@ test("reorder with buttons, mouse drag and keyboard; invalid drops change nothin
     await page.keyboard.press(key);
     await page.waitForTimeout(250);
   }
-  await expect.poll(async () => (await order(page)).slice(0, 3)).not.toEqual(["Section", "Heading", "Button"]);
+  await expect
+    .poll(async () => (await order(page)).slice(0, 3))
+    .not.toEqual(["Section", "Heading", "Button"]);
 
   // Escape cancels a keyboard drag.
   const before = await order(page);
@@ -180,7 +211,9 @@ test("reorder with buttons, mouse drag and keyboard; invalid drops change nothin
 
   // Invalid drop: a second Section dropped into a Grid. Nothing changes.
   await show(page, "Structure");
-  await rowOf(page, /^Section/).locator("[data-row-id]").click();
+  await rowOf(page, /^Section/)
+    .locator("[data-row-id]")
+    .click();
   await add(page, "Grid");
   await show(page, "Structure");
   await rowOf(page, /^Grid/).locator("[data-row-id]").click();
@@ -208,11 +241,15 @@ test("an invalid link shows an inline error and blocks Publish", async ({ page }
   const publish = page.getByRole("button", { name: "Publish", exact: true });
   await expect(publish).toBeEnabled();
   await page.getByLabel("Link", { exact: true }).fill("javascript:alert(1)");
-  await expect(page.getByRole("alert").filter({ hasText: "Use a path starting with /" })).toBeVisible();
+  await expect(
+    page.getByRole("alert").filter({ hasText: "Use a path starting with /" })
+  ).toBeVisible();
   await expect(publish).toBeDisabled();
   await expect(status(page)).toContainText("Fix errors to save");
   await page.getByLabel("Link", { exact: true }).fill("/pages/ok");
-  await expect(page.getByRole("alert").filter({ hasText: "Use a path starting with /" })).toHaveCount(0);
+  await expect(
+    page.getByRole("alert").filter({ hasText: "Use a path starting with /" })
+  ).toHaveCount(0);
   await expect(publish).toBeEnabled();
 });
 
@@ -247,7 +284,11 @@ test("undo, redo and the device toggle", async ({ page }) => {
   await expect.poll(width).toBeGreaterThan(desktop - 5);
 });
 
-test("draft is private, publish goes live and strips XSS, discard and reset work", async ({ page, request, context }) => {
+test("draft is private, publish goes live and strips XSS, discard and reset work", async ({
+  page,
+  request,
+  context,
+}) => {
   await signIn(page);
   const p = await createPage(page, "Designer E", "Original theme body E");
   // What a visitor sees (the raw HTML also carries the stored page text in the RSC payload).
@@ -288,7 +329,9 @@ test("draft is private, publish goes live and strips XSS, discard and reset work
 
     await page.getByRole("button", { name: "Publish", exact: true }).click();
     await expect(page.getByText("Published", { exact: true })).toBeVisible({ timeout: 15_000 });
-    await expect.poll(async () => (await publicHtml()).text.includes("Live designer heading")).toBe(true);
+    await expect
+      .poll(async () => (await publicHtml()).text.includes("Live designer heading"))
+      .toBe(true);
     const visible = await publicHtml();
     expect(visible.text).toContain("Rich words");
     expect(visible.text).not.toContain("Original theme body E");
@@ -301,7 +344,9 @@ test("draft is private, publish goes live and strips XSS, discard and reset work
     await expect(page.getByText("Published", { exact: true })).toBeVisible();
 
     // A change makes the draft differ; discarding brings the published layout back.
-    await rowOf(page, /^Heading/).getByRole("button", { name: "Delete" }).click();
+    await rowOf(page, /^Heading/)
+      .getByRole("button", { name: "Delete" })
+      .click();
     await expect(page.getByText("Draft differs from live")).toBeVisible();
     await expect(status(page)).toContainText("Saved", { timeout: 15_000 });
     await page.locator('summary[aria-label="More options"]').click();
@@ -319,12 +364,19 @@ test("draft is private, publish goes live and strips XSS, discard and reset work
     await page.locator('summary[aria-label="More options"]').click();
     const resetItem = page.getByRole("button", { name: "Reset to theme" });
     if (await resetItem.isEnabled()) await resetItem.click();
-    await expect.poll(async () => (await publicHtml()).text.includes("Original theme body E"), { timeout: 15_000 }).toBe(true);
+    await expect
+      .poll(async () => (await publicHtml()).text.includes("Original theme body E"), {
+        timeout: 15_000,
+      })
+      .toBe(true);
   }
   expect((await publicHtml()).text).not.toContain("Live designer heading");
 });
 
-test("the home page designer publishes to the public home, then resets", async ({ page, request }) => {
+test("the home page designer publishes to the public home, then resets", async ({
+  page,
+  request,
+}) => {
   await signIn(page);
   const homeHtml = async () => (await request.get("/")).text();
   try {
@@ -334,16 +386,23 @@ test("the home page designer publishes to the public home, then resets", async (
     await page.getByLabel("Text", { exact: true }).fill("Designed home heading");
     await expect(status(page)).toContainText("Saved", { timeout: 15_000 });
     await page.getByRole("button", { name: "Publish", exact: true }).click();
-    await expect.poll(async () => (await homeHtml()).includes("Designed home heading"), { timeout: 20_000 }).toBe(true);
+    await expect
+      .poll(async () => (await homeHtml()).includes("Designed home heading"), { timeout: 20_000 })
+      .toBe(true);
   } finally {
     await open(page, "/admin/design/home");
     await page.locator('summary[aria-label="More options"]').click();
     await page.getByRole("button", { name: "Reset to theme" }).click();
-    await expect.poll(async () => (await homeHtml()).includes("Designed home heading"), { timeout: 20_000 }).toBe(false);
+    await expect
+      .poll(async () => (await homeHtml()).includes("Designed home heading"), { timeout: 20_000 })
+      .toBe(false);
   }
 });
 
-test("anonymous visitors cannot reach the designer or its preview", async ({ browser, baseURL }) => {
+test("anonymous visitors cannot reach the designer or its preview", async ({
+  browser,
+  baseURL,
+}) => {
   const context = await browser.newContext();
   const page = await context.newPage();
   for (const path of [a.designer, "/admin/design/home"]) {
@@ -369,8 +428,9 @@ test("the preview route can only be framed by the admin itself", async ({ page }
   expect(normal.headers()["x-frame-options"]).toBe("DENY");
 });
 
-
-test("typing markup-like text character by character, across an autosave, never crashes the editor", async ({ page }) => {
+test("typing markup-like text character by character, across an autosave, never crashes the editor", async ({
+  page,
+}) => {
   await signIn(page);
   const p = await createPage(page, "Designer F", "Theme body F");
   const errors: string[] = [];
@@ -413,7 +473,9 @@ test("Discard re-syncs the editor without a reload", async ({ page }) => {
     await expect(page.getByText("Published", { exact: true })).toBeVisible({ timeout: 15_000 });
     // Edit and let the autosave store the draft.
     await show(page, "Structure");
-    await rowOf(page, /^Heading/).getByRole("button", { name: "Delete" }).click();
+    await rowOf(page, /^Heading/)
+      .getByRole("button", { name: "Delete" })
+      .click();
     expect(await order(page)).toEqual(["Section"]);
     await expect(page.getByText("Draft differs from live")).toBeVisible();
     await expect(status(page)).toContainText("Saved", { timeout: 15_000 });
@@ -445,20 +507,22 @@ test("Reset empties the editor without a reload and it stays empty", async ({ pa
   await page.getByRole("button", { name: "Publish", exact: true }).click();
   await expect(page.getByText("Published", { exact: true })).toBeVisible({ timeout: 15_000 });
   await show(page, "Structure");
-  await rowOf(page, /^Heading/).getByRole("button", { name: "Delete" }).click();
+  await rowOf(page, /^Heading/)
+    .getByRole("button", { name: "Delete" })
+    .click();
   await expect(status(page)).toContainText("Saved", { timeout: 15_000 });
 
   await page.locator('summary[aria-label="More options"]').click();
   await page.getByRole("button", { name: "Reset to theme" }).click();
   await expect.poll(() => order(page), { timeout: 15_000 }).toEqual([]);
   // No layout means visitors see the theme's own template, so nothing is unpublished.
-    await expect(page.getByText("Published", { exact: true })).toBeVisible();
+  await expect(page.getByText("Published", { exact: true })).toBeVisible();
   await page.waitForTimeout(3000);
   expect(await order(page)).toEqual([]);
   await open(page, p.designer);
   expect(await order(page)).toEqual([]);
   // No layout means visitors see the theme's own template, so nothing is unpublished.
-    await expect(page.getByText("Published", { exact: true })).toBeVisible();
+  await expect(page.getByText("Published", { exact: true })).toBeVisible();
   const html = await (await request.get(`/pages/${p.slug}`)).text();
   expect(html).toContain("Theme body H");
 });
@@ -506,7 +570,9 @@ test("panels collapse, focus mode hides both, and the choice is remembered", asy
   }
 });
 
-test("desktop preview shows the desktop layout (no hamburger); mobile shows it", async ({ page }) => {
+test("desktop preview shows the desktop layout (no hamburger); mobile shows it", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await signIn(page);
   await page.goto("/admin/design/home");

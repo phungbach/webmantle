@@ -108,8 +108,12 @@ describe("saveContentKey: rejected values", () => {
     await expect(saveContentKey(admin, EC, "vi", "hero", "a string")).rejects.toThrow();
     await expect(saveContentKey(admin, EC, "vi", "hero", [1, 2])).rejects.toThrow();
     await expect(saveContentKey(admin, EC, "vi", "courses", { not: "a list" })).rejects.toThrow();
-    await expect(saveContentKey(admin, EC, "vi", "hero", { ...b.hero, title: 5 })).rejects.toThrow();
-    await expect(saveContentKey(admin, EC, "vi", "nonexistentblock", { a: 1 })).rejects.toThrow(/unknown/i);
+    await expect(
+      saveContentKey(admin, EC, "vi", "hero", { ...b.hero, title: 5 })
+    ).rejects.toThrow();
+    await expect(saveContentKey(admin, EC, "vi", "nonexistentblock", { a: 1 })).rejects.toThrow(
+      /unknown/i
+    );
     for (const key of ["Bad-key", "__proto__", "constructor", "a".repeat(60), "", "UPPER"]) {
       await expect(saveContentKey(admin, EC, "vi", key, { a: 1 }), key).rejects.toThrow();
     }
@@ -142,8 +146,12 @@ describe("saveContentKey: rejected values", () => {
     "relative/path",
   ])("hero href %j is refused (primary, secondary, nav, footer)", async (bad) => {
     const b = await base(EC);
-    await expect(saveContentKey(admin, EC, "vi", "hero", { ...b.hero, primaryHref: bad })).rejects.toThrow();
-    await expect(saveContentKey(admin, EC, "vi", "hero", { ...b.hero, secondaryHref: bad })).rejects.toThrow();
+    await expect(
+      saveContentKey(admin, EC, "vi", "hero", { ...b.hero, primaryHref: bad })
+    ).rejects.toThrow();
+    await expect(
+      saveContentKey(admin, EC, "vi", "hero", { ...b.hero, secondaryHref: bad })
+    ).rejects.toThrow();
     await expect(
       saveContentKey(admin, EC, "vi", "nav", [{ label: "x", href: bad }])
     ).rejects.toThrow();
@@ -186,7 +194,9 @@ describe("saveContentKey: images", () => {
     const b = await base(EC);
     const courses = structuredClone(b.courses) as Record<string, unknown>[];
     courses[0] = { ...courses[0], image: "media/doesnotexist1234" };
-    await expect(saveContentKey(admin, EC, "vi", "courses", courses)).rejects.toThrow(/no longer exists/i);
+    await expect(saveContentKey(admin, EC, "vi", "courses", courses)).rejects.toThrow(
+      /no longer exists/i
+    );
   });
 });
 
@@ -206,7 +216,10 @@ describe("limits", () => {
         { key: `themecontent.${EC}.vi`, value: "x".repeat(210 * 1024) },
         { key: `themecontent.${EC}.vi.draft`, value: "{broken" },
         { key: `themecontent.${HS}.vi`, value: "[1,2]" },
-        { key: `themecontent.${HS}.en`, value: '{"hero":{"title":"ok"},"Bad-key":1,"__proto__":2}' },
+        {
+          key: `themecontent.${HS}.en`,
+          value: '{"hero":{"title":"ok"},"Bad-key":1,"__proto__":2}',
+        },
       ],
     });
     expect(await loadContentOverrides(EC, "vi")).toEqual({});
@@ -227,7 +240,9 @@ describe("permissions", () => {
       await expect(discardContentDraft(user, EC, "vi")).rejects.toThrow();
     }
     expect(await settingRows()).toEqual([]);
-    expect(await prisma.auditLog.count({ where: { action: { startsWith: "theme-content." } } })).toBe(0);
+    expect(
+      await prisma.auditLog.count({ where: { action: { startsWith: "theme-content." } } })
+    ).toBe(0);
   });
 });
 
@@ -236,20 +251,28 @@ describe("draft, publish, discard, reset", () => {
     const b = await base(EC);
     await saveContentKey(admin, EC, "vi", "hero", { ...b.hero, title: "Draft title" });
     expect(await loadContentOverrides(EC, "vi")).toEqual({});
-    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({ title: "Draft title" });
+    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({
+      title: "Draft title",
+    });
 
     await publishContent(admin, EC, "vi");
     expect((await loadContentOverrides(EC, "vi")).hero).toMatchObject({ title: "Draft title" });
     const afterPublish = await getContentEditState(EC, "vi");
     expect(afterPublish.draftKeys).toEqual([]);
     expect(afterPublish.publishedKeys).toEqual(["hero"]);
-    expect(await prisma.siteSetting.count({ where: { key: `themecontent.${EC}.vi.draft` } })).toBe(0);
+    expect(await prisma.siteSetting.count({ where: { key: `themecontent.${EC}.vi.draft` } })).toBe(
+      0
+    );
 
     await saveContentKey(admin, EC, "vi", "hero", { ...b.hero, title: "Newer draft" });
     expect((await loadContentOverrides(EC, "vi")).hero).toMatchObject({ title: "Draft title" });
-    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({ title: "Newer draft" });
+    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({
+      title: "Newer draft",
+    });
     await discardContentDraft(admin, EC, "vi");
-    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({ title: "Draft title" });
+    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({
+      title: "Draft title",
+    });
     expect((await getContentEditState(EC, "vi")).draftKeys).toEqual([]);
   });
 
@@ -262,7 +285,9 @@ describe("draft, publish, discard, reset", () => {
     await saveContentKey(admin, EC, "vi", "hero", { ...b.hero, title: "Custom" });
     await publishContent(admin, EC, "vi");
     await saveContentKey(admin, EC, "vi", "hero", null);
-    const draftRow = await prisma.siteSetting.findUniqueOrThrow({ where: { key: `themecontent.${EC}.vi.draft` } });
+    const draftRow = await prisma.siteSetting.findUniqueOrThrow({
+      where: { key: `themecontent.${EC}.vi.draft` },
+    });
     expect(JSON.parse(draftRow.value)).toEqual({ hero: { __reset: true } });
     expect(await loadContentOverrides(EC, "vi", { draft: true })).toEqual({});
     expect((await loadContentOverrides(EC, "vi")).hero).toBeDefined();
@@ -281,13 +306,17 @@ describe("draft, publish, discard, reset", () => {
     await publishContent(admin, HS, "vi");
     expect((await loadContentOverrides(HS, "vi")).hero).toMatchObject({ title: "VI hero" });
     expect(await loadContentOverrides(HS, "en")).toEqual({});
-    expect((await loadContentOverrides(HS, "en", { draft: true })).hero).toMatchObject({ title: "EN hero" });
+    expect((await loadContentOverrides(HS, "en", { draft: true })).hero).toMatchObject({
+      title: "EN hero",
+    });
     expect(await loadContentOverrides(EC, "vi")).toEqual({});
     // Switching the active theme does not disturb anything.
     await setActive(HS);
     await setActive(EC);
     expect((await loadContentOverrides(HS, "vi")).hero).toMatchObject({ title: "VI hero" });
-    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({ title: "EC hero" });
+    expect((await loadContentOverrides(EC, "vi", { draft: true })).hero).toMatchObject({
+      title: "EC hero",
+    });
   });
 });
 
@@ -328,19 +357,25 @@ describe("server actions", () => {
   it("resolve theme and language on the server", async () => {
     const ec = await base(EC);
     state.locale = "vi";
-    expect(await saveContentKeyAction("hero", json({ ...ec.hero, title: "From action" }))).toMatchObject({ ok: true });
+    expect(
+      await saveContentKeyAction("hero", json({ ...ec.hero, title: "From action" }))
+    ).toMatchObject({ ok: true });
     expect((await getContentEditState(EC, "vi")).draftKeys).toEqual(["hero"]);
     // Switch the active theme and language: the same action now writes there instead.
     await setActive(HS);
     state.locale = "en";
     const hs = await base(HS, "en");
-    expect(await saveContentKeyAction("hero", json({ ...hs.hero, title: "HS en" }))).toMatchObject({ ok: true });
+    expect(await saveContentKeyAction("hero", json({ ...hs.hero, title: "HS en" }))).toMatchObject({
+      ok: true,
+    });
     expect((await getContentEditState(HS, "en")).draftKeys).toEqual(["hero"]);
     expect((await getContentEditState(EC, "en")).draftKeys).toEqual([]);
     expect(await publishContentAction()).toMatchObject({ ok: true });
     expect((await loadContentOverrides(HS, "en")).hero).toMatchObject({ title: "HS en" });
     expect(await loadContentOverrides(EC, "vi")).toEqual({});
-    expect(await saveContentKeyAction("hero", json({ ...hs.hero, title: "x" }))).toMatchObject({ ok: true });
+    expect(await saveContentKeyAction("hero", json({ ...hs.hero, title: "x" }))).toMatchObject({
+      ok: true,
+    });
     expect(await discardContentAction()).toMatchObject({ ok: true });
     expect((await getContentEditState(HS, "en")).draftKeys).toEqual([]);
   });
@@ -368,7 +403,11 @@ describe("server actions", () => {
   it("refuses editors, authors and anonymous callers", async () => {
     vi.spyOn(console, "error").mockImplementation(() => {});
     const ec = await base(EC);
-    for (const user of [{ id: editor.id, role: "editor" }, { id: author.id, role: "author" }, null]) {
+    for (const user of [
+      { id: editor.id, role: "editor" },
+      { id: author.id, role: "author" },
+      null,
+    ]) {
       state.user = user;
       expect(await saveContentKeyAction("hero", json(ec.hero))).toMatchObject({ ok: false });
       expect(await publishContentAction()).toMatchObject({ ok: false });
@@ -410,13 +449,18 @@ describe("deleteMedia guard", () => {
     await prisma.page.update({ where: { id: page.id }, data: { layout: `{"mediaId":"${a.id}"}` } });
     await expect(deleteMedia(admin, a.id)).rejects.toThrow(/page layout/i);
     const b = await newMedia();
-    await prisma.page.update({ where: { id: page.id }, data: { layoutDraft: `{"mediaId":"${b.id}"}` } });
+    await prisma.page.update({
+      where: { id: page.id },
+      data: { layoutDraft: `{"mediaId":"${b.id}"}` },
+    });
     await expect(deleteMedia(admin, b.id)).rejects.toThrow(/page layout/i);
     const c = await newMedia();
     await prisma.siteSetting.create({ data: { key: "builder.home.layout", value: `x ${c.id} y` } });
     await expect(deleteMedia(admin, c.id)).rejects.toThrow(/home page/i);
     const d = await newMedia();
-    await prisma.siteSetting.create({ data: { key: "builder.home.layoutDraft", value: `x ${d.id}` } });
+    await prisma.siteSetting.create({
+      data: { key: "builder.home.layoutDraft", value: `x ${d.id}` },
+    });
     await expect(deleteMedia(admin, d.id)).rejects.toThrow(/home page/i);
     for (const m of [a, b, c, d]) expect(await exists(m.id)).toBe(true);
   });

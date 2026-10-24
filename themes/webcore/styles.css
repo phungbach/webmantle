@@ -2074,9 +2074,14 @@ a {
   width: 9rem;
   height: 0.7rem;
   margin-top: 1rem;
-  background:
-    radial-gradient(circle at 0.7rem -0.2rem, transparent 0.45rem, var(--wave) 0.47rem, var(--wave) 0.72rem, transparent 0.74rem)
-      0 0 / 1.4rem 0.7rem repeat-x;
+  background: radial-gradient(
+      circle at 0.7rem -0.2rem,
+      transparent 0.45rem,
+      var(--wave) 0.47rem,
+      var(--wave) 0.72rem,
+      transparent 0.74rem
+    )
+    0 0 / 1.4rem 0.7rem repeat-x;
 }
 
 /* Hero: hình tròn lớn, lưới chấm và hai ngôi sao phía sau ảnh */
@@ -2247,7 +2252,9 @@ a {
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
-  transition: transform var(--ease), margin var(--ease);
+  transition:
+    transform var(--ease),
+    margin var(--ease);
 }
 
 .cms-menu[open] > summary::after {
@@ -2709,8 +2716,18 @@ a {
   font-weight: 700;
 }
 
-.cms-theme-root[data-custom-template="roadmap"] .cms-docs__body h2#du-kien-tiep-theo ~ h3 + ul li::before,
-.cms-theme-root[data-custom-template="roadmap"] .cms-docs__body h2#planned-next ~ h3 + ul li::before {
+.cms-theme-root[data-custom-template="roadmap"]
+  .cms-docs__body
+  h2#du-kien-tiep-theo
+  ~ h3
+  + ul
+  li::before,
+.cms-theme-root[data-custom-template="roadmap"]
+  .cms-docs__body
+  h2#planned-next
+  ~ h3
+  + ul
+  li::before {
   content: "○";
   color: #d97706;
 }
@@ -2735,7 +2752,11 @@ a {
 
 .cms-theme-root[data-custom-template="roadmap"] .cms-docs__body h2#du-kien-tiep-theo ~ h3::after,
 .cms-theme-root[data-custom-template="roadmap"] .cms-docs__body h2#planned-next ~ h3::after {
-  background: repeating-linear-gradient(180deg, color-mix(in srgb, #d97706 55%, #ffffff) 0 4px, transparent 4px 8px);
+  background: repeating-linear-gradient(
+    180deg,
+    color-mix(in srgb, #d97706 55%, #ffffff) 0 4px,
+    transparent 4px 8px
+  );
 }
 
 /* ---------- Webmantle 1.15: mũi tên vector ở nút Trước / Tiếp theo ---------- */
@@ -2763,7 +2784,9 @@ a {
   margin-top: -1.175rem;
   border-radius: 50%;
   background: var(--soft-2);
-  transition: background var(--ease), transform var(--ease);
+  transition:
+    background var(--ease),
+    transform var(--ease);
 }
 
 .cms-docs__pager-prev::after {
@@ -2784,7 +2807,9 @@ a {
   border-top: 2.5px solid var(--color-accent);
   border-right: 2.5px solid var(--color-accent);
   border-radius: 1px;
-  transition: border-color var(--ease), translate var(--ease);
+  transition:
+    border-color var(--ease),
+    translate var(--ease);
 }
 
 .cms-docs__pager-next::before {
@@ -2856,7 +2881,6 @@ a {
   }
 }
 
-
 /* ---------- Trang 404: số 404 chuyển sắc, quỹ đạo xoay, tìm kiếm dạng viên thuốc ---------- */
 .cms-theme-root .cms-shell[data-template="not-found"] .cms-section {
   position: relative;
@@ -2878,7 +2902,11 @@ a {
   aspect-ratio: 1;
   translate: -50% -50%;
   border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 68%);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-accent) 20%, transparent),
+    transparent 68%
+  );
 }
 
 .cms-theme-root .cms-shell[data-template="not-found"] .cms-section::after {
@@ -2913,7 +2941,15 @@ a {
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 0.9;
-  background: linear-gradient(100deg, var(--color-accent) 0%, #7c3aed 25%, #e11d48 50%, var(--color-accent-2) 75%, var(--color-accent) 100%) 0 0 / 300% 100%;
+  background: linear-gradient(
+      100deg,
+      var(--color-accent) 0%,
+      #7c3aed 25%,
+      #e11d48 50%,
+      var(--color-accent-2) 75%,
+      var(--color-accent) 100%
+    )
+    0 0 / 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -2929,10 +2965,20 @@ a {
   translate: -50% -50%;
   padding: 3px;
   border-radius: 50%;
-  background: conic-gradient(var(--color-accent), #d2ff3a, var(--color-accent-2), #e11d48, var(--color-accent));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  background: conic-gradient(
+    var(--color-accent),
+    #d2ff3a,
+    var(--color-accent-2),
+    #e11d48,
+    var(--color-accent)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
   pointer-events: none;
 }
 
@@ -2947,12 +2993,16 @@ a {
   border: 1px solid var(--color-border);
   border-radius: 999px;
   box-shadow: 0 14px 34px -14px rgba(11, 16, 32, 0.25);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .cms-theme-root .cms-shell[data-template="not-found"] .cms-search:focus-within {
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 22%, transparent), 0 14px 34px -14px rgba(11, 16, 32, 0.25);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-accent) 22%, transparent),
+    0 14px 34px -14px rgba(11, 16, 32, 0.25);
 }
 
 .cms-theme-root .cms-shell[data-template="not-found"] .cms-search__label {

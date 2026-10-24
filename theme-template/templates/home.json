@@ -9,7 +9,10 @@
         "props": { "width": "content" },
         "children": [
           { "component": "Hero", "props": { "source": "titlehome", "showDescription": true } },
-          { "component": "PostList", "props": { "layout": "grid", "limit": 6, "showExcerpt": true } },
+          {
+            "component": "PostList",
+            "props": { "layout": "grid", "limit": 6, "showExcerpt": true }
+          },
           { "component": "Pagination" }
         ]
       },

@@ -88,11 +88,7 @@
     "primaryHref": "/pages/lien-he",
     "secondaryLabel": "",
     "secondaryHref": "/",
-    "highlights": [
-      "Không phí ẩn",
-      "Hoàn phí theo chính sách",
-      "Ưu đãi đăng ký nhóm"
-    ],
+    "highlights": ["Không phí ẩn", "Hoàn phí theo chính sách", "Ưu đãi đăng ký nhóm"],
     "image": "assets/pricing.png"
   },
   "heroabout": {
@@ -103,11 +99,7 @@
     "primaryHref": "/pages/lien-he",
     "secondaryLabel": "Xem khoá học",
     "secondaryHref": "/pages/khoa-hoc",
-    "highlights": [
-      "Thành lập từ 2018",
-      "Giáo viên có chứng chỉ giảng dạy",
-      "Hơn 12.000 học viên"
-    ],
+    "highlights": ["Thành lập từ 2018", "Giáo viên có chứng chỉ giảng dạy", "Hơn 12.000 học viên"],
     "image": "assets/about.png"
   },
   "cta": {
@@ -241,12 +233,7 @@
         "name": "Lớp nhóm",
         "price": "từ 2.900.000đ",
         "period": "/ khoá",
-        "specs": [
-          "Tối đa 15 học viên",
-          "Tài liệu đầy đủ",
-          "Kiểm tra định kỳ",
-          "Học bù khi vắng"
-        ],
+        "specs": ["Tối đa 15 học viên", "Tài liệu đầy đủ", "Kiểm tra định kỳ", "Học bù khi vắng"],
         "badge": "Phổ biến",
         "href": "/pages/lien-he",
         "cta": "Đăng ký tư vấn"

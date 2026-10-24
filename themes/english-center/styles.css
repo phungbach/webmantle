@@ -1405,7 +1405,11 @@ a {
   aspect-ratio: 1;
   translate: -50% -50%;
   border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 68%);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-accent) 20%, transparent),
+    transparent 68%
+  );
 }
 
 .cms-theme-root .cms-shell[data-template="not-found"] .cms-section::after {
@@ -1440,7 +1444,13 @@ a {
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 0.9;
-  background: linear-gradient(100deg, var(--color-accent), color-mix(in srgb, var(--color-accent) 40%, #5eead4) 45%, var(--color-accent) 100%) 0 0 / 220% 100%;
+  background: linear-gradient(
+      100deg,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 40%, #5eead4) 45%,
+      var(--color-accent) 100%
+    )
+    0 0 / 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1456,10 +1466,20 @@ a {
   translate: -50% -50%;
   padding: 3px;
   border-radius: 50%;
-  background: conic-gradient(var(--color-accent), #d2ff3a, var(--color-accent-2), #e11d48, var(--color-accent));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  background: conic-gradient(
+    var(--color-accent),
+    #d2ff3a,
+    var(--color-accent-2),
+    #e11d48,
+    var(--color-accent)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
   pointer-events: none;
 }
 
@@ -1474,12 +1494,16 @@ a {
   border: 1px solid var(--color-border);
   border-radius: 999px;
   box-shadow: 0 14px 34px -14px rgba(11, 16, 32, 0.25);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .cms-theme-root .cms-shell[data-template="not-found"] .cms-search:focus-within {
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 22%, transparent), 0 14px 34px -14px rgba(11, 16, 32, 0.25);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-accent) 22%, transparent),
+    0 14px 34px -14px rgba(11, 16, 32, 0.25);
 }
 
 .cms-theme-root .cms-shell[data-template="not-found"] .cms-search__label {

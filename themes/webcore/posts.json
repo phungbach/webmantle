@@ -3,12 +3,8 @@
     "slug": "chao-mung-den-voi-webcore",
     "title": "Chào mừng đến với Webmantle",
     "excerpt": "Webmantle gom bài viết, trang, giao diện và SEO vào một trang quản trị. Đây là bài viết mẫu để bạn thấy website trông thế nào khi có nội dung.",
-    "categories": [
-      "tin-webcore"
-    ],
-    "tags": [
-      "bat-dau"
-    ],
+    "categories": ["tin-webcore"],
+    "tags": ["bat-dau"],
     "publishedAt": "2026-10-20",
     "featured": true,
     "body": "<p>Đây là bài viết mẫu đi kèm giao diện Webmantle. Bạn có thể sửa hoặc xoá nó trong <strong>Bài viết</strong> của trang quản trị.</p><h2>Bắt đầu từ đâu</h2><p>Mở trang <a href=\"/pages/huong-dan\">Hướng dẫn sử dụng</a>. Mỗi chủ đề có ảnh chụp màn hình để bạn làm theo.</p><h2>Nội dung có sẵn</h2><ul><li>Trang chủ và trang Giới thiệu.</li><li>Chín trang hướng dẫn chi tiết.</li><li>Ba bài viết mẫu, ba chuyên mục và bốn thẻ.</li></ul><p>Khi đã quen, hãy xoá nội dung mẫu và viết nội dung của bạn.</p>",
@@ -25,12 +21,8 @@
     "slug": "5-meo-viet-bai-de-doc",
     "title": "5 mẹo viết bài dễ đọc trên màn hình",
     "excerpt": "Người đọc lướt trước khi đọc kỹ. Năm thói quen nhỏ giúp bài của bạn dễ lướt và dễ nhớ.",
-    "categories": [
-      "meo-viet-bai"
-    ],
-    "tags": [
-      "soan-thao"
-    ],
+    "categories": ["meo-viet-bai"],
+    "tags": ["soan-thao"],
     "publishedAt": "2026-10-21",
     "body": "<p>Người đọc trên màn hình thường lướt trước, rồi mới quyết định có đọc kỹ hay không.</p><h2>1. Mở đầu bằng điều quan trọng nhất</h2><p>Hai câu đầu nên nói bài viết này giúp người đọc việc gì.</p><h2>2. Chia nhỏ bằng tiêu đề</h2><p>Dùng tiêu đề H2 cho mỗi ý chính. Người đọc nhìn tiêu đề là hiểu bố cục bài.</p><h2>3. Đoạn ngắn</h2><p>Mỗi đoạn một ý, ba đến bốn dòng.</p><h2>4. Dùng danh sách</h2><p>Khi liệt kê từ ba mục trở lên, hãy dùng danh sách gạch đầu dòng.</p><h2>5. Thêm một ảnh có ý nghĩa</h2><p>Ảnh minh hoạ đúng nội dung giúp người đọc nghỉ mắt và hiểu nhanh hơn.</p>",
     "image": "assets/guide-post-edit.jpg",
@@ -46,13 +38,8 @@
     "slug": "dat-tieu-de-seo-cho-bai-viet",
     "title": "Đặt tiêu đề và mô tả SEO cho bài viết",
     "excerpt": "Tiêu đề và mô tả là hai dòng người dùng thấy trên Google. Cách đặt chúng ngắn gọn và đúng ý.",
-    "categories": [
-      "huong-dan",
-      "meo-viet-bai"
-    ],
-    "tags": [
-      "seo"
-    ],
+    "categories": ["huong-dan", "meo-viet-bai"],
+    "tags": ["seo"],
     "publishedAt": "2026-10-22",
     "body": "<p>Trên trang kết quả của Google, mỗi bài viết hiện ra bằng một tiêu đề và một đoạn mô tả. Webmantle cho bạn đặt hai dòng này riêng cho từng bài.</p><h2>Tiêu đề</h2><p>Giữ tiêu đề dưới 70 ký tự, đặt từ khoá chính ở đầu và nói rõ bài viết nói về gì.</p><h2>Mô tả</h2><p>Mô tả dưới 160 ký tự, viết như một lời mời đọc tiếp. Đừng nhồi từ khoá.</p><p>Xem thêm hướng dẫn chi tiết tại <a href=\"/pages/huong-dan-seo-cai-dat\">SEO và cài đặt</a>.</p>",
     "image": "assets/guide-settings-seo.jpg",

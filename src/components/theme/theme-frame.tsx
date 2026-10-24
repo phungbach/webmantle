@@ -108,7 +108,11 @@ export function ThemeFrame({
       >
         <RenderLayout node={layout} ctx={full} />
       </div>
-      {full.edit ? <EditBridge /> : <BackToTop label={full.site.locale === "en" ? "Back to top" : "Lên đầu trang"} />}
+      {full.edit ? (
+        <EditBridge />
+      ) : (
+        <BackToTop label={full.site.locale === "en" ? "Back to top" : "Lên đầu trang"} />
+      )}
       {season ? <SeasonOverlay season={season} /> : null}
       {appearance.blockDevtools ? <DevtoolsGuard /> : null}
     </>

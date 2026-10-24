@@ -30,7 +30,10 @@ test("settings hub shows five tabs and switches by URL", async ({ page }) => {
   await tabs.getByRole("tab", { name: "Blog style" }).click();
   await expect(page).toHaveURL(/\/admin\/settings\?tab=blog-style/);
   await expect(page.getByRole("button", { name: "Save blog style" })).toBeVisible();
-  await expect(tabs.getByRole("tab", { name: "Blog style" })).toHaveAttribute("aria-selected", "true");
+  await expect(tabs.getByRole("tab", { name: "Blog style" })).toHaveAttribute(
+    "aria-selected",
+    "true"
+  );
 
   await page.goto("/admin/settings?tab=plugins");
   await expect(tabs.getByRole("tab", { name: "Plugins" })).toHaveAttribute("aria-selected", "true");

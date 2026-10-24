@@ -160,7 +160,7 @@ describe("getTrafficStats regression", () => {
     }[] = [];
     // deterministic pseudo-random data spanning 70 days (older than 60 should be ignored)
     let seed = 42;
-    const rnd = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
+    const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
     for (let i = 0; i < 400; i++) {
       const p = rnd() < 0.7 ? posts[Math.floor(rnd() * posts.length)] : null;
       rows.push({
@@ -198,7 +198,9 @@ describe("getTrafficStats regression", () => {
       expect(day.visitors).toBe(new Set(inDay.map((r) => r.visitor)).size);
     });
     expect(stats.viewsToday).toBe(stats.daily[29]?.views);
-    expect(stats.week).toEqual(stats.daily.slice(-7).map((d) => ({ date: d.date, views: d.views })));
+    expect(stats.week).toEqual(
+      stats.daily.slice(-7).map((d) => ({ date: d.date, views: d.views }))
+    );
 
     for (const s of stats.sources) {
       expect(s.views).toBe(cur.filter((r) => r.source === s.source).length);
