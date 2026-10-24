@@ -6,6 +6,10 @@ Webmantle là hệ thống quản trị nội dung (CMS) cho blog và website, v
 
 Tính năng chính là Theme Engine: quản trị viên tải lên file ZIP giao diện, kiểm tra, xem trước, kích hoạt và quay lại bản cũ, mà không đụng tới bài viết, trang, chuyên mục, người dùng hay dữ liệu SEO.
 
+## Giấy phép và đóng góp
+
+Mã nguồn dùng giấy phép [MIT](LICENSE): anh em được dùng, sửa và phát hành lại, kể cả cho dự án thương mại. Phát hiện lỗi hoặc muốn đề xuất, hãy mở một Issue hoặc Pull Request trên GitHub.
+
 ## Mục lục
 
 - [Chạy thử nhanh](#chạy-thử-nhanh)

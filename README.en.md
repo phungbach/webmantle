@@ -6,6 +6,10 @@ Webmantle is a blog and website CMS built with Next.js (App Router), React, Type
 
 The main feature is the Theme Engine. An administrator can upload a theme ZIP, validate it, preview it, activate it, and roll back, without touching posts, pages, categories, users or SEO data.
 
+## License and contributing
+
+Released under the [MIT license](LICENSE): use, change and redistribute it freely, including in commercial projects. Found a bug or have an idea? Open an Issue or a Pull Request on GitHub.
+
 ## Quick start
 
 ```sh
