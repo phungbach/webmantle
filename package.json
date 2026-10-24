@@ -21,6 +21,7 @@
     "test:e2e": "playwright test",
     "analytics:purge": "tsx scripts/purge-page-views.ts",
     "release": "bash scripts/release.sh",
+    "docker": "bash scripts/webmantle.sh",
     "start:passenger": "node app.js"
   },
   "engines": {

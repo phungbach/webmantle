@@ -24,6 +24,8 @@ For production see [docs/deployment.md](docs/deployment.md).
 | Docker / Docker Compose                        | [docs/deploy-docker.md](docs/deploy-docker.md) |
 | Making a release package, publishing to GitHub | [docs/release.md](docs/release.md)             |
 
+Docker CLI (`scripts/webmantle.sh`), hướng dẫn tiếng Việt: [README.vi.md](README.vi.md).
+
 Bản tiếng Việt: [cPanel](docs/vi/deploy-cpanel.md), [Docker](docs/vi/deploy-docker.md), [phát hành](docs/vi/release.md).
 
 `npm run release` builds a prebuilt package in `release/` (`webmantle-vX.Y.Z.zip`) that contains no `.env`, database or uploads. On a host: `npm ci`, `npx prisma migrate deploy`, `npm run db:seed`, then `npm start` (or `app.js` on cPanel). With Docker: `cp .env.example .env`, edit it, `docker compose up -d --build`.

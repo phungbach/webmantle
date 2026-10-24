@@ -6,8 +6,9 @@ services:
     image: webmantle:1.0.0
     container_name: webmantle
     restart: unless-stopped
+    mem_limit: ${WEB_MEMORY:-1g}
     ports:
-      - "3000:3000"
+      - "${WEB_PORT:-3000}:3000"
     env_file: .env
     environment:
       NODE_ENV: production
