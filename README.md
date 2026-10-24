@@ -70,21 +70,21 @@ Bạn cũng gọi được qua npm: `npm run docker -- up`.
 
 ### Các lệnh
 
-| Lệnh | Việc làm |
-| --- | --- |
-| `init` | Tạo `.env` từ `.env.example`, sinh `PREVIEW_SECRET`, hỏi thông tin quản trị |
-| `build` | Chỉ build image `webmantle:1.0.0` |
-| `up` | Build (nếu cần) và chạy website ở nền, chờ đến khi sẵn sàng |
-| `update` | Build lại và khởi động lại bằng bản mới, giữ nguyên dữ liệu |
-| `status` | Xem trạng thái container và mức dùng bộ nhớ |
-| `logs` | Xem log trực tiếp (Ctrl+C để thoát) |
-| `start`, `stop`, `restart` | Bật, tắt, khởi động lại |
-| `down` | Dừng và gỡ container, dữ liệu vẫn còn |
-| `shell` | Mở shell bên trong container |
-| `create-admin [email]` | Tạo hoặc đặt lại mật khẩu tài khoản quản trị |
-| `create-demo [email]` | Tạo hoặc đặt lại tài khoản Demo chỉ xem (mặc định `demo@mail.com`) |
-| `backup` | Sao lưu và chép ra thư mục `backups-<ngày giờ>` |
-| `reset` | Xóa container **và toàn bộ dữ liệu** (phải gõ `XOA` để xác nhận) |
+| Lệnh                       | Việc làm                                                                    |
+| -------------------------- | --------------------------------------------------------------------------- |
+| `init`                     | Tạo `.env` từ `.env.example`, sinh `PREVIEW_SECRET`, hỏi thông tin quản trị |
+| `build`                    | Chỉ build image `webmantle:1.0.0`                                           |
+| `up`                       | Build (nếu cần) và chạy website ở nền, chờ đến khi sẵn sàng                 |
+| `update`                   | Build lại và khởi động lại bằng bản mới, giữ nguyên dữ liệu                 |
+| `status`                   | Xem trạng thái container và mức dùng bộ nhớ                                 |
+| `logs`                     | Xem log trực tiếp (Ctrl+C để thoát)                                         |
+| `start`, `stop`, `restart` | Bật, tắt, khởi động lại                                                     |
+| `down`                     | Dừng và gỡ container, dữ liệu vẫn còn                                       |
+| `shell`                    | Mở shell bên trong container                                                |
+| `create-admin [email]`     | Tạo hoặc đặt lại mật khẩu tài khoản quản trị                                |
+| `create-demo [email]`      | Tạo hoặc đặt lại tài khoản Demo chỉ xem (mặc định `demo@mail.com`)          |
+| `backup`                   | Sao lưu và chép ra thư mục `backups-<ngày giờ>`                             |
+| `reset`                    | Xóa container **và toàn bộ dữ liệu** (phải gõ `XOA` để xác nhận)            |
 
 Xem danh sách lệnh bất cứ lúc nào bằng `scripts/webmantle.sh help`.
 
@@ -92,15 +92,15 @@ Xem danh sách lệnh bất cứ lúc nào bằng `scripts/webmantle.sh help`.
 
 Mọi thiết lập nằm trong `.env` (không bao giờ commit lên git). Những biến hay dùng:
 
-| Biến | Ý nghĩa |
-| --- | --- |
-| `SITE_URL` | Địa chỉ công khai của website, dùng cho liên kết, sitemap và RSS |
-| `PREVIEW_SECRET` | Khóa bí mật cho liên kết xem trước (CLI tự sinh) |
-| `ADMIN_EMAIL`, `ADMIN_PASSWORD` | Quản trị viên đầu tiên, chỉ dùng ở lần khởi động đầu |
-| `WEB_PORT` | Cổng mở ra máy chủ, mặc định `3000` |
-| `WEB_MEMORY` | Giới hạn bộ nhớ của container, mặc định `1g` |
-| `TRUST_PROXY` | Đặt `true` chỉ khi có reverse proxy do bạn kiểm soát đứng trước |
-| `DEMO_PUBLIC_LOGIN` | `true` để bật nút `/demo` tự đăng nhập tài khoản Demo |
+| Biến                            | Ý nghĩa                                                          |
+| ------------------------------- | ---------------------------------------------------------------- |
+| `SITE_URL`                      | Địa chỉ công khai của website, dùng cho liên kết, sitemap và RSS |
+| `PREVIEW_SECRET`                | Khóa bí mật cho liên kết xem trước (CLI tự sinh)                 |
+| `ADMIN_EMAIL`, `ADMIN_PASSWORD` | Quản trị viên đầu tiên, chỉ dùng ở lần khởi động đầu             |
+| `WEB_PORT`                      | Cổng mở ra máy chủ, mặc định `3000`                              |
+| `WEB_MEMORY`                    | Giới hạn bộ nhớ của container, mặc định `1g`                     |
+| `TRUST_PROXY`                   | Đặt `true` chỉ khi có reverse proxy do bạn kiểm soát đứng trước  |
+| `DEMO_PUBLIC_LOGIN`             | `true` để bật nút `/demo` tự đăng nhập tài khoản Demo            |
 
 Sau khi sửa `.env`, chạy `scripts/webmantle.sh restart`. Riêng `WEB_PORT` và `WEB_MEMORY` cần `scripts/webmantle.sh up` để áp dụng.
 
@@ -155,23 +155,23 @@ Trước khi mở ra mạng, hãy dùng mật khẩu quản trị dài và chỉ
 
 ### Xử lý sự cố Docker
 
-| Triệu chứng | Cách xử lý |
-| --- | --- |
-| `Docker chưa chạy` | Mở Docker Desktop rồi thử lại |
-| Build lỗi `input/output error` hoặc hệ thống file chỉ đọc | Ổ đĩa đầy. Giải phóng dung lượng, rồi chạy `docker builder prune -f` |
-| Cổng đã bị chiếm | Đổi `WEB_PORT` trong `.env` rồi chạy `scripts/webmantle.sh up` |
-| Container tự khởi động lại | Xem `scripts/webmantle.sh logs`. Thường do thiếu `ADMIN_EMAIL`/`ADMIN_PASSWORD` hoặc mật khẩu dưới 12 ký tự ở lần đầu |
-| Quên mật khẩu quản trị | `scripts/webmantle.sh create-admin <email>` để đặt lại |
-| Website báo hết bộ nhớ | Tăng `WEB_MEMORY` (ví dụ `2g`) rồi chạy `up` |
-| Ổ đĩa đầy vì Docker | Chạy `docker builder prune -f` để xóa cache build |
+| Triệu chứng                                               | Cách xử lý                                                                                                            |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `Docker chưa chạy`                                        | Mở Docker Desktop rồi thử lại                                                                                         |
+| Build lỗi `input/output error` hoặc hệ thống file chỉ đọc | Ổ đĩa đầy. Giải phóng dung lượng, rồi chạy `docker builder prune -f`                                                  |
+| Cổng đã bị chiếm                                          | Đổi `WEB_PORT` trong `.env` rồi chạy `scripts/webmantle.sh up`                                                        |
+| Container tự khởi động lại                                | Xem `scripts/webmantle.sh logs`. Thường do thiếu `ADMIN_EMAIL`/`ADMIN_PASSWORD` hoặc mật khẩu dưới 12 ký tự ở lần đầu |
+| Quên mật khẩu quản trị                                    | `scripts/webmantle.sh create-admin <email>` để đặt lại                                                                |
+| Website báo hết bộ nhớ                                    | Tăng `WEB_MEMORY` (ví dụ `2g`) rồi chạy `up`                                                                          |
+| Ổ đĩa đầy vì Docker                                       | Chạy `docker builder prune -f` để xóa cache build                                                                     |
 
 ## Hosting
 
-| Nơi chạy | Hướng dẫn (tiếng Việt) | Bản tiếng Anh |
-| --- | --- | --- |
-| cPanel (Setup Node.js App) | [docs/vi/deploy-cpanel.md](docs/vi/deploy-cpanel.md) | [docs/deploy-cpanel.md](docs/deploy-cpanel.md) |
-| Docker / Docker Compose | [docs/vi/deploy-docker.md](docs/vi/deploy-docker.md) | [docs/deploy-docker.md](docs/deploy-docker.md) |
-| Tạo gói phát hành, đưa lên GitHub | [docs/vi/release.md](docs/vi/release.md) | [docs/release.md](docs/release.md) |
+| Nơi chạy                          | Hướng dẫn (tiếng Việt)                               | Bản tiếng Anh                                  |
+| --------------------------------- | ---------------------------------------------------- | ---------------------------------------------- |
+| cPanel (Setup Node.js App)        | [docs/vi/deploy-cpanel.md](docs/vi/deploy-cpanel.md) | [docs/deploy-cpanel.md](docs/deploy-cpanel.md) |
+| Docker / Docker Compose           | [docs/vi/deploy-docker.md](docs/vi/deploy-docker.md) | [docs/deploy-docker.md](docs/deploy-docker.md) |
+| Tạo gói phát hành, đưa lên GitHub | [docs/vi/release.md](docs/vi/release.md)             | [docs/release.md](docs/release.md)             |
 
 `npm run release` tạo gói build sẵn trong `release/` (`webmantle-vX.Y.Z.zip`), không chứa `.env`, cơ sở dữ liệu hay ảnh tải lên. Trên máy chủ: `npm ci`, `npx prisma migrate deploy`, `npm run db:seed`, rồi `npm start` (hoặc `app.js` trên cPanel). Với Docker: dùng CLI ở phần trên, hoặc `cp .env.example .env`, sửa file, rồi `docker compose up -d --build`.
 
@@ -179,22 +179,22 @@ Các bài hướng dẫn có video (tiếng Việt và tiếng Anh) cũng nằm 
 
 ## Các lệnh npm
 
-| Lệnh | Việc làm |
-| --- | --- |
-| `npm run dev` | Chạy máy chủ phát triển |
-| `npm run build` | Tạo Prisma client và build bản chạy thật |
-| `npm start` | Chạy bản build |
-| `npm run db:migrate` | Áp dụng các bản cập nhật cơ sở dữ liệu (dùng trên máy chủ) |
-| `npm run db:migrate:dev` | Tạo và áp dụng một bản cập nhật mới (khi phát triển) |
-| `npm run db:seed` | Cài đặt lặp lại an toàn: quản trị viên, giao diện có sẵn, bài mẫu |
-| `npm run db:backup` | Sao lưu nhất quán cơ sở dữ liệu, ảnh và giao diện |
-| `npm run docker -- <lệnh>` | Công cụ Docker `scripts/webmantle.sh` |
-| `npm run release` | Kiểm tra, build và đóng gói bản phát hành |
-| `npm run typecheck` | TypeScript, chế độ strict |
-| `npm run lint` | ESLint (quy tắc Next.js) |
-| `npm test` | Test đơn vị, tích hợp, hiển thị và thành phần (Vitest, React Testing Library). Các route handler được gọi trực tiếp, không cần máy chủ HTTP. |
-| `npm run test:e2e` | Test trên trình duyệt (Playwright, Chromium) ở cổng 3201 với cơ sở dữ liệu riêng |
-| `npm run format:check` | Kiểm tra Prettier |
+| Lệnh                       | Việc làm                                                                                                                                     |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run dev`              | Chạy máy chủ phát triển                                                                                                                      |
+| `npm run build`            | Tạo Prisma client và build bản chạy thật                                                                                                     |
+| `npm start`                | Chạy bản build                                                                                                                               |
+| `npm run db:migrate`       | Áp dụng các bản cập nhật cơ sở dữ liệu (dùng trên máy chủ)                                                                                   |
+| `npm run db:migrate:dev`   | Tạo và áp dụng một bản cập nhật mới (khi phát triển)                                                                                         |
+| `npm run db:seed`          | Cài đặt lặp lại an toàn: quản trị viên, giao diện có sẵn, bài mẫu                                                                            |
+| `npm run db:backup`        | Sao lưu nhất quán cơ sở dữ liệu, ảnh và giao diện                                                                                            |
+| `npm run docker -- <lệnh>` | Công cụ Docker `scripts/webmantle.sh`                                                                                                        |
+| `npm run release`          | Kiểm tra, build và đóng gói bản phát hành                                                                                                    |
+| `npm run typecheck`        | TypeScript, chế độ strict                                                                                                                    |
+| `npm run lint`             | ESLint (quy tắc Next.js)                                                                                                                     |
+| `npm test`                 | Test đơn vị, tích hợp, hiển thị và thành phần (Vitest, React Testing Library). Các route handler được gọi trực tiếp, không cần máy chủ HTTP. |
+| `npm run test:e2e`         | Test trên trình duyệt (Playwright, Chromium) ở cổng 3201 với cơ sở dữ liệu riêng                                                             |
+| `npm run format:check`     | Kiểm tra Prettier                                                                                                                            |
 
 ## Tài liệu
 
