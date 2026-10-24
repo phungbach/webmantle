@@ -340,6 +340,14 @@
           {
             "label": "Users and backups",
             "href": "/pages/huong-dan-nguoi-dung-sao-luu"
+          },
+          {
+            "label": "Hosting on cPanel",
+            "href": "/pages/huong-dan-cpanel"
+          },
+          {
+            "label": "Run with Docker",
+            "href": "/pages/huong-dan-docker"
           }
         ]
       },

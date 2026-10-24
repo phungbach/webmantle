@@ -340,6 +340,14 @@
           {
             "label": "Người dùng và sao lưu",
             "href": "/pages/huong-dan-nguoi-dung-sao-luu"
+          },
+          {
+            "label": "Hosting trên cPanel",
+            "href": "/pages/huong-dan-cpanel"
+          },
+          {
+            "label": "Chạy bằng Docker",
+            "href": "/pages/huong-dan-docker"
           }
         ]
       },
