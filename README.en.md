@@ -8,7 +8,9 @@ The main feature is the Theme Engine. An administrator can upload a theme ZIP, v
 
 ## License and contributing
 
-Released under the [MIT license](LICENSE): use, change and redistribute it freely, including in commercial projects. Found a bug or have an idea? Open an Issue or a Pull Request on GitHub.
+Source code: https://github.com/phungbach/webmantle
+
+Copyright © 2026 PhungBach. Released under the [MIT license](LICENSE): use, change and redistribute it freely, including in commercial projects. Found a bug or have an idea? Open an Issue or a Pull Request on GitHub.
 
 ## Quick start
 

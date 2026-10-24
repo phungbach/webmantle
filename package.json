@@ -1,8 +1,18 @@
 {
   "name": "webmantle",
   "version": "1.0.0",
-  "private": true,
   "description": "Webmantle: a blog and website CMS with installable, previewable and rollback-able themes (Next.js + SQLite)",
+  "author": "PhungBach",
+  "license": "MIT",
+  "homepage": "https://github.com/phungbach/webmantle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phungbach/webmantle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phungbach/webmantle/issues"
+  },
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",

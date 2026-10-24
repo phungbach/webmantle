@@ -8,7 +8,9 @@ Tính năng chính là Theme Engine: quản trị viên tải lên file ZIP giao
 
 ## Giấy phép và đóng góp
 
-Mã nguồn dùng giấy phép [MIT](LICENSE): anh em được dùng, sửa và phát hành lại, kể cả cho dự án thương mại. Phát hiện lỗi hoặc muốn đề xuất, hãy mở một Issue hoặc Pull Request trên GitHub.
+Mã nguồn: https://github.com/phungbach/webmantle
+
+Bản quyền © 2026 PhungBach. Mã nguồn dùng giấy phép [MIT](LICENSE): anh em được dùng, sửa và phát hành lại, kể cả cho dự án thương mại. Phát hiện lỗi hoặc muốn đề xuất, hãy mở một Issue hoặc Pull Request trên GitHub.
 
 ## Mục lục
 
